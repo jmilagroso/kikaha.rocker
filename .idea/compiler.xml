@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Annotation profile for 2.0" enabled="true">
+        <sourceOutputDir name="output/generated-sources/annotations" />
+        <sourceTestOutputDir name="output/generated-test-sources/annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="2.0" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="2.0" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

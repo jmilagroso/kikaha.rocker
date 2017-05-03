@@ -1,0 +1,8 @@
+@import minerva.User;
+
+@args (User u)
+
+@views.common.main.template("Home") -> {
+<h1>Dynamic data: Name: @u.name</h1>
+<h1>Dynamic data: Age: @u.age</h1>
+}

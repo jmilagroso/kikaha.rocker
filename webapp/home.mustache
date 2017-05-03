@@ -1,0 +1,744 @@
+<html>
+<head>
+    <title>Kikaha - Minerva Demo</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.css">
+</head>
+<body>
+<div class="container">
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> New XXXXXUsers Vs Returning Users Metric [Daily] (Line Chart)</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartNewUsersVsReturningUsersDaily"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> New Users Vs Returning Users Metric [Hourly] (Line Chart)</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartNewUsersVsReturningUsersHourly"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> New Sessions Vs Returning Sessions Metric [Daily] (Line Chart)</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartNewSessionsVsReturningSessionsDaily"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> New Sessions Vs Returning Sessions Metric [Hourly] (Line Chart)</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartNewSessionsVsReturningSessionsHourly"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Users and Sessions Metrics (Donut)</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartNewUsersVsReturningUsers"></div>
+                    <div id="chartNewSessionsVsReturningSessions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Signup Type Metric</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartSignupType"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 0 auto; text-align: center;">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Demographics Gender Metric</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="chartDemographicGender"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.js"></script>
+<script async>
+    document.getElementById('chartNewUsersVsReturningUsers').style.display = "inline";
+    document.getElementById('chartNewSessionsVsReturningSessions').style.display = "inline";
+
+    // No need for any JS framework for now, let's do native http call XD
+
+    function newLineUsersVsReturningUsersDaily(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?&timezone=Europe/Rome&breakdown=TENANT_ID,TIME&start_datetime=2016-01-01%2000:00:00&end_datetime=2016-01-07%2023:59:59&granularity=daily&metrics=new_users,returning_users"
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Inspect raw response
+                //console.log(response);
+
+                // Callback result container
+                var obj = new Object();
+
+                // Define array of keys not to be returned (for UI purposes only, just fetch these when needed)
+                var blackList = ["VENUE_ID","TENANT_ID","ACCESS_POINT_ID"]
+
+                var tmpX = [];
+                tmpX.push("x");
+                var tmpNewUsersValue = [];
+                tmpNewUsersValue.push("'New Users'");
+
+                var tmpReturningUsersValue = [];
+                tmpReturningUsersValue.push("'Returning Users'");
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    // key: the name of the object key
+                    // index: the ordinal position of the key within the object
+                    //console.log(key+"=>"+response[index].TIME)
+                    //console.log(key+"=|>"+blackList.indexOf(key))
+                    if(blackList.indexOf(key)==-1) {
+                        tmpX.push(String(response[index].TIME));
+                        tmpNewUsersValue.push(response[index].NEW_USERS);
+                        tmpReturningUsersValue.push(response[index].RETURNING_USERS);
+                    }
+                });
+
+                obj.xAxis = tmpX;
+                obj.xNewUsers = tmpNewUsersValue;
+                obj.xReturningUsers = tmpReturningUsersValue;
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+
+    function newLineUsersVsReturningUsersHourly(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?tenant_id=&timezone=Europe/Rome&breakdown=TENANT_ID,TIME&start_datetime=2016-01-01%2000:00:00&end_datetime=2016-01-07%2023:59:59&granularity=hourly&metrics=new_users,returning_users"
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Inspect raw response
+                console.log(response);
+
+                // Callback result container
+                var obj = new Object();
+
+                // Define array of keys not to be returned (for UI purposes only, just fetch these when needed)
+                var blackList = ["VENUE_ID","TENANT_ID","ACCESS_POINT_ID"]
+
+                var tmpX = [];
+                tmpX.push("x");
+                var tmpNewUsersValue = [];
+                tmpNewUsersValue.push("'New Users'");
+
+                var tmpReturningUsersValue = [];
+                tmpReturningUsersValue.push("'Returning Users'");
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    // key: the name of the object key
+                    // index: the ordinal position of the key within the object
+                    //console.log(key+"=>"+response[index].TIME)
+                    //console.log(key+"=|>"+blackList.indexOf(key))
+                    if(blackList.indexOf(key)==-1) {
+                        //console.log(response[index].TIME.substring(0, response[index].TIME.length));
+                        tmpX.push(String(response[index].TIME.substring(0, response[index].TIME.length-4)));
+                        tmpNewUsersValue.push(response[index].NEW_USERS);
+                        tmpReturningUsersValue.push(response[index].RETURNING_USERS);
+                    }
+                });
+
+                obj.xAxis = tmpX;
+                obj.xNewUsers = tmpNewUsersValue;
+                obj.xReturningUsers = tmpReturningUsersValue;
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+    function newLineSessionsVsReturningSessionsDaily(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?tenant_id=&timezone=Europe/Rome&breakdown=TENANT_ID,TIME&start_datetime=2016-01-01%2000:00:00&end_datetime=2016-01-15%2000:00:00&granularity=daily&metrics=new_sessions,returning_sessions"
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Inspect raw response
+                //console.log(response);
+
+                // Callback result container
+                var obj = new Object();
+
+                // Define array of keys not to be returned (for UI purposes only, just fetch these when needed)
+                var blackList = ["VENUE_ID","TENANT_ID","ACCESS_POINT_ID"]
+
+                var tmpX = [];
+                tmpX.push("x");
+                var tmpNewSessionsValue = [];
+                tmpNewSessionsValue.push("'New Sessions'");
+
+                var tmpReturningSessionsValue = [];
+                tmpReturningSessionsValue.push("'Returning Sessions'");
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    // key: the name of the object key
+                    // index: the ordinal position of the key within the object
+                    //console.log(key+"=>"+response[index].TIME)
+                    //console.log(key+"=|>"+blackList.indexOf(key))
+                    if(blackList.indexOf(key)==-1) {
+                        tmpX.push(String(response[index].TIME));
+                        tmpNewSessionsValue.push(response[index].NEW_SESSIONS);
+                        tmpReturningSessionsValue.push(response[index].RETURNING_SESSIONS);
+                    }
+                });
+
+                obj.xAxis = tmpX;
+                obj.xNewSessions = tmpNewSessionsValue;
+                obj.xReturningSessions = tmpReturningSessionsValue;
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+    function newLineSessionsVsReturningSessionsHourly(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?tenant_id=&timezone=Europe/Rome&breakdown=TENANT_ID,TIME&start_datetime=2012-01-01%2000:00:00&end_datetime=2016-03-15%2000:00:00&granularity=hourly&metrics=new_sessions,returning_sessions"
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Inspect raw response
+                //console.log(response);
+
+                // Callback result container
+                var obj = new Object();
+
+                // Define array of keys not to be returned (for UI purposes only, just fetch these when needed)
+                var blackList = ["VENUE_ID","TENANT_ID","ACCESS_POINT_ID"]
+
+                var tmpX = [];
+                tmpX.push("x");
+                var tmpNewSessionsValue = [];
+                tmpNewSessionsValue.push("'New Sessions'");
+
+                var tmpReturningSessionsValue = [];
+                tmpReturningSessionsValue.push("'Returning Sessions'");
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    // key: the name of the object key
+                    // index: the ordinal position of the key within the object
+                    //console.log(key+"=>"+response[index].TIME)
+                    //console.log(key+"=|>"+blackList.indexOf(key))
+                    if(blackList.indexOf(key)==-1) {
+                        tmpX.push(String(response[index].TIME.substring(0, response[index].TIME.length-4)));
+                        tmpNewSessionsValue.push(response[index].NEW_SESSIONS);
+                        tmpReturningSessionsValue.push(response[index].RETURNING_SESSIONS);
+                    }
+                });
+
+                obj.xAxis = tmpX;
+                obj.xNewSessions = tmpNewSessionsValue;
+                obj.xReturningSessions = tmpReturningSessionsValue;
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+    function newSessionsVsReturningSessions(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?tenant_id=&timezone=Europe/Rome&breakdown=TENANT_ID,TIME&start_datetime=2016-01-01 00:00:00&end_datetime=2016-01-07 23:59:59&granularity=daily&metrics=new_sessions,returning_sessions"
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Inspect raw response
+                //console.log(response);
+
+                // Callback result container
+                var obj = new Object();
+
+
+                var totalNewSessions = 0;
+                var totalReturningSessions = 0;
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    totalNewSessions += parseInt(response[index].NEW_SESSIONS);
+                    totalReturningSessions += parseInt(response[index].RETURNING_SESSIONS);
+                });
+
+                obj.newSessions = totalNewSessions;
+                obj.returningSessions = totalReturningSessions;
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+    function signupType(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?tenant_id=&timezone=Europe/Rome&breakdown=TENANT_ID&start_datetime=2012-02-16%2000:00:00&end_datetime=2016-02-17%2000:00:00&granularity=daily&metrics=signup_type";
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = JSON.parse(xhr.responseText);
+                // Inspect raw response
+
+                // Callback result container
+                var obj = new Object();
+
+                // Define array of keys not to be returned (for UI purposes only, just fetch these when needed)
+                var blackList = ["VENUE_ID","TENANT_ID","ACCESS_POINT_ID","TIME"]
+
+                var totalPassThrough = 0;
+                var totalCloud4Wi = 0;
+                var totalLinkedIn = 0;
+
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    // key: the name of the object key
+                    // index: the ordinal position of the key within the object
+                    // console.log(response[index]);
+                    obj.PASSTHROUGH = (response[index].SIGNUP_TYPE_PASSTHROUGH) ? response[index].SIGNUP_TYPE_PASSTHROUGH : 0;
+                    obj.CLOUD4WI = (response[index].SIGNUP_TYPE_CLOUD4WI) ? response[index].SIGNUP_TYPE_CLOUD4WI : 0;
+                    obj.LINKEDIN = (response[index].SIGNUP_TYPE_LINKEDIN) ? response[index].SIGNUP_TYPE_LINKEDIN : 0;
+                    obj.FACEBOOK = (response[index].SIGNUP_TYPE_FACEBOOK) ? response[index].SIGNUP_TYPE_FACEBOOK : 0;
+
+                });
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+
+    function demographicGender(callback) {
+        var xhr = new XMLHttpRequest();
+        var url = "http://54.154.219.35/api/v1/minerva?&timezone=Europe/Rome&breakdown=&start_datetime=2015-01-01%2000:00:00&end_datetime=2016-01-16%2000:00:00&granularity=daily&metrics=demographics_gender"
+        console.log("URL:"+url)
+        xhr.open('GET', url, true);
+        xhr.send();
+
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                //console.log(JSON.parse(xhr.responseText));
+                var response = JSON.parse(xhr.responseText);
+                console.log("demogender:"+response);
+                // Inspect raw response
+
+                // Callback result container
+                var obj = new Object();
+
+                // Define array of keys not to be returned (for UI purposes only, just fetch these when needed)
+                var blackList = ["VENUE_ID","TENANT_ID","ACCESS_POINT_ID","TIME"]
+
+                var totalM = 0;
+                var totalF = 0;
+                var totalU = 0;
+
+                // Iterate response
+                Object.keys(response).forEach(function(key,index) {
+                    // key: the name of the object key
+                    // index: the ordinal position of the key within the object
+
+                    totalM += ("DEMOGRAPHICS_GENDER_MALE" in response[index]) ? parseInt(response[index].DEMOGRAPHICS_GENDER_MALE) : parseInt(0);
+                    totalF += ("DEMOGRAPHICS_GENDER_FEMALE" in response[index]) ? parseInt(response[index].DEMOGRAPHICS_GENDER_FEMALE) : parseInt(0);
+                    totalU += ("DEMOGRAPHICS_GENDER_UNKNOWN" in response[index]) ? parseInt(response[index].DEMOGRAPHICS_GENDER_UNKNOWN) : parseInt(0);
+
+
+                });
+
+                obj.DEMOGRAPHICS_GENDER_MALE = totalM;
+                obj.DEMOGRAPHICS_GENDER_FEMALE = totalF;
+                obj.DEMOGRAPHICS_GENDER_UNKNOWN = totalU;
+
+                // Let's wait for the data to populate and invoke callback after.
+                callback(obj);
+            }
+        };
+    }
+
+    setTimeout(function () {
+
+        newLineUsersVsReturningUsersDaily(function(result){
+            // Inspect
+            //console.log("xAxis:"+result.xAxis);
+            //console.log("xNewUsers:"+result.xNewUsers);
+            //console.log("xReturningUsers:"+result.xReturningUsers);
+
+            // Instantiate C3 Donut
+            var chartNewUsersVsReturningUsersDaily = c3.generate({
+                size: {
+                    height: 240,
+                    width: 800
+                },
+                data: {
+                    x: 'x',
+                    //xFormat: '%Y-%m-%d %H:%M:%S',
+                    xFormat: '%Y-%m-%d',
+                    columns: [
+                        result.xAxis,
+                        result.xNewUsers,
+                        result.xReturningUsers
+                    ],
+                //onmouseover: function (d, i) { console.log("onmouseover", d, i, this); },
+                //onmouseout: function (d, i) { console.log("onmouseout", d, i, this); },
+                //onclick: function (d, i) { console.log("onclick", d, i, this); },
+                //order: null // set null to disable sort of data. desc is the default.
+                },
+                axis: {
+                    x: {
+                        type: 'timeseries',
+                        tick: {
+                            format: '%Y-%m-%d'
+                        }
+                    }
+                },
+                transition: {
+                    duration: 200
+                },
+                bindto: '#chartNewUsersVsReturningUsersDaily'
+            });
+        });
+
+        newLineUsersVsReturningUsersHourly(function(result){
+            // Inspect
+            //console.log("xAxis:"+result.xAxis);
+            //console.log("xNewUsers:"+result.xNewUsers);
+            //console.log("xReturningUsers:"+result.xReturningUsers);
+
+            // Instantiate C3 Donut
+            var chartNewUsersVsReturningUsersHourly = c3.generate({
+                size: {
+                    height: 240,
+                    width: 800
+                },
+                data: {
+                    x: 'x',
+                    xFormat: '%Y-%m-%d %H:%M:%S',
+                    columns: [
+                        result.xAxis,
+                        result.xNewUsers,
+                        result.xReturningUsers
+                    ],
+                //onmouseover: function (d, i) { console.log("onmouseover", d, i, this); },
+                //onmouseout: function (d, i) { console.log("onmouseout", d, i, this); },
+                //onclick: function (d, i) { console.log("onclick", d, i, this); },
+                //order: null // set null to disable sort of data. desc is the default.
+                },
+                axis: {
+                    x: {
+                        type: 'timeseries',
+                        tick: {
+                            //format: '%Y-%m-%d %H:%M',
+                            format: function(x) { return d3.time.format('%b-%e %HH')(x); }
+                            //count: 2
+                        }
+                    }
+                },
+                transition: {
+                    duration: 200
+                },
+                bindto: '#chartNewUsersVsReturningUsersHourly'
+            });
+        });
+
+        newLineSessionsVsReturningSessionsDaily(function(result){
+            // Inspect
+            //console.log("xAxis:"+result.xAxis);
+            //console.log("xNewUsers:"+result.xNewUsers);
+            //console.log("xReturningUsers:"+result.xReturningUsers);
+
+            // Instantiate C3 Donut
+            var chartNewSessionsVsReturningSessionsDaily = c3.generate({
+                size: {
+                    height: 240,
+                    width: 800
+                },
+                data: {
+                    x: 'x',
+                    //xFormat: '%Y-%m-%d %H:%M:%S',
+                    xFormat: '%Y-%m-%d',
+                    columns: [
+                        result.xAxis,
+                        result.xNewSessions,
+                        result.xReturningSessions
+                    ],
+                //onmouseover: function (d, i) { console.log("onmouseover", d, i, this); },
+                //onmouseout: function (d, i) { console.log("onmouseout", d, i, this); },
+                //onclick: function (d, i) { console.log("onclick", d, i, this); },
+                //order: null // set null to disable sort of data. desc is the default.
+                },
+                axis: {
+                    x: {
+                        type: 'timeseries',
+                        tick: {
+                            format: '%Y-%m-%d'
+                        }
+                    }
+                },
+                transition: {
+                    duration: 200
+                },
+                bindto: '#chartNewSessionsVsReturningSessionsDaily'
+            });
+        });
+
+        newLineSessionsVsReturningSessionsHourly(function(result){
+            // Inspect
+            //console.log("xAxis:"+result.xAxis);
+            //console.log("xNewUsers:"+result.xNewUsers);
+            //console.log("xReturningUsers:"+result.xReturningUsers);
+
+            // Instantiate C3 Donut
+            var chartNewSessionsVsReturningSessionsHourly = c3.generate({
+                size: {
+                    height: 240,
+                    width: 800
+                },
+                data: {
+                    x: 'x',
+                    xFormat: '%Y-%m-%d %H:%M:%S',
+                    columns: [
+                        result.xAxis,
+                        result.xNewSessions,
+                        result.xReturningSessions
+                    ],
+                //onmouseover: function (d, i) { console.log("onmouseover", d, i, this); },
+                //onmouseout: function (d, i) { console.log("onmouseout", d, i, this); },
+                //onclick: function (d, i) { console.log("onclick", d, i, this); },
+                //order: null // set null to disable sort of data. desc is the default.
+                },
+                axis: {
+                    x: {
+                        type: 'timeseries',
+                        tick: {
+                            // format: '%Y-%m-%d %H:%M:%S',
+                            format: function(x) { return d3.time.format('%b-%e %HH')(x); },
+                            count: 24
+                        }
+
+                    }
+                },
+                transition: {
+                    duration: 200
+                },
+                bindto: '#chartNewSessionsVsReturningSessionsHourly'
+            });
+        });
+
+        newSessionsVsReturningSessions(function(result){
+            // Inspect
+            //console.log("newSessionsVsReturningSessions:"+result);
+
+            // Instantiate C3
+            var chartNewSessionsVsReturningSessions = c3.generate({
+                size: {
+                    height: 240,
+                    width: 200
+                },
+                data: {
+                    columns: [
+                    ["NEW SESSIONS ("+result.newSessions+")", result.newSessions],
+                    ["RETURNING SESSIONS ("+result.returningSessions+")", result.returningSessions],
+                    ],
+                    type : 'donut',
+                    //onmouseover: function (d, i) { console.log("onmouseover", d, i, this); },
+                    //onmouseout: function (d, i) { console.log("onmouseout", d, i, this); },
+                    //onclick: function (d, i) { console.log("onclick", d, i, this); },
+                    //order: null // set null to disable sort of data. desc is the default.
+                },
+                axis: {
+                    x: {
+                        label: 'Sepal.Width'
+                    },
+                    y: {
+                        label: 'Petal.Width'
+                    }
+                },
+                donut: {
+                    label: {
+                        //format: function (d, ratio) { return ""; }
+                    },
+                    title: "Sessions",
+                    width: 40
+                },
+                transition: {
+                    duration: 100
+                },
+                bindto: '#chartNewSessionsVsReturningSessions'
+            });
+
+
+            chartNewSessionsVsReturningSessions.load({
+                columns: [result]
+            });
+        });
+
+        signupType(function(result){
+            // Inspect
+            //console.log("PASSTHROUGH:"+result.PASSTHROUGH);
+            //console.log("CLOUD4WI:"+result.CLOUD4WI);
+            //console.log("LINKEDIN:"+result.LINKEDIN);
+
+            // Instantiate C3
+            var chartSignupType = c3.generate({
+                size: {
+                    height: 240,
+                    width: 280
+                },
+                data: {
+                    columns: [
+                    ["PASSTHROUGH ("+result.PASSTHROUGH+")", result.PASSTHROUGH],
+                    ["CLOUD4WI ("+result.CLOUD4WI+")", result.CLOUD4WI],
+                    ["LINKEDIN ("+result.LINKEDIN+")", result.LINKEDIN],
+                    ],
+                    type : 'pie'
+                },
+                axis: {
+                    x: {
+                        label: 'Sepal.Width'
+                    },
+                    y: {
+                        label: 'Petal.Width'
+                    }
+                },
+                donut: {
+                    label: {
+                    //format: function (d, ratio) { return ""; }
+                    },
+                    title: "Signup Type",
+                    width: 40,
+                },
+                transition: {
+                    duration: 100
+                },
+                bindto: '#chartSignupType'
+            });
+        });
+
+        demographicGender(function(result){
+            // Inspect
+            console.log("demographicGender:"+result);
+
+            // Instantiate C3
+            var chartDemographicGender = c3.generate({
+                size: {
+                    height: 420,
+                    width: 420
+                },
+                data: {
+                    columns: [
+                    ["MALE ("+result.DEMOGRAPHICS_GENDER_MALE+")", result.DEMOGRAPHICS_GENDER_MALE],
+                    ["FEMALE ("+result.DEMOGRAPHICS_GENDER_FEMALE+")", result.DEMOGRAPHICS_GENDER_FEMALE],
+                    ["UNKNOWN ("+result.DEMOGRAPHICS_GENDER_UNKNOWN+")", result.DEMOGRAPHICS_GENDER_UNKNOWN],
+                    ],
+                    type : 'donut',
+                    //onmouseover: function (d, i) { console.log("onmouseover", d, i, this); },
+                    //onmouseout: function (d, i) { console.log("onmouseout", d, i, this); },
+                    //onclick: function (d, i) { console.log("onclick", d, i, this); },
+                    //order: null // set null to disable sort of data. desc is the default.
+                },
+                axis: {
+                    x: {
+                        label: 'Sepal.Width'
+                    },
+                    y: {
+                        label: 'Petal.Width'
+                    }
+                },
+                donut: {
+                    label: {
+                        //format: function (d, ratio) { return ""; }
+                    },
+                    title: "Demographic Gender",
+                    width: 70
+                },
+                transition: {
+                    duration: 100
+                },
+                bindto: '#chartDemographicGender'
+            });
+
+
+            chartDemographicGender.load({
+                columns: [result]
+            });
+        });
+    }, 1000);
+
+</script>
+</body>
+</html>
+

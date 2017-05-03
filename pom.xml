@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.skullabs.kikaha</groupId>
+		<version><!-- var-kikaha-version -->2.0.4<!-- /var-kikaha-version --></version>
+		<artifactId>kikaha-project</artifactId>
+	</parent>
+
+	<groupId><!-- var-project-group-id -->2.0<!-- /var-project-group-id --></groupId>
+	<artifactId><!-- var-project-artifact-id -->2.0<!-- /var-project-artifact-id --></artifactId>
+	<version><!-- var-project-version -->1.0.0-SNAPSHOT<!-- /var-project-version --></version>
+	<packaging>jar</packaging>
+	<name>${project.artifactId}</name>
+
+	<properties>
+		<!-- project configurations -->
+		<config.dir.source>source</config.dir.source>
+		<config.dir.resource>resources</config.dir.resource>
+		<config.dir.test.source>tests</config.dir.test.source>
+		<config.dir.test.resource>tests-resources</config.dir.test.resource>
+		<config.dir.output>output</config.dir.output>
+		<config.dir.web>webapp</config.dir.web>
+		<!-- dependencies version configuration -->
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.skullabs.kikaha</groupId>
+			<artifactId>kikaha-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.skullabs.kikaha</groupId>
+			<artifactId>kikaha-urouting</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.skullabs.kikaha</groupId>
+			<artifactId>kikaha-injection-processor</artifactId>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>io.skullabs.kikaha</groupId>
+			<artifactId>kikaha-urouting-mustache</artifactId>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>io.skullabs.kikaha</groupId>
+			<artifactId>kikaha-urouting-jackson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe</groupId>
+			<artifactId>config</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fizzed</groupId>
+			<artifactId>rocker-runtime</artifactId>
+			<version>0.16.0</version>
+		</dependency>
+
+		<!-- for hot-reloading support only during development -->
+		<dependency>
+			<groupId>com.fizzed</groupId>
+			<artifactId>rocker-compiler</artifactId>
+			<version>0.16.0</version>
+			<scope>provided</scope>
+		</dependency>
+<!-- kikaha-dependencies -->
+
+<!-- /kikaha-dependencies -->
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.fizzed</groupId>
+				<artifactId>rocker-maven-plugin</artifactId>
+				<version>0.16.0</version>
+				<executions>
+					<execution>
+						<id>generate-rocker-templates</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

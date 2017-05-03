@@ -14,15 +14,16 @@ import com.fizzed.rocker.runtime.RockerRuntime;
 import rocker.*;
 
 @Singleton
-@Path( "home" )
+@Path( "/" )
 public class HomeResource {
 
     @GET
-    @Path( "rocker" )
+    @Path( "/" )
     @Produces( Mimes.HTML )
     public rocker.RockerTemplate renderMe() {
         RockerRuntime.getInstance().setReloading(true);
 
+        // Sample data
         User x = new User();
         x.name = "Peter";
         x.age = 31;

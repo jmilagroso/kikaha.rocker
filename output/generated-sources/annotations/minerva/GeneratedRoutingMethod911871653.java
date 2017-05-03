@@ -12,8 +12,8 @@ import kikaha.urouting.RoutingMethodExceptionHandler;
 
 @Singleton
 @Typed( HttpHandler.class )
-@WebResource( path="/home/rocker/", method="GET" )
-public class GeneratedRoutingMethod801149652 implements HttpHandler {
+@WebResource( path="/", method="GET" )
+public class GeneratedRoutingMethod911871653 implements HttpHandler {
 
 	@Inject RoutingMethodResponseWriter responseWriter;
 	@Inject RoutingMethodParameterReader methodDataProvider;

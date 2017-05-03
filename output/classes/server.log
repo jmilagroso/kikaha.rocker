@@ -1,21 +1,21 @@
-10:42:21.568 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
-10:42:21.590 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
-10:42:21.591 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
-10:42:21.707 WARN  - The DefaultSecurityContextFactory isn't designed for production proposes. Please consider using the HazelcastSecurityContextFactory.
-10:42:21.726 INFO  - Listening for HTTP requests at 0.0.0.0:9000
-10:42:21.734 INFO  - Configuring Undertow options...
-10:42:21.734 INFO  -   buffer-size: 1024
-10:42:21.740 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
-10:42:21.740 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
-10:42:21.740 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
-10:42:21.740 INFO  -   org.xnio.Options.BACKLOG: 20000
-10:42:21.740 INFO  - Registering route: GET:/home/rocker
-10:42:21.741 INFO  - Registering route: GET:/{templatePath}.do
-10:42:21.742 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
-10:42:21.761 INFO  - XNIO version 3.3.6.Final
-10:42:21.767 INFO  - XNIO NIO Implementation Version 3.3.6.Final
-10:42:21.832 INFO  - Application started in 372ms.
-10:42:30.181 INFO  - Rocker version 0.16.0
-10:42:30.182 INFO  - Rocker template reloading not activated
-10:42:30.189 INFO  - Rocker template reloading activated
-10:45:29.404 INFO  - Server stopped!
+11:46:35.654 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
+11:46:35.676 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
+11:46:35.677 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
+11:46:35.796 WARN  - The DefaultSecurityContextFactory isn't designed for production proposes. Please consider using the HazelcastSecurityContextFactory.
+11:46:35.815 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+11:46:35.823 INFO  - Configuring Undertow options...
+11:46:35.823 INFO  -   buffer-size: 1024
+11:46:35.834 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+11:46:35.834 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+11:46:35.834 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+11:46:35.834 INFO  -   org.xnio.Options.BACKLOG: 20000
+11:46:35.835 INFO  - Registering route: GET:/
+11:46:35.836 INFO  - Registering route: GET:/{templatePath}.do
+11:46:35.836 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
+11:46:35.860 INFO  - XNIO version 3.3.6.Final
+11:46:35.873 INFO  - XNIO NIO Implementation Version 3.3.6.Final
+11:46:35.968 INFO  - Application started in 434ms.
+11:46:37.530 INFO  - Rocker version 0.16.0
+11:46:37.531 INFO  - Rocker template reloading not activated
+11:46:37.538 INFO  - Rocker template reloading activated
+11:46:54.809 INFO  - Server stopped!

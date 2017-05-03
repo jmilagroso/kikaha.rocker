@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="168c5276-3b52-4150-bcf0-4a40d06f01c1" name="Default" comment="" />
+    <list default="true" id="168c5276-3b52-4150-bcf0-4a40d06f01c1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/minerva/GeneratedRoutingMethod801149652.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/generated-sources/annotations/minerva/GeneratedRoutingMethod801149652.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2.0-1.0.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/output/2.0-1.0.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/minerva/Home.class" afterPath="$PROJECT_DIR$/output/classes/minerva/Home.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/minerva/HomeResource.class" afterPath="$PROJECT_DIR$/output/classes/minerva/HomeResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/minerva/User.class" afterPath="$PROJECT_DIR$/output/classes/minerva/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/EmptyHeaders.class" afterPath="$PROJECT_DIR$/output/classes/rocker/EmptyHeaders.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/GeneratedRoutingMethod1540815954.class" afterPath="$PROJECT_DIR$/output/classes/rocker/GeneratedRoutingMethod1540815954.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/HTMLRockerSerializer.class" afterPath="$PROJECT_DIR$/output/classes/rocker/HTMLRockerSerializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerResource.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerResponse.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerSerializer.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerSerializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerSerializerFactory.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerSerializerFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerTemplate.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerTemplate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/main$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/common/main$PlainText.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/main$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/common/main$Template.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/main.class" afterPath="$PROJECT_DIR$/output/classes/views/common/main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/index$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/index$PlainText.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/index$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/index$Template.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/index.class" afterPath="$PROJECT_DIR$/output/classes/views/index.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2.0.iml" afterPath="$PROJECT_DIR$/2.0.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/META-INF/services/io.undertow.server.HttpHandler" afterPath="$PROJECT_DIR$/output/classes/META-INF/services/io.undertow.server.HttpHandler" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker-compiler.conf" afterPath="$PROJECT_DIR$/output/classes/rocker-compiler.conf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/server.log" afterPath="$PROJECT_DIR$/output/classes/server.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/output/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/minerva/HomeResource.java" afterPath="$PROJECT_DIR$/source/minerva/HomeResource.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/output/maven-status/" />
     <ignored path="$PROJECT_DIR$/output/maven-archiver/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +50,8 @@
       <file leaf-file-name="HomeResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/minerva/HomeResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,14 +69,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output/classes/views/index.class">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-461">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#3758#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1110">
+              <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/source/rocker/RockerResource.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,16 +136,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="starter-template.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webapp/starter-template.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -156,6 +174,9 @@
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -180,7 +201,6 @@
         <option value="$PROJECT_DIR$/resources/conf/application.yml" />
         <option value="$PROJECT_DIR$/source/rocker/HTMLRockerSerializer.java" />
         <option value="$PROJECT_DIR$/source/rocker/RockerSerializerFactory.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/source/rocker/RockerResource.java" />
         <option value="$PROJECT_DIR$/source/rocker/RockerTemplate.java" />
         <option value="$PROJECT_DIR$/source/rocker/RockerSerializer.java" />
@@ -190,6 +210,7 @@
         <option value="$PROJECT_DIR$/source/views/common/starter-template.css" />
         <option value="$PROJECT_DIR$/source/views/common/main.rocker.html" />
         <option value="$PROJECT_DIR$/source/views/index.rocker.html" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/source/minerva/HomeResource.java" />
       </list>
     </option>
@@ -714,7 +735,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -731,9 +752,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26947704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26947704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3361793" sideWeight="0.49573106" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33653846" sideWeight="0.49573106" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -904,14 +925,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/fizzed/rocker-runtime/0.16.0/rocker-runtime-0.16.0-sources.jar!/com/fizzed/rocker/RockerOutputFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -991,9 +1004,9 @@
         <state relative-caret-position="151">
           <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1154#1155#0" expanded="false" />
+            <element signature="e#1183#1184#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1019,7 +1032,7 @@
     <entry file="file://$PROJECT_DIR$/source/rocker/RockerResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1075,6 +1088,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/views/common/main.rocker.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1085,8 +1106,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/minerva/HomeResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

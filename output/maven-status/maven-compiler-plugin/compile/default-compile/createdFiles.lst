@@ -9,6 +9,7 @@ rocker/RockerSerializerFactory.class
 views/common/main$PlainText.class
 rocker/HTMLRockerSerializer.class
 META-INF/services/rocker.RockerResource
+minerva/GeneratedRoutingMethod911871653.class
 minerva/HomeResource.class
 rocker/GeneratedRoutingMethod1540815954.class
 minerva/User.class
@@ -20,5 +21,4 @@ views/common/main.class
 META-INF/services/minerva.HomeResource
 META-INF/services/kikaha.urouting.api.Serializer
 META-INF/services/rocker.RockerSerializerFactory
-minerva/GeneratedRoutingMethod801149652.class
 views/index.class

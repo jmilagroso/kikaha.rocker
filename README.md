@@ -9,3 +9,8 @@ See [Kikaha](http://get.kikaha.io/v1.6/docs/what-is-kikaha)
 Rocker is a Java 8 optimized (runtime compat with 6+), near zero-copy rendering, speedy template engine that produces statically typed, plain java object templates that are compiled along with the rest of your project. No more "warm-up" time in production, slow reflection-based logic, or nasty surprises that should have been caught during development.
 See [Rocker](https://github.com/fizzed/rocker)
 
+### Setup
+1. $ git clone git@github.com:jmilagroso/kikaha.rocker.git
+2. $ cd kikaha.rocker
+3. $ curl -s http://download.kikaha.io/installer | bash
+4. $ kikaha run_app

@@ -17,15 +17,6 @@ import rocker.*;
 @Path( "home" )
 public class HomeResource {
 
-    /*@GET
-    @Path( "chart" )
-    @Produces( Mimes.HTML )
-    public MustacheTemplate renderProfileTemplate() {
-        return new MustacheTemplate()
-                .templateName( "home.mustache" )
-                .paramObject( new Home() );
-    }*/
-
     @GET
     @Path( "rocker" )
     @Produces( Mimes.HTML )

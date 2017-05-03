@@ -13,3 +13,5 @@ Integrates Kikaha with Rocker.
 3. $ curl -s http://download.kikaha.io/installer | bash
 4. $ kikaha run_app
 5. Open http://localhost:9000
+
+Special thanks to [jeoffreylim](https://github.com/jeoffreylim)

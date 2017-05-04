@@ -7,9 +7,8 @@ import kikaha.urouting.api.*;
 import javax.inject.*;
 import com.fizzed.rocker.runtime.RockerRuntime;
 import myapp.models.HazelCast;
-import java.util.Map;
-import java.util.UUID;
 
+import java.util.*;
 
 @Singleton
 @Path( "/hazelcast" )
@@ -23,7 +22,8 @@ public class HazelCastResource
         RockerRuntime.getInstance().setReloading(true);
 
         Config cfg = new Config();
-        HazelcastInstance instance = Hazelcast.newHazelcastInstance(cfg);
+        cfg.setInstanceName("hzInstance1");
+        HazelcastInstance instance = Hazelcast.getHazelcastInstanceByName(cfg.getInstanceName());
         Map<Integer, String> mapCustomers = instance.getMap("customers");
 
         HazelCast hc = new HazelCast();
@@ -38,7 +38,8 @@ public class HazelCastResource
     public rocker.RockerTemplate renderGenerateDummyDataToHazelCast() {
 
         Config cfg = new Config();
-        HazelcastInstance instance = Hazelcast.newHazelcastInstance(cfg);
+        cfg.setInstanceName("hzInstance1");
+        HazelcastInstance instance = Hazelcast.getHazelcastInstanceByName(cfg.getInstanceName());
         Map<Integer, String> mapCustomers = instance.getMap("customers");
 
         String uuid = UUID.randomUUID().toString();

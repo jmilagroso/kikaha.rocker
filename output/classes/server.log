@@ -1,80 +1,52 @@
-10:30:49.929 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
-10:30:49.950 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
-10:30:49.950 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-hazelcast/2.0.4/kikaha-hazelcast-2.0.4.jar!/META-INF/defaults.yml
-10:30:49.951 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
-10:30:50.251 INFO  - [LOCAL] [dev] [3.8.1] Prefer IPv4 stack is true.
-10:30:50.256 INFO  - [LOCAL] [dev] [3.8.1] Picked [172.17.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-10:30:50.262 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Hazelcast 3.8.1 (20170411 - f1e9264) starting at [172.17.0.1]:5701
-10:30:50.263 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
-10:30:50.263 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Configured Hazelcast Serialization version : 1
-10:30:50.371 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Backpressure is disabled
-10:30:50.649 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Creating MulticastJoiner
-10:30:50.740 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Starting 4 partition threads
-10:30:50.743 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Starting 3 generic threads (1 dedicated for priority tasks)
-10:30:50.747 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] [172.17.0.1]:5701 is STARTING
-10:30:52.666 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Cluster version set to 3.8
-10:30:52.667 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] 
+12:17:16.367 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
+12:17:16.389 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
+12:17:16.390 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-hazelcast/2.0.4/kikaha-hazelcast-2.0.4.jar!/META-INF/defaults.yml
+12:17:16.391 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
+12:17:16.712 INFO  - [LOCAL] [dev] [3.7.2] Prefer IPv4 stack is true.
+12:17:16.718 INFO  - [LOCAL] [dev] [3.7.2] Picked [172.17.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+12:17:16.724 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [172.17.0.1]:5701
+12:17:16.725 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+12:17:16.725 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
+12:17:16.805 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Backpressure is disabled
+12:17:17.079 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Creating MulticastJoiner
+12:17:17.081 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] [172.17.0.1]:5701 is STARTING
+12:17:17.155 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Starting 4 partition threads
+12:17:17.166 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
+12:17:17.170 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
+12:17:19.239 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] 
 
 
 Members [1] {
-	Member [172.17.0.1]:5701 - 52965f50-b84d-4b70-bd72-cfec9b6bb36b this
+	Member [172.17.0.1]:5701 - 695370d1-3dcf-476e-a74d-2e2a78d52512 this
 }
 
-10:30:52.712 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] [172.17.0.1]:5701 is STARTED
-10:30:52.756 INFO  - Listening for HTTP requests at 0.0.0.0:9000
-10:30:52.763 INFO  - Configuring Undertow options...
-10:30:52.763 INFO  -   buffer-size: 1024
-10:30:52.769 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
-10:30:52.769 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
-10:30:52.769 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
-10:30:52.769 INFO  -   org.xnio.Options.BACKLOG: 20000
-10:30:52.769 INFO  - Registering route: GET:/hazelcast
-10:30:52.771 INFO  - Registering route: GET:/hazelcast/generate
-10:30:52.771 INFO  - Registering route: GET:/
-10:30:52.771 INFO  - Registering route: GET:/{templatePath}.do
-10:30:52.771 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
-10:30:52.790 INFO  - XNIO version 3.3.6.Final
-10:30:52.796 INFO  - XNIO NIO Implementation Version 3.3.6.Final
-10:30:52.854 INFO  - Application started in 3056ms.
-10:30:56.253 INFO  - Rocker version 0.16.0
-10:30:56.254 INFO  - Rocker template reloading not activated
-10:30:56.262 INFO  - Rocker template reloading activated
-10:30:56.396 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Accepting socket connection from /192.168.94.172:55825
-10:30:56.399 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Established socket connection between /172.17.0.1:5701 and /192.168.94.172:55825
-10:31:01.749 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Accepting socket connection from /192.168.94.172:46592
-10:31:01.754 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Established socket connection between /172.17.0.1:5701 and /192.168.94.172:46592
-10:31:07.758 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] 
-
-Members [3] {
-	Member [172.17.0.1]:5701 - 52965f50-b84d-4b70-bd72-cfec9b6bb36b this
-	Member [172.17.0.1]:5702 - bf9f8b1b-a69f-4084-ade3-7d2e176e1a5a
-	Member [172.17.0.1]:5703 - 04cb9325-3886-41b7-b6b6-40396ce22e7e
-}
-
-10:31:09.410 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Initializing cluster partition table arrangement...
-10:31:12.625 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Accepting socket connection from /192.168.94.172:41750
-10:31:12.626 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Established socket connection between /172.17.0.1:5701 and /192.168.94.172:41750
-10:31:18.629 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] 
-
-Members [4] {
-	Member [172.17.0.1]:5701 - 52965f50-b84d-4b70-bd72-cfec9b6bb36b this
-	Member [172.17.0.1]:5702 - bf9f8b1b-a69f-4084-ade3-7d2e176e1a5a
-	Member [172.17.0.1]:5703 - 04cb9325-3886-41b7-b6b6-40396ce22e7e
-	Member [172.17.0.1]:5704 - 137ad856-fa35-4b2c-b926-7481bfce4f97
-}
-
-10:31:18.943 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Re-partitioning cluster data... Migration queue size: 271
-10:31:20.393 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] All migration tasks have been completed, queues are empty.
-10:31:41.257 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Running shutdown hook... Current state: ACTIVE
-10:31:41.258 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] [172.17.0.1]:5701 is SHUTTING_DOWN
-10:31:41.259 WARN  - [172.17.0.1]:5701 [dev] [3.8.1] Terminating forcefully...
-10:31:41.260 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Shutting down multicast service...
-10:31:41.270 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Shutting down connection manager...
-10:31:41.270 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Connection[id=3, /172.17.0.1:5701->/192.168.94.172:41750, endpoint=[172.17.0.1]:5704, alive=false, type=MEMBER] closed. Reason: TcpIpConnectionManager is stopping
-10:31:41.277 INFO  - Server stopped!
-10:31:41.277 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Connection[id=1, /172.17.0.1:5701->/192.168.94.172:55825, endpoint=[172.17.0.1]:5702, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-10:31:41.279 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Connection[id=2, /172.17.0.1:5701->/192.168.94.172:46592, endpoint=[172.17.0.1]:5703, alive=false, type=MEMBER] closed. Reason: Connection closed by the other side
-10:31:41.279 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Shutting down node engine...
-10:31:41.300 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Destroying node NodeExtension.
-10:31:41.301 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] Hazelcast Shutdown is completed in 42 ms.
-10:31:41.302 INFO  - [172.17.0.1]:5701 [dev] [3.8.1] [172.17.0.1]:5701 is SHUTDOWN
+12:17:19.258 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] [172.17.0.1]:5701 is STARTED
+12:17:19.295 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+12:17:19.302 INFO  - Configuring Undertow options...
+12:17:19.303 INFO  -   buffer-size: 1024
+12:17:19.308 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+12:17:19.308 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+12:17:19.308 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+12:17:19.308 INFO  -   org.xnio.Options.BACKLOG: 20000
+12:17:19.309 INFO  - Registering route: GET:/hazelcast
+12:17:19.310 INFO  - Registering route: GET:/hazelcast/generate
+12:17:19.310 INFO  - Registering route: GET:/
+12:17:19.310 INFO  - Registering route: GET:/{templatePath}.do
+12:17:19.310 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
+12:17:19.329 INFO  - XNIO version 3.3.6.Final
+12:17:19.335 INFO  - XNIO NIO Implementation Version 3.3.6.Final
+12:17:19.395 INFO  - Application started in 3177ms.
+12:17:20.887 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Initializing cluster partition table arrangement...
+12:17:20.939 INFO  - Rocker version 0.16.0
+12:17:20.951 INFO  - Rocker template reloading not activated
+12:17:22.377 INFO  - Rocker template reloading activated
+12:17:35.941 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Running shutdown hook... Current state: ACTIVE
+12:17:35.941 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] [172.17.0.1]:5701 is SHUTTING_DOWN
+12:17:35.941 WARN  - [172.17.0.1]:5701 [dev] [3.7.2] Terminating forcefully...
+12:17:35.941 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Shutting down multicast service...
+12:17:35.941 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Shutting down connection manager...
+12:17:35.943 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Shutting down node engine...
+12:17:35.943 INFO  - Server stopped!
+12:17:35.950 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Destroying node NodeExtension.
+12:17:35.951 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] Hazelcast Shutdown is completed in 10 ms.
+12:17:35.951 INFO  - [172.17.0.1]:5701 [dev] [3.7.2] [172.17.0.1]:5701 is SHUTDOWN

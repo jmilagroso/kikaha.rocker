@@ -11,10 +11,8 @@ rocker/RockerSerializerFactory.class
 views/common/main$PlainText.class
 views/hazelcast.class
 myapp/routes/GeneratedRoutingMethod4205422549.class
-META-INF/services/myapp.services.SampleService
 rocker/HTMLRockerSerializer.class
 META-INF/services/rocker.RockerResource
-myapp/services/SampleService.class
 rocker/GeneratedRoutingMethod1540815954.class
 myapp/routes/HazelCastResource.class
 views/index$PlainText.class

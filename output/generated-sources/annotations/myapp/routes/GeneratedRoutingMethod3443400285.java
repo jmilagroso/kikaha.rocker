@@ -1,4 +1,4 @@
-package minerva;
+package myapp.routes;
 
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
@@ -13,13 +13,13 @@ import kikaha.urouting.RoutingMethodExceptionHandler;
 @Singleton
 @Typed( HttpHandler.class )
 @WebResource( path="/", method="GET" )
-public class GeneratedRoutingMethod911871653 implements HttpHandler {
+public class GeneratedRoutingMethod3443400285 implements HttpHandler {
 
 	@Inject RoutingMethodResponseWriter responseWriter;
 	@Inject RoutingMethodParameterReader methodDataProvider;
 	@Inject RoutingMethodExceptionHandler exceptionHandler;
 	
-	@Inject minerva.HomeResource instance;
+	@Inject myapp.routes.HomeResource instance;
 
 	@Override
 	public void handleRequest( HttpServerExchange exchange ) throws Exception {
@@ -30,7 +30,7 @@ public class GeneratedRoutingMethod911871653 implements HttpHandler {
 			else if ( !exchange.isInIoThread() && !exchange.isBlocking() )
 				exchange.startBlocking();
 		try {
-			final rocker.RockerTemplate response = instance.renderMe( 
+			final rocker.RockerTemplate response = instance.renderHome( 
 			 );
 				responseWriter.write( exchange, "text/html", response );
 		} catch ( Throwable cause ) {

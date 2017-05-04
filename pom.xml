@@ -65,6 +65,17 @@
 			<version>0.16.0</version>
 		</dependency>
 
+        <dependency>
+            <groupId>io.skullabs.kikaha</groupId>
+            <artifactId>kikaha-hazelcast</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
 		<!-- for hot-reloading support only during development -->
 		<dependency>
 			<groupId>com.fizzed</groupId>

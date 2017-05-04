@@ -1,0 +1,14 @@
+<hazelcast
+        xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.4.xsd"
+        xmlns="http://www.hazelcast.com/schema/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <map name="default">
+        <time-to-live-seconds>0</time-to-live-seconds>
+        <max-idle-seconds>0</max-idle-seconds>
+        <eviction-policy>LRU</eviction-policy>
+        <max-size policy="PER_NODE">5000</max-size>
+        <eviction-percentage>25</eviction-percentage>
+        <min-eviction-check-millis>100</min-eviction-check-millis>
+    </map>
+
+</hazelcast>

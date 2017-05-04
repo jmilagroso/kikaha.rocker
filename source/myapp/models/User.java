@@ -1,4 +1,4 @@
-package minerva;
+package myapp.models;
 
 /**
  * Created by jay on 5/3/17.

@@ -1,0 +1,7 @@
+@import myapp.models.HazelCast;
+
+@args (HazelCast hc)
+
+@views.common.main.template("Home") -> {
+<h1>Hazelcast Size: @hc.size</h1>
+}

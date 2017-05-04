@@ -7,31 +7,9 @@ server:
     default-content-type: "application/json"
     # default-content-type: "text/html"
 
+  hazelcast:
+    config: "conf/hazelcast.xml"
+
   auth:
-    # SecurityContext factory
-    security-context-factory: kikaha.core.modules.security.DefaultSecurityContextFactory
-
-    #Available IdentityManagers
-    identity-managers:
-      default: kikaha.core.modules.security.FixedUserAndPasswordIdentityManager
-
-    # Available AuthMechanisms
-    auth-mechanisms:
-      basic: kikaha.core.modules.security.BasicAuthenticationMechanism
-      form: kikaha.core.modules.security.FormAuthenticationMechanism
-
-    # Auth rules (empty by default)
-    rules:
-
-    # Configuration for fixed-user-and-pass Identity Manager
-    fixed-auth:
-      username: "admin-c4w"
-      password: "admin-c4w"
-      role: "admin"
-
-    # Configuration for Form-based AuthMechanism
-    form-auth:
-      login-page: "/auth/"
-      error-page: "/auth/error/"
-      permission-denied-page: ""
-
+    # Distributed Session Management with Hazelcast
+    security-context-factory: kikaha.hazelcast.HazelcastSecurityContextFactory

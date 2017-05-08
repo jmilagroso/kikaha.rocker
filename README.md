@@ -10,6 +10,10 @@ Integrates Kikaha with Rocker.
 ## Hazelcast
 [Hazelcast](https://hazelcast.org/getting-started-with-hazelcast/) is an open source in-memory data grid based on Java.
 
+## Redis
+[Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+[Jedis](https://github.com/xetorthio/jedis) a blazingly small and sane redis java client.
+
 ### Setup
 1. $ git clone git@github.com:jmilagroso/kikaha.rocker.git
 2. $ cd kikaha.rocker

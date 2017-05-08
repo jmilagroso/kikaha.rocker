@@ -2,9 +2,6 @@ package myapp.models;
 
 import java.util.List;
 
-/**
- * Created by jay on 5/5/17.
- */
 public class Forum {
     public List<Post> posts;
 
@@ -13,4 +10,6 @@ public class Forum {
 
     public short page;
     public short pageCount;
+
+    public String url;
 }

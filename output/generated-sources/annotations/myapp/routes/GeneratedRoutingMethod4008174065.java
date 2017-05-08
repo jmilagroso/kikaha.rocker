@@ -12,14 +12,14 @@ import kikaha.urouting.RoutingMethodExceptionHandler;
 
 @Singleton
 @Typed( HttpHandler.class )
-@WebResource( path="/bot/{page}/", method="GET" )
-public class GeneratedRoutingMethod2905719813 implements HttpHandler {
+@WebResource( path="/bot-redis/{page}/", method="GET" )
+public class GeneratedRoutingMethod4008174065 implements HttpHandler {
 
 	@Inject RoutingMethodResponseWriter responseWriter;
 	@Inject RoutingMethodParameterReader methodDataProvider;
 	@Inject RoutingMethodExceptionHandler exceptionHandler;
 	
-	@Inject myapp.routes.BotResource instance;
+	@Inject myapp.routes.BotRedisResource instance;
 
 	@Override
 	public void handleRequest( HttpServerExchange exchange ) throws Exception {

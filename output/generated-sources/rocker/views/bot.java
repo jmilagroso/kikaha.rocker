@@ -22,7 +22,7 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
     static public final String TEMPLATE_NAME = "bot.rocker.html";
     static public final String TEMPLATE_PACKAGE_NAME = "views";
     static public final String HEADER_HASH = "-2106852055";
-    static public final long MODIFIED_AT = 1494214105000L;
+    static public final long MODIFIED_AT = 1494232322000L;
     static public final String[] ARGUMENT_NAMES = { "forum" };
 
     // argument @ [4:2]
@@ -76,32 +76,36 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
         static private final byte[] PLAIN_TEXT_11_0;
         //     <ul class=\"pagination\">\n
         static private final byte[] PLAIN_TEXT_12_0;
-        //         <li><a href=\"/?page=1\">&laquo;</a></li>\n
+        //         <li><a href=\"/
         static private final byte[] PLAIN_TEXT_13_0;
-        // \n
+        // /1\">&laquo;</a></li>\n
         static private final byte[] PLAIN_TEXT_14_0;
-        //                 i = +forum.page - 4\n
+        // \n
         static private final byte[] PLAIN_TEXT_15_0;
-        //             <li class=\"disabled\"><a href=\"#\">...</a></li>\n
+        //                 i = +forum.page - 4\n
         static private final byte[] PLAIN_TEXT_16_0;
-        //                 <li class=\"active\"><span> 
+        //             <li class=\"disabled\"><a href=\"#\">...</a></li>\n
         static private final byte[] PLAIN_TEXT_17_0;
-        //  <span class=\"sr-only\">(current)</span></span></li>\n
+        //                 <li class=\"active\"><span> 
         static private final byte[] PLAIN_TEXT_18_0;
-        //                 <li><a href=\"/bot/
+        //  <span class=\"sr-only\">(current)</span></span></li>\n
         static private final byte[] PLAIN_TEXT_19_0;
-        // \"> 
+        //                 <li><a href=\"/
         static private final byte[] PLAIN_TEXT_20_0;
-        //  </a></li>\n
+        // /
         static private final byte[] PLAIN_TEXT_21_0;
-        //                 <li class=\"disabled\"><a href=\"#\">...</a></li>\n                break;\n
+        // \"> 
         static private final byte[] PLAIN_TEXT_22_0;
-        //             <li><a href=\"/bot/
+        //  </a></li>\n
         static private final byte[] PLAIN_TEXT_23_0;
-        //  \">&raquo;</a></li>\n
+        //                 <li class=\"disabled\"><a href=\"#\">...</a></li>\n                break;\n
         static private final byte[] PLAIN_TEXT_24_0;
-        //     </ul>\n
+        //             <li><a href=\"/
         static private final byte[] PLAIN_TEXT_25_0;
+        //  \">&raquo;</a></li>\n
+        static private final byte[] PLAIN_TEXT_26_0;
+        //     </ul>\n
+        static private final byte[] PLAIN_TEXT_27_0;
 
         static {
             PlainTextUnloadedClassLoader loader = PlainTextUnloadedClassLoader.tryLoad(bot.class.getClassLoader(), bot.class.getName() + "$PlainText", "UTF-8");
@@ -131,6 +135,8 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
             PLAIN_TEXT_23_0 = loader.tryGet("PLAIN_TEXT_23_0");
             PLAIN_TEXT_24_0 = loader.tryGet("PLAIN_TEXT_24_0");
             PLAIN_TEXT_25_0 = loader.tryGet("PLAIN_TEXT_25_0");
+            PLAIN_TEXT_26_0 = loader.tryGet("PLAIN_TEXT_26_0");
+            PLAIN_TEXT_27_0 = loader.tryGet("PLAIN_TEXT_27_0");
         }
 
         // argument @ [4:2]
@@ -247,12 +253,18 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                         // PlainText @ [40:31]
                         __internal.aboutToExecutePosInTemplate(40, 31);
                         __internal.writeValue(PLAIN_TEXT_13_0);
+                        // ValueExpression @ [41:23]
+                        __internal.aboutToExecutePosInTemplate(41, 23);
+                        __internal.renderValue(forum.url, false);
+                        // PlainText @ [41:33]
+                        __internal.aboutToExecutePosInTemplate(41, 33);
+                        __internal.writeValue(PLAIN_TEXT_14_0);
                         // IfBlockEnd @ [40:9]
                         __internal.aboutToExecutePosInTemplate(40, 9);
                     } // if end @ [40:9]
                     // PlainText @ [42:10]
                     __internal.aboutToExecutePosInTemplate(42, 10);
-                    __internal.writeValue(PLAIN_TEXT_14_0);
+                    __internal.writeValue(PLAIN_TEXT_15_0);
                     // WithBlockBegin @ [44:9]
                     __internal.aboutToExecutePosInTemplate(44, 9);
                     com.fizzed.rocker.runtime.WithBlock.with(1, false, (i) -> {
@@ -261,7 +273,7 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                         if (forum.page > 5) {
                             // PlainText @ [45:35]
                             __internal.aboutToExecutePosInTemplate(45, 35);
-                            __internal.writeValue(PLAIN_TEXT_15_0);
+                            __internal.writeValue(PLAIN_TEXT_16_0);
                             // IfBlockEnd @ [45:13]
                             __internal.aboutToExecutePosInTemplate(45, 13);
                         } // if end @ [45:13]
@@ -270,7 +282,7 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                         if (i != 1) {
                             // PlainText @ [48:27]
                             __internal.aboutToExecutePosInTemplate(48, 27);
-                            __internal.writeValue(PLAIN_TEXT_16_0);
+                            __internal.writeValue(PLAIN_TEXT_17_0);
                             // IfBlockEnd @ [48:13]
                             __internal.aboutToExecutePosInTemplate(48, 13);
                         } // if end @ [48:13]
@@ -284,31 +296,37 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                                     if (forum.page == j) {
                                         // PlainText @ [52:40]
                                         __internal.aboutToExecutePosInTemplate(52, 40);
-                                        __internal.writeValue(PLAIN_TEXT_17_0);
+                                        __internal.writeValue(PLAIN_TEXT_18_0);
                                         // ValueExpression @ [53:43]
                                         __internal.aboutToExecutePosInTemplate(53, 43);
                                         __internal.renderValue(j, false);
                                         // PlainText @ [53:45]
                                         __internal.aboutToExecutePosInTemplate(53, 45);
-                                        __internal.writeValue(PLAIN_TEXT_18_0);
+                                        __internal.writeValue(PLAIN_TEXT_19_0);
                                         // IfBlockElse @ [54:17]
                                         __internal.aboutToExecutePosInTemplate(54, 17);
                                     } else { // else @ [54:17]
                                         // PlainText @ [54:25]
                                         __internal.aboutToExecutePosInTemplate(54, 25);
-                                        __internal.writeValue(PLAIN_TEXT_19_0);
-                                        // ValueExpression @ [55:35]
-                                        __internal.aboutToExecutePosInTemplate(55, 35);
-                                        __internal.renderValue(j, false);
-                                        // PlainText @ [55:37]
-                                        __internal.aboutToExecutePosInTemplate(55, 37);
                                         __internal.writeValue(PLAIN_TEXT_20_0);
-                                        // ValueExpression @ [55:40]
-                                        __internal.aboutToExecutePosInTemplate(55, 40);
-                                        __internal.renderValue(j, false);
-                                        // PlainText @ [55:42]
-                                        __internal.aboutToExecutePosInTemplate(55, 42);
+                                        // ValueExpression @ [55:31]
+                                        __internal.aboutToExecutePosInTemplate(55, 31);
+                                        __internal.renderValue(forum.url, false);
+                                        // PlainText @ [55:41]
+                                        __internal.aboutToExecutePosInTemplate(55, 41);
                                         __internal.writeValue(PLAIN_TEXT_21_0);
+                                        // ValueExpression @ [55:42]
+                                        __internal.aboutToExecutePosInTemplate(55, 42);
+                                        __internal.renderValue(j, false);
+                                        // PlainText @ [55:44]
+                                        __internal.aboutToExecutePosInTemplate(55, 44);
+                                        __internal.writeValue(PLAIN_TEXT_22_0);
+                                        // ValueExpression @ [55:47]
+                                        __internal.aboutToExecutePosInTemplate(55, 47);
+                                        __internal.renderValue(j, false);
+                                        // PlainText @ [55:49]
+                                        __internal.aboutToExecutePosInTemplate(55, 49);
+                                        __internal.writeValue(PLAIN_TEXT_23_0);
                                         // IfBlockEnd @ [52:17]
                                         __internal.aboutToExecutePosInTemplate(52, 17);
                                     } // if end @ [52:17]
@@ -317,7 +335,7 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                                     if (j == (+forum.page + 4)) {
                                         // PlainText @ [57:47]
                                         __internal.aboutToExecutePosInTemplate(57, 47);
-                                        __internal.writeValue(PLAIN_TEXT_22_0);
+                                        __internal.writeValue(PLAIN_TEXT_24_0);
                                         // IfBlockEnd @ [57:17]
                                         __internal.aboutToExecutePosInTemplate(57, 17);
                                     } // if end @ [57:17]
@@ -335,13 +353,19 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                         if (forum.page != forum.pageCount) {
                             // PlainText @ [62:50]
                             __internal.aboutToExecutePosInTemplate(62, 50);
-                            __internal.writeValue(PLAIN_TEXT_23_0);
-                            // ValueExpression @ [63:31]
-                            __internal.aboutToExecutePosInTemplate(63, 31);
+                            __internal.writeValue(PLAIN_TEXT_25_0);
+                            // ValueExpression @ [63:27]
+                            __internal.aboutToExecutePosInTemplate(63, 27);
+                            __internal.renderValue(forum.url, false);
+                            // PlainText @ [63:37]
+                            __internal.aboutToExecutePosInTemplate(63, 37);
+                            __internal.writeValue(PLAIN_TEXT_21_0);
+                            // ValueExpression @ [63:38]
+                            __internal.aboutToExecutePosInTemplate(63, 38);
                             __internal.renderValue(forum.pageCount, false);
-                            // PlainText @ [63:47]
-                            __internal.aboutToExecutePosInTemplate(63, 47);
-                            __internal.writeValue(PLAIN_TEXT_24_0);
+                            // PlainText @ [63:54]
+                            __internal.aboutToExecutePosInTemplate(63, 54);
+                            __internal.writeValue(PLAIN_TEXT_26_0);
                             // IfBlockEnd @ [62:13]
                             __internal.aboutToExecutePosInTemplate(62, 13);
                         } // if end @ [62:13]
@@ -350,7 +374,7 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
                     }); // with end @ [44:9]
                     // PlainText @ [65:10]
                     __internal.aboutToExecutePosInTemplate(65, 10);
-                    __internal.writeValue(PLAIN_TEXT_25_0);
+                    __internal.writeValue(PLAIN_TEXT_27_0);
                     // IfBlockEnd @ [38:5]
                     __internal.aboutToExecutePosInTemplate(38, 5);
                 } // if end @ [38:5]
@@ -359,7 +383,7 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
             }), false); // value closure end @ [6:1]
             // PlainText @ [68:2]
             __internal.aboutToExecutePosInTemplate(68, 2);
-            __internal.writeValue(PLAIN_TEXT_14_0);
+            __internal.writeValue(PLAIN_TEXT_15_0);
         }
     }
 
@@ -378,19 +402,21 @@ public class bot extends com.fizzed.rocker.runtime.DefaultRockerModel {
         static private final String PLAIN_TEXT_10_0 = "\" class=\"img-circle\" style=\"width: 140px; height: 140px;\">\n            </li>\n";
         static private final String PLAIN_TEXT_11_0 = "    </ul>\n\n";
         static private final String PLAIN_TEXT_12_0 = "    <ul class=\"pagination\">\n";
-        static private final String PLAIN_TEXT_13_0 = "        <li><a href=\"/?page=1\">&laquo;</a></li>\n";
-        static private final String PLAIN_TEXT_14_0 = "\n";
-        static private final String PLAIN_TEXT_15_0 = "                i = +forum.page - 4\n";
-        static private final String PLAIN_TEXT_16_0 = "            <li class=\"disabled\"><a href=\"#\">...</a></li>\n";
-        static private final String PLAIN_TEXT_17_0 = "                <li class=\"active\"><span> ";
-        static private final String PLAIN_TEXT_18_0 = " <span class=\"sr-only\">(current)</span></span></li>\n";
-        static private final String PLAIN_TEXT_19_0 = "                <li><a href=\"/bot/";
-        static private final String PLAIN_TEXT_20_0 = "\"> ";
-        static private final String PLAIN_TEXT_21_0 = " </a></li>\n";
-        static private final String PLAIN_TEXT_22_0 = "                <li class=\"disabled\"><a href=\"#\">...</a></li>\n                break;\n";
-        static private final String PLAIN_TEXT_23_0 = "            <li><a href=\"/bot/";
-        static private final String PLAIN_TEXT_24_0 = " \">&raquo;</a></li>\n";
-        static private final String PLAIN_TEXT_25_0 = "    </ul>\n";
+        static private final String PLAIN_TEXT_13_0 = "        <li><a href=\"/";
+        static private final String PLAIN_TEXT_14_0 = "/1\">&laquo;</a></li>\n";
+        static private final String PLAIN_TEXT_15_0 = "\n";
+        static private final String PLAIN_TEXT_16_0 = "                i = +forum.page - 4\n";
+        static private final String PLAIN_TEXT_17_0 = "            <li class=\"disabled\"><a href=\"#\">...</a></li>\n";
+        static private final String PLAIN_TEXT_18_0 = "                <li class=\"active\"><span> ";
+        static private final String PLAIN_TEXT_19_0 = " <span class=\"sr-only\">(current)</span></span></li>\n";
+        static private final String PLAIN_TEXT_20_0 = "                <li><a href=\"/";
+        static private final String PLAIN_TEXT_21_0 = "/";
+        static private final String PLAIN_TEXT_22_0 = "\"> ";
+        static private final String PLAIN_TEXT_23_0 = " </a></li>\n";
+        static private final String PLAIN_TEXT_24_0 = "                <li class=\"disabled\"><a href=\"#\">...</a></li>\n                break;\n";
+        static private final String PLAIN_TEXT_25_0 = "            <li><a href=\"/";
+        static private final String PLAIN_TEXT_26_0 = " \">&raquo;</a></li>\n";
+        static private final String PLAIN_TEXT_27_0 = "    </ul>\n";
 
     }
 

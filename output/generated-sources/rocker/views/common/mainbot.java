@@ -18,7 +18,7 @@ public class mainbot extends com.fizzed.rocker.runtime.DefaultRockerModel {
     static public final String TEMPLATE_NAME = "mainbot.rocker.html";
     static public final String TEMPLATE_PACKAGE_NAME = "views.common";
     static public final String HEADER_HASH = "-635070772";
-    static public final long MODIFIED_AT = 1494214053000L;
+    static public final long MODIFIED_AT = 1494214487000L;
     static public final String[] ARGUMENT_NAMES = { "title" };
 
     // argument @ [1:2]

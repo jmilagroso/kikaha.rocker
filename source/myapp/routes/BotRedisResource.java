@@ -1,9 +1,9 @@
 package myapp.routes;
 
-import com.hazelcast.config.Config;
-import com.hazelcast.config.XmlConfigBuilder;
-import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
+import ch.qos.logback.core.net.SyslogOutputStream;
+import com.fizzed.rocker.runtime.RockerRuntime;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import kikaha.urouting.api.*;
 import javax.inject.*;
 import javax.ws.rs.client.ClientBuilder;
@@ -12,41 +12,38 @@ import javax.ws.rs.core.MediaType;
 
 import myapp.models.Author;
 import myapp.models.Forum;
-import myapp.models.HazelCast;
 import myapp.models.Post;
+import org.apache.commons.lang3.ArrayUtils;
+import redis.clients.jedis.Jedis;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.lang.reflect.Type;
+import java.util.*;
 
 import java.util.concurrent.ConcurrentMap;
 
-// https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
-// http://get.kikaha.io/docs/urouting-api
-// http://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-
-// https://github.com/fizzed/rocker/blob/master/docs/SYNTAX.md
-// http://stackoverflow.com/questions/39329263/hazelcast-hazelcastserializationexception-failed-to-serialize-com-hazelcast-s
+// http://stackoverflow.com/questions/28033303/caused-by-java-lang-illegalstateexception-expected-begin-array-but-was-begin-o
+// https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.code.gson%22
 
 @Singleton
-@Path( "/bot" )
-public class BotResource {
+@Path( "/bot-redis" )
+public class BotRedisResource {
 
     @GET
     @Path( "/{page}" )
     @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderBot( @PathParam("page") short page) {
-
-        Config cfg = null;
+    public rocker.RockerTemplate renderBot( @PathParam("page") short page)  {
+        RockerRuntime.getInstance().setReloading(true);
         Forum forum = new Forum();
+        Gson gson = new Gson();
+
         try {
-            cfg = new XmlConfigBuilder("conf/hazelcast.xml").build();
+            // Single instance redis
+            Jedis jedis = new Jedis("localhost", 6379);
 
-            HazelcastInstance instance = Hazelcast.getHazelcastInstanceByName(cfg.getInstanceName());
-
-            ConcurrentMap<String, List<Post>> postsMap = instance.getMap("posts.map");
-            ConcurrentMap<String, List<Author>> authorsMap = instance.getMap("posts.author");
-
-            if(postsMap.size() == 0 && authorsMap.size()==0){
+            String redisKey = "posts";
+            //jedis.del(redisKey.getBytes());
+            if(jedis.get(redisKey.getBytes())==null) {
                 // Get posts JSON and translate
                 GenericType<List<Post>> genericTypePost = new GenericType<List<Post>>(){};
                 List<Post> posts = ClientBuilder.newClient()
@@ -72,13 +69,11 @@ public class BotResource {
                     }
                 }
 
-                postsMap.put("posts", posts);
-                authorsMap.put("authors", authors);
+                jedis.set(redisKey, gson.toJson(posts));
             }
 
-            List<Post> posts = postsMap.get("posts");
+            List<Post> posts = new Gson().fromJson(jedis.get(redisKey), new TypeToken<ArrayList<Post>>(){}.getType());
 
-            // Pagination
             short perPage = 5;
             short totalData = (short)posts.size();
             short pageCount = (short)(totalData/perPage);
@@ -89,6 +84,7 @@ public class BotResource {
             forum.subtitle = "Subtitle";
             forum.page = currentPage;
             forum.pageCount = pageCount;
+            forum.url = "bot-redis";
 
             return new rocker.RockerTemplate().templateName( "views/bot.rocker.html" ).paramContent(forum);
         } catch (Exception e) {

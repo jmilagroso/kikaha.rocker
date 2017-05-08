@@ -38,7 +38,7 @@
     @if (forum.pageCount > 1) {
     <ul class="pagination">
         @if (forum.page > 1) {
-        <li><a href="/?page=1">&laquo;</a></li>
+        <li><a href="/@forum.url/1">&laquo;</a></li>
         }
 
         @with(short i = 1){
@@ -52,7 +52,7 @@
                 @if (forum.page == j) {
                 <li class="active"><span> @j <span class="sr-only">(current)</span></span></li>
                 } else {
-                <li><a href="/bot/@j"> @j </a></li>
+                <li><a href="/@forum.url/@j"> @j </a></li>
                 }
                 @if (j == (+forum.page + 4)) {
                 <li class="disabled"><a href="#">...</a></li>
@@ -60,7 +60,7 @@
                 }
             }
             @if (forum.page != forum.pageCount) {
-            <li><a href="/bot/@forum.pageCount ">&raquo;</a></li>
+            <li><a href="/@forum.url/@forum.pageCount ">&raquo;</a></li>
             }
         }
     </ul>

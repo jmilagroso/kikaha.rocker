@@ -29,10 +29,7 @@ import java.util.concurrent.ConcurrentMap;
 @Path( "/bot-redis" )
 public class BotRedisResource {
 
-    @GET
-    @Path( "/" )
-    @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderBot()  {
+    private rocker.RockerTemplate handler(short page) {
         RockerRuntime.getInstance().setReloading(true);
         Forum forum = new Forum();
         Gson gson = new Gson();
@@ -74,8 +71,6 @@ public class BotRedisResource {
 
             List<Post> posts = new Gson().fromJson(jedis.get(redisKey), new TypeToken<ArrayList<Post>>(){}.getType());
 
-
-            short page = 1;
             short perPage = 5;
             short totalData = (short)posts.size();
             short pageCount = (short)(totalData/perPage);
@@ -95,65 +90,17 @@ public class BotRedisResource {
     }
 
     @GET
+    @Path( "/" )
+    @Produces( Mimes.HTML )
+    public rocker.RockerTemplate renderBot()  {
+        short page = 1;
+        return handler(page);
+    }
+
+    @GET
     @Path( "/{page}" )
     @Produces( Mimes.HTML )
     public rocker.RockerTemplate renderBotWithPage( @PathParam("page") short page)  {
-        RockerRuntime.getInstance().setReloading(true);
-        Forum forum = new Forum();
-        Gson gson = new Gson();
-
-        try {
-            // Single instance redis
-            Jedis jedis = new Jedis("localhost", 6379);
-
-            String redisKey = "posts";
-            //jedis.del(redisKey.getBytes());
-            if(jedis.get(redisKey.getBytes())==null) {
-                // Get posts JSON and translate
-                GenericType<List<Post>> genericTypePost = new GenericType<List<Post>>(){};
-                List<Post> posts = ClientBuilder.newClient()
-                        .target("http://maqe.github.io/json/posts.json")
-                        .request().accept(MediaType.APPLICATION_JSON)
-                        .get(genericTypePost);
-
-                GenericType<List<Author>> genericTypeAuthor = new GenericType<List<Author>>(){};
-                List<Author> authors = ClientBuilder.newClient()
-                        .target("http://maqe.github.io/json/authors.json")
-                        .request().accept(MediaType.APPLICATION_JSON)
-                        .get(genericTypeAuthor);
-
-                Map<Integer, Author> map = new HashMap<Integer, Author>();
-                for(Author a: authors) {
-                    map.put(a.id, a);
-                }
-
-                // Post-Author association.
-                for(Post p: posts) {
-                    if(map.containsKey(p.author_id)) {
-                        p.author = map.get(p.author_id);
-                    }
-                }
-
-                jedis.set(redisKey, gson.toJson(posts));
-            }
-
-            List<Post> posts = new Gson().fromJson(jedis.get(redisKey), new TypeToken<ArrayList<Post>>(){}.getType());
-
-            short perPage = 5;
-            short totalData = (short)posts.size();
-            short pageCount = (short)(totalData/perPage);
-            short currentPage = (page > 1) ? page : 1;
-
-            forum.posts = posts.subList(currentPage-1, totalData/perPage);
-            forum.title = "Forums";
-            forum.subtitle = "Subtitle";
-            forum.page = currentPage;
-            forum.pageCount = pageCount;
-            forum.url = "bot-redis";
-
-            return new rocker.RockerTemplate().templateName( "views/bot.rocker.html" ).paramContent(forum);
-        } catch (Exception e) {
-            return new rocker.RockerTemplate().templateName( "views/common/error.rocker.html" ).paramContent(e.getMessage().toString());
-        }
+       return handler(page);
     }
 }

@@ -19,8 +19,9 @@ Integrates Kikaha with Rocker.
 2. $ cd kikaha.rocker
 3. $ curl -s http://download.kikaha.io/installer | bash
 4. $ kikaha run_app
-5. Open http://localhost:9000
-        http://localhost:9000/bot-hazelcast/1
-        http://localhost:9000/bot-redis/1
+5. Open 
+- http://localhost:9000
+- http://localhost:9000/bot-hazelcast/
+- http://localhost:9000/bot-redis/
 
 Special thanks to [jeoffreylim](https://github.com/jeoffreylim) [anaesguerra](https://github.com/anaesguerra)

@@ -2,43 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168c5276-3b52-4150-bcf0-4a40d06f01c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/META-INF/services/myapp.routes.BotResource" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotResource$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotResource$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/DemoResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod2905719813.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/generated-sources/annotations/myapp/routes/GeneratedRoutingMethod2905719813.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/myapp/routes/BotResource.java" afterPath="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod2948198717.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod4008174065.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/generated-sources/annotations/myapp/routes/GeneratedRoutingMethod2948198717.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/generated-sources/annotations/myapp/routes/GeneratedRoutingMethod4008174065.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2.0-1.0.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/output/2.0-1.0.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/models/Author.class" afterPath="$PROJECT_DIR$/output/classes/myapp/models/Author.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/models/Forum.class" afterPath="$PROJECT_DIR$/output/classes/myapp/models/Forum.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/models/Post.class" afterPath="$PROJECT_DIR$/output/classes/myapp/models/Post.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bot$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/bot$PlainText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bot$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/bot$Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bot.class" afterPath="$PROJECT_DIR$/output/classes/views/bot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/error.class" afterPath="$PROJECT_DIR$/output/classes/views/common/error.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot.class" afterPath="$PROJECT_DIR$/output/classes/views/common/mainbot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$1.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$2.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$1.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$2.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$3.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2.0.iml" afterPath="$PROJECT_DIR$/2.0.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/META-INF/services/io.undertow.server.HttpHandler" afterPath="$PROJECT_DIR$/output/classes/META-INF/services/io.undertow.server.HttpHandler" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker-compiler.conf" afterPath="$PROJECT_DIR$/output/classes/rocker-compiler.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/server.log" afterPath="$PROJECT_DIR$/output/classes/server.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/bot.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/bot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/error.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/error.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/mainbot.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/mainbot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/output/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/models/Author.java" afterPath="$PROJECT_DIR$/source/myapp/models/Author.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/models/Forum.java" afterPath="$PROJECT_DIR$/source/myapp/models/Forum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/models/Post.java" afterPath="$PROJECT_DIR$/source/myapp/models/Post.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/views/bot.rocker.html" afterPath="$PROJECT_DIR$/source/views/bot.rocker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" afterPath="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" afterPath="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" />
     </list>
     <ignored path="$PROJECT_DIR$/output/maven-status/" />
     <ignored path="$PROJECT_DIR$/output/maven-archiver/" />
@@ -55,11 +36,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BotHazelCastResource.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BotHazelCastResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="90" column="38" lean-forward="false" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+            <state relative-caret-position="463">
+              <caret line="80" column="27" lean-forward="false" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,13 +48,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotRedisResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BotRedisResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <state relative-caret-position="613">
+              <caret line="77" column="27" lean-forward="false" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
               <folding>
-                <element signature="e#2217#2234#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2181#2198#0" expanded="true" />
+                <element signature="e#4834#4851#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -225,8 +208,8 @@
         <option value="$PROJECT_DIR$/source/myapp/models/Post.java" />
         <option value="$PROJECT_DIR$/source/myapp/models/Forum.java" />
         <option value="$PROJECT_DIR$/source/views/bot.rocker.html" />
-        <option value="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" />
         <option value="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" />
+        <option value="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" />
       </list>
     </option>
   </component>
@@ -272,122 +255,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2.0" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="source" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -944,7 +811,7 @@
         <state relative-caret-position="629">
           <caret line="53" column="32" lean-forward="false" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1187,22 +1054,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java">
+    <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="90" column="38" lean-forward="false" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+        <state relative-caret-position="613">
+          <caret line="77" column="27" lean-forward="false" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2181#2198#0" expanded="true" />
+            <element signature="e#4834#4851#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java">
+    <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        <state relative-caret-position="463">
+          <caret line="80" column="27" lean-forward="false" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
           <folding>
-            <element signature="e#2217#2234#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

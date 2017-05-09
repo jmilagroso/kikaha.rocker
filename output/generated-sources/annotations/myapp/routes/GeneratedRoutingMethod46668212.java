@@ -13,7 +13,7 @@ import kikaha.urouting.RoutingMethodExceptionHandler;
 @Singleton
 @Typed( HttpHandler.class )
 @WebResource( path="/bot-hazelcast/{page}/", method="GET" )
-public class GeneratedRoutingMethod2948198717 implements HttpHandler {
+public class GeneratedRoutingMethod46668212 implements HttpHandler {
 
 	@Inject RoutingMethodResponseWriter responseWriter;
 	@Inject RoutingMethodParameterReader methodDataProvider;
@@ -30,7 +30,7 @@ public class GeneratedRoutingMethod2948198717 implements HttpHandler {
 			else if ( !exchange.isInIoThread() && !exchange.isBlocking() )
 				exchange.startBlocking();
 		try {
-			final rocker.RockerTemplate response = instance.renderBot( 
+			final rocker.RockerTemplate response = instance.renderBotWithPage( 
 			methodDataProvider.getPathParam( exchange, "page", short.class )
 			 );
 				responseWriter.write( exchange, "text/html", response );

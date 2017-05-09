@@ -12,8 +12,8 @@ import kikaha.urouting.RoutingMethodExceptionHandler;
 
 @Singleton
 @Typed( HttpHandler.class )
-@WebResource( path="/bot-redis/{page}/", method="GET" )
-public class GeneratedRoutingMethod4008174065 implements HttpHandler {
+@WebResource( path="/bot-redis/", method="GET" )
+public class GeneratedRoutingMethod3377373805 implements HttpHandler {
 
 	@Inject RoutingMethodResponseWriter responseWriter;
 	@Inject RoutingMethodParameterReader methodDataProvider;
@@ -31,7 +31,6 @@ public class GeneratedRoutingMethod4008174065 implements HttpHandler {
 				exchange.startBlocking();
 		try {
 			final rocker.RockerTemplate response = instance.renderBot( 
-			methodDataProvider.getPathParam( exchange, "page", short.class )
 			 );
 				responseWriter.write( exchange, "text/html", response );
 		} catch ( Throwable cause ) {

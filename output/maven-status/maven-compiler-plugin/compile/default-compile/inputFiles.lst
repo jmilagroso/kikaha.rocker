@@ -1,7 +1,6 @@
 /home/jay/2.0/source/myapp/models/Author.java
 /home/jay/2.0/source/myapp/routes/BotHazelCastResource.java
 /home/jay/2.0/output/generated-sources/rocker/views/index.java
-/home/jay/2.0/output/generated-sources/rocker/views/bot.java
 /home/jay/2.0/source/myapp/models/Post.java
 /home/jay/2.0/source/rocker/RockerSerializer.java
 /home/jay/2.0/output/generated-sources/rocker/views/common/error.java
@@ -9,9 +8,11 @@
 /home/jay/2.0/source/rocker/HTMLRockerSerializer.java
 /home/jay/2.0/source/myapp/models/HazelCast.java
 /home/jay/2.0/source/myapp/routes/BotRedisResource.java
+/home/jay/2.0/output/generated-sources/rocker/views/bothazelcast.java
 /home/jay/2.0/output/generated-sources/rocker/views/common/mainbot.java
 /home/jay/2.0/output/generated-sources/rocker/views/common/main.java
 /home/jay/2.0/source/myapp/models/Forum.java
+/home/jay/2.0/output/generated-sources/rocker/views/botredis.java
 /home/jay/2.0/source/myapp/models/User.java
 /home/jay/2.0/source/rocker/RockerTemplate.java
 /home/jay/2.0/source/rocker/RockerResource.java

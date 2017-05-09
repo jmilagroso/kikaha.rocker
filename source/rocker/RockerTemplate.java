@@ -18,4 +18,10 @@ public class RockerTemplate {
     @NonNull
     Object paramContent;
 
+    public RockerTemplate setParamContent(Object ... args) {
+        this.paramContent = args;
+
+        return this;
+    }
+
 }

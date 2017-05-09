@@ -13,19 +13,13 @@ import javax.ws.rs.core.MediaType;
 import myapp.models.Author;
 import myapp.models.Forum;
 import myapp.models.Post;
-import rocker.RockerTemplate;
+import myapp.models.User;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import java.util.concurrent.ConcurrentMap;
-
-// https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
-// http://get.kikaha.io/docs/urouting-api
-// http://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-
-// https://github.com/fizzed/rocker/blob/master/docs/SYNTAX.md
-// http://stackoverflow.com/questions/39329263/hazelcast-hazelcastserializationexception-failed-to-serialize-com-hazelcast-s
 
 @Singleton
 @Path( "/bot-hazelcast" )
@@ -87,7 +81,12 @@ public class BotHazelCastResource {
             forum.pageCount = pageCount;
             forum.url = "bot-hazelcast";
 
-            return new rocker.RockerTemplate().templateName( "views/bot.rocker.html" ).paramContent(forum);
+            // A dummy data to validate multiple parameter content through Rocker.
+            User u = new User();
+            u.name = "Peter";
+            u.age = 31;
+
+            return new rocker.RockerTemplate().templateName("views/bothazelcast.rocker.html").setParamContent(forum, u);
         } catch (Exception e) {
             return new rocker.RockerTemplate().templateName( "views/common/error.rocker.html" ).paramContent(e.getMessage().toString());
         }

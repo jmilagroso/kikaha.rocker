@@ -1,14 +1,15 @@
 @import myapp.models.Forum;
 @import myapp.models.Post;
+@import myapp.models.User;
 
-@args (Forum forum)
+@args (Forum forum, User u)
 
 @views.common.mainbot.template("Home") -> {
     <div class="page-header">
         <h1>
             @forum.title<br>
             @forum.subtitle<br>
-            Posts
+            Posts [@u.name + @u.age]
         </h1>
     </div>
     <ul class="list-group">

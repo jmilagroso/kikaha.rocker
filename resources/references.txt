@@ -1,0 +1,8 @@
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+http://get.kikaha.io/docs/urouting-api
+http://docs.oracle.com/javase/8/docs/api/java/util/List.html#subList-int-int-
+https://github.com/fizzed/rocker/blob/master/docs/SYNTAX.md
+http://stackoverflow.com/questions/39329263/hazelcast-hazelcastserializationexception-failed-to-serialize-com-hazelcast-s
+http://stackoverflow.com/questions/28033303/caused-by-java-lang-illegalstateexception-expected-begin-array-but-was-begin-o
+https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.code.gson%22
+http://get.kikaha.io/docs/routing-with-undertow

@@ -1,6 +1,5 @@
 package myapp.routes;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import com.fizzed.rocker.runtime.RockerRuntime;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -13,17 +12,9 @@ import javax.ws.rs.core.MediaType;
 import myapp.models.Author;
 import myapp.models.Forum;
 import myapp.models.Post;
-import org.apache.commons.lang3.ArrayUtils;
+import myapp.models.User;
 import redis.clients.jedis.Jedis;
-
-import java.io.*;
-import java.lang.reflect.Type;
 import java.util.*;
-
-import java.util.concurrent.ConcurrentMap;
-
-// http://stackoverflow.com/questions/28033303/caused-by-java-lang-illegalstateexception-expected-begin-array-but-was-begin-o
-// https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.google.code.gson%22
 
 @Singleton
 @Path( "/bot-redis" )
@@ -83,7 +74,12 @@ public class BotRedisResource {
             forum.pageCount = pageCount;
             forum.url = "bot-redis";
 
-            return new rocker.RockerTemplate().templateName( "views/bot.rocker.html" ).paramContent(forum);
+            // A dummy data to validate multiple parameter content through Rocker.
+            User u = new User();
+            u.name = "Peter";
+            u.age = 31;
+
+            return new rocker.RockerTemplate().templateName("views/botredis.rocker.html").setParamContent(forum, u);
         } catch (Exception e) {
             return new rocker.RockerTemplate().templateName( "views/common/error.rocker.html" ).paramContent(e.getMessage().toString());
         }

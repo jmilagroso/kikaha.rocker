@@ -3,6 +3,7 @@ package myapp.routes;
 import kikaha.urouting.api.*;
 import javax.inject.*;
 import com.fizzed.rocker.runtime.RockerRuntime;
+import myapp.models.Author;
 import myapp.models.User;
 
 @Singleton
@@ -20,7 +21,14 @@ public class HomeResource {
         u.name = "Peter";
         u.age = 31;
 
-        return new rocker.RockerTemplate().templateName( "views/index.rocker.html" ).paramContent(u);
+        // Sample data
+        Author a = new Author();
+        a.id = 1;
+        a.name = "John";
+        a.place = "CA";
+        a.role = "Guest";
+
+        return new rocker.RockerTemplate().templateName( "views/index.rocker.html" ).setParamContent(u, a);
     }
 
 }

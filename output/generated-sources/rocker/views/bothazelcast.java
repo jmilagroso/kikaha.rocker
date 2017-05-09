@@ -24,7 +24,7 @@ public class bothazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
     static public final String TEMPLATE_NAME = "bothazelcast.rocker.html";
     static public final String TEMPLATE_PACKAGE_NAME = "views";
     static public final String HEADER_HASH = "-2045760142";
-    static public final long MODIFIED_AT = 1494311306000L;
+    static public final long MODIFIED_AT = 1494316297000L;
     static public final String[] ARGUMENT_NAMES = { "forum", "u" };
 
     // argument @ [5:2]
@@ -178,9 +178,9 @@ public class bothazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
         protected void __doRender() throws IOException, RenderingException {
             // ValueClosureBegin @ [7:1]
             __internal.aboutToExecutePosInTemplate(7, 1);
-            __internal.renderValue(views.common.mainbot.template("Home").__body(() -> {
-                // PlainText @ [7:44]
-                __internal.aboutToExecutePosInTemplate(7, 44);
+            __internal.renderValue(views.common.main.template("Home").__body(() -> {
+                // PlainText @ [7:41]
+                __internal.aboutToExecutePosInTemplate(7, 41);
                 __internal.writeValue(PLAIN_TEXT_0_0);
                 // ValueExpression @ [10:13]
                 __internal.aboutToExecutePosInTemplate(10, 13);

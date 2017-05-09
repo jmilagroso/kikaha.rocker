@@ -1,8 +1,11 @@
 @import myapp.models.User;
+@import myapp.models.Author;
 
-@args (User u)
+@args (User u, Author a)
 
 @views.common.main.template("Home") -> {
-<h1>Dynamic data: Name: @u.name</h1>
-<h1>Dynamic data: Age: @u.age</h1>
+Some Dummy Dynamic Data
+@u.name @u.age
+<br>
+@a.name @a.place @a.role
 }

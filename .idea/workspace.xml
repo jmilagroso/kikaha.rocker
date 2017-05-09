@@ -2,41 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="168c5276-3b52-4150-bcf0-4a40d06f01c1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/references.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/views/botredis.rocker.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/views/bot.rocker.html" afterPath="$PROJECT_DIR$/source/views/bothazelcast.rocker.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/UndertowResource.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output/classes/META-INF/services/myapp.routes.UndertowResource" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/myapp/routes/UndertowResource.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot$PlainText.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot$Template.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/mainbot.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/source/views/common/mainbot.rocker.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2.0-1.0.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/output/2.0-1.0.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$1.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$2.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotHazelCastResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$1.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$2.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$3.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/BotRedisResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod1106643560.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod1106643560.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod2577331681.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod2577331681.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod3377373805.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod3377373805.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod4205422549.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod4205422549.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod447722929.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod447722929.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod46668212.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/GeneratedRoutingMethod46668212.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/HazelCastResource.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/HazelCastResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerSerializer.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerSerializer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker/RockerTemplate.class" afterPath="$PROJECT_DIR$/output/classes/rocker/RockerTemplate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bot$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/bot$PlainText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bot$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/bot$Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bot.class" afterPath="$PROJECT_DIR$/output/classes/views/bot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/error$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/common/error$PlainText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/error$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/common/error$Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/error.class" afterPath="$PROJECT_DIR$/output/classes/views/common/error.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/myapp/routes/HomeResource.class" afterPath="$PROJECT_DIR$/output/classes/myapp/routes/HomeResource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bothazelcast$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/bothazelcast$Template.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/bothazelcast.class" afterPath="$PROJECT_DIR$/output/classes/views/bothazelcast.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/botredis$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/botredis$Template.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/botredis.class" afterPath="$PROJECT_DIR$/output/classes/views/botredis.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/main$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/common/main$PlainText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/main$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/common/main$Template.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/main.class" afterPath="$PROJECT_DIR$/output/classes/views/common/main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/common/mainbot$PlainText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/common/mainbot$Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/common/mainbot.class" afterPath="$PROJECT_DIR$/output/classes/views/common/mainbot.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/hazelcast$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/hazelcast$PlainText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/hazelcast$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/hazelcast$Template.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/hazelcast.class" afterPath="$PROJECT_DIR$/output/classes/views/hazelcast.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/index$PlainText.class" afterPath="$PROJECT_DIR$/output/classes/views/index$PlainText.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/index$Template.class" afterPath="$PROJECT_DIR$/output/classes/views/index$Template.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/views/index.class" afterPath="$PROJECT_DIR$/output/classes/views/index.class" />
@@ -44,12 +25,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/META-INF/services/io.undertow.server.HttpHandler" afterPath="$PROJECT_DIR$/output/classes/META-INF/services/io.undertow.server.HttpHandler" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/rocker-compiler.conf" afterPath="$PROJECT_DIR$/output/classes/rocker-compiler.conf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/classes/server.log" afterPath="$PROJECT_DIR$/output/classes/server.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/bot.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/bot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/bothazelcast.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/bothazelcast.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/botredis.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/botredis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/main.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/common/main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/generated-sources/rocker/views/index.java" afterPath="$PROJECT_DIR$/output/generated-sources/rocker/views/index.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/output/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" afterPath="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" afterPath="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rocker/RockerSerializer.java" afterPath="$PROJECT_DIR$/source/rocker/RockerSerializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/rocker/RockerTemplate.java" afterPath="$PROJECT_DIR$/source/rocker/RockerTemplate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/output/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/myapp/routes/HomeResource.java" afterPath="$PROJECT_DIR$/source/myapp/routes/HomeResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/views/bothazelcast.rocker.html" afterPath="$PROJECT_DIR$/source/views/bothazelcast.rocker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/views/botredis.rocker.html" afterPath="$PROJECT_DIR$/source/views/botredis.rocker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/views/common/main.rocker.html" afterPath="$PROJECT_DIR$/source/views/common/main.rocker.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/views/index.rocker.html" afterPath="$PROJECT_DIR$/source/views/index.rocker.html" />
     </list>
     <ignored path="$PROJECT_DIR$/output/maven-status/" />
     <ignored path="$PROJECT_DIR$/output/maven-archiver/" />
@@ -66,11 +53,47 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BotHazelCastResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java">
+      <file leaf-file-name="BotRedisResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="88" column="109" lean-forward="false" selection-start-line="88" selection-start-column="109" selection-end-line="88" selection-end-column="109" />
+            <state relative-caret-position="277">
+              <caret line="81" column="105" lean-forward="false" selection-start-line="81" selection-start-column="90" selection-end-line="81" selection-end-column="105" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1767#1784#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="botredis.rocker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/views/botredis.rocker.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bothazelcast.rocker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/views/bothazelcast.rocker.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#1;n#li#0;n#ul#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UndertowResource.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/myapp/routes/UndertowResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,15 +101,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotRedisResource.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java">
+      <file leaf-file-name="main.rocker.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/views/common/main.rocker.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="81" column="75" lean-forward="false" selection-start-line="81" selection-start-column="75" selection-end-line="81" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1767#1784#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="254">
+              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,8 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webapp/views/index.rocker.html" />
-        <option value="$PROJECT_DIR$/webapp/views/app/index.rocker.html" />
         <option value="$PROJECT_DIR$/output/generated-sources/annotations/minerva/GeneratedRoutingMethod3339770167.java" />
         <option value="$PROJECT_DIR$/source/rocker/HTMLRockerSerializer.java" />
         <option value="$PROJECT_DIR$/source/rocker/RockerSerializerFactory.java" />
@@ -143,19 +161,16 @@
         <option value="$PROJECT_DIR$/source/views/common/starter-template.css" />
         <option value="$PROJECT_DIR$/webapp/assets/bootstra.min.css" />
         <option value="$PROJECT_DIR$/webapp/assets/js/jquery.min.js" />
-        <option value="$PROJECT_DIR$/source/views/common/main.rocker.html" />
         <option value="$PROJECT_DIR$/source/minerva/HazelCast.java" />
         <option value="$PROJECT_DIR$/source/minerva/GettingStarted.java" />
         <option value="$PROJECT_DIR$/source/minerva/HomeResource.java" />
         <option value="$PROJECT_DIR$/source/myapp/HomeResource.java" />
         <option value="$PROJECT_DIR$/source/myapp/models/HazelCastResponse.java" />
         <option value="$PROJECT_DIR$/source/myapp/models/HazelCast.java" />
-        <option value="$PROJECT_DIR$/source/views/index.rocker.html" />
         <option value="$PROJECT_DIR$/source/views/hazelcast.rocker.html" />
         <option value="$PROJECT_DIR$/source/myapp/routes/Hazelcast.java" />
         <option value="$PROJECT_DIR$/source/myapp/routes/Home.java" />
         <option value="$PROJECT_DIR$/source/myapp/routes/HazelCast.java" />
-        <option value="$PROJECT_DIR$/source/myapp/routes/HomeResource.java" />
         <option value="$PROJECT_DIR$/source/myapp/Services/Simple.java" />
         <option value="$PROJECT_DIR$/source/myapp/Services/SampleService.java" />
         <option value="$PROJECT_DIR$/resources/conf/hazelcast.xml" />
@@ -177,11 +192,16 @@
         <option value="$PROJECT_DIR$/source/rocker/RockerTemplate.java" />
         <option value="$PROJECT_DIR$/source/rocker/RockerSerializer.java" />
         <option value="$PROJECT_DIR$/resources/references.txt" />
-        <option value="$PROJECT_DIR$/source/myapp/routes/UndertowResource.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/source/myapp/routes/HazelCastResource.java" />
         <option value="$PROJECT_DIR$/source/myapp/routes/BotHazelCastResource.java" />
         <option value="$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java" />
+        <option value="$PROJECT_DIR$/source/myapp/routes/UndertowResource.java" />
+        <option value="$PROJECT_DIR$/source/myapp/routes/HomeResource.java" />
+        <option value="$PROJECT_DIR$/source/views/index.rocker.html" />
+        <option value="$PROJECT_DIR$/source/views/common/main.rocker.html" />
+        <option value="$PROJECT_DIR$/source/views/botredis.rocker.html" />
+        <option value="$PROJECT_DIR$/source/views/bothazelcast.rocker.html" />
       </list>
     </option>
   </component>
@@ -319,7 +339,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="rocker" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2.0" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -825,7 +863,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -837,7 +875,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32870865" sideWeight="0.50426894" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13287087" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35576922" sideWeight="0.49359658" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35576922" sideWeight="0.49359658" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -874,14 +912,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/output/generated-sources/rocker/views/index.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output/classes/views/index.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-461">
@@ -979,13 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/views/index.rocker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/myapp/models/ListPost.java" />
     <entry file="file://$PROJECT_DIR$/webapp/assets/css/bot.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1025,32 +1048,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/views/common/bot.rocker.html" />
-    <entry file="file://$PROJECT_DIR$/source/views/common/main.rocker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="39" column="46" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/views/common/mainbot.rocker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/myapp/routes/DemoResource.java" />
-    <entry file="file://$PROJECT_DIR$/source/myapp/routes/HomeResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/myapp/routes/MongoResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1138,17 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/views/bothazelcast.rocker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#1;n#li#0;n#ul#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/myapp/models/Forum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1181,14 +1168,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/myapp/routes/UndertowResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/myapp/routes/HazelCastResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1217,10 +1196,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/views/botredis.rocker.html">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4-sources.jar!/kikaha/core/modules/http/WebResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/myapp/routes/HomeResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="30" column="100" lean-forward="false" selection-start-line="30" selection-start-column="100" selection-end-line="30" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/views/index.rocker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1237,11 +1234,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/myapp/routes/BotRedisResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="81" column="75" lean-forward="false" selection-start-line="81" selection-start-column="75" selection-end-line="81" selection-end-column="75" />
+        <state relative-caret-position="277">
+          <caret line="81" column="105" lean-forward="false" selection-start-line="81" selection-start-column="90" selection-end-line="81" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1767#1784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/views/common/main.rocker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/views/common/mainbot.rocker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/views/botredis.rocker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/views/bothazelcast.rocker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#1;n#li#0;n#ul#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/myapp/routes/UndertowResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

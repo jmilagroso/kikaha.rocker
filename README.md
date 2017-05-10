@@ -14,14 +14,29 @@ Integrates Kikaha with Rocker.
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 [Jedis](https://github.com/xetorthio/jedis) a blazingly small and sane redis java client.
 
+## FastPFor
+[FastPFor](https://github.com/lemire/FastPFor) is a FastPFOR C++ library: Fast integer compression.
+
 ### Setup
-1. $ git clone git@github.com:jmilagroso/kikaha.rocker.git
-2. $ cd kikaha.rocker
-3. $ curl -s http://download.kikaha.io/installer | bash
-4. $ kikaha run_app
-5. Open 
+```sh
+$ git clone git@github.com:jmilagroso/kikaha.rocker.git
+$ cd kikaha.rocker
+$ curl -s http://download.kikaha.io/installer | bash
+$ kikaha run_app
+```
+
+### Memory Adjustment
+```sh
+$ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
+```
+### URL
+Open 
 - http://localhost:9000
-- http://localhost:9000/bot-hazelcast/
-- http://localhost:9000/bot-redis/
+- http://localhost:9000/hazelcast/
+- http://localhost:9000/redis/
+- http://localhost:9000/fastpfor/
+- http://localhost:9000/undertow/
+
+
 
 Special thanks to [jeoffreylim](https://github.com/jeoffreylim) [anaesguerra](https://github.com/anaesguerra)

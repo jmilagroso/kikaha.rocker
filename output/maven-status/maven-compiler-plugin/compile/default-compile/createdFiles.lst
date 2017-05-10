@@ -14,19 +14,16 @@ META-INF/services/myapp.routes.UndertowResource
 myapp/routes/FastPForResource.class
 views/index$PlainText.class
 myapp/routes/GeneratedRoutingMethod1920576170.class
-myapp/routes/HomeResource$1.class
 myapp/routes/RedisResource$3.class
 myapp/routes/GeneratedRoutingMethod3443400285.class
 views/fastpfor.class
 META-INF/services/kikaha.urouting.api.Serializer
-myapp/routes/HomeResource$Response.class
 myapp/models/HazelCast.class
 myapp/models/FastByteArrayOutputStream.class
 views/fastpfor$PlainText.class
 META-INF/services/io.undertow.server.HttpHandler
 myapp/routes/RedisResource$2.class
 rocker/RockerSerializer.class
-myapp/routes/HomeResource$Request.class
 rocker/RockerResource.class
 myapp/models/Author.class
 views/hazelcast.class
@@ -35,7 +32,6 @@ META-INF/services/rocker.RockerResource
 myapp/routes/GeneratedRoutingMethod1284666037.class
 myapp/services/Builder.class
 myapp/services/Paginator.class
-myapp/routes/GeneratedRoutingMethod4234381081.class
 rocker/GeneratedRoutingMethod1540815954.class
 META-INF/services/myapp.routes.FastPForResource
 myapp/routes/RedisResource.class

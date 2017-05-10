@@ -22,7 +22,7 @@ public class redis extends com.fizzed.rocker.runtime.DefaultRockerModel {
     static public final String TEMPLATE_NAME = "redis.rocker.html";
     static public final String TEMPLATE_PACKAGE_NAME = "views";
     static public final String HEADER_HASH = "-109662583";
-    static public final long MODIFIED_AT = 1494385622000L;
+    static public final long MODIFIED_AT = 1494388232000L;
     static public final String[] ARGUMENT_NAMES = { "forum", "title", "subtitle", "url", "page", "pageCount" };
 
     // argument @ [4:2]
@@ -249,12 +249,12 @@ public class redis extends com.fizzed.rocker.runtime.DefaultRockerModel {
                 // ForBlockBegin @ [14:9]
                 __internal.aboutToExecutePosInTemplate(14, 9);
                 try {
-                    final com.fizzed.rocker.runtime.CollectionForIterator<Post> __forIterator0 = new com.fizzed.rocker.runtime.CollectionForIterator<Post>(forum.posts);
+                    final com.fizzed.rocker.runtime.CollectionForIterator<Post> __forIterator0 = new com.fizzed.rocker.runtime.CollectionForIterator<Post>(forum.data);
                     while (__forIterator0.hasNext()) {
                         final Post p = __forIterator0.next();
                         try {
-                            // PlainText @ [14:38]
-                            __internal.aboutToExecutePosInTemplate(14, 38);
+                            // PlainText @ [14:37]
+                            __internal.aboutToExecutePosInTemplate(14, 37);
                             __internal.writeValue(PLAIN_TEXT_3_0);
                             // ValueExpression @ [16:27]
                             __internal.aboutToExecutePosInTemplate(16, 27);

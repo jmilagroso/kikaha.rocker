@@ -18,7 +18,7 @@ public class main extends com.fizzed.rocker.runtime.DefaultRockerModel {
     static public final String TEMPLATE_NAME = "main.rocker.html";
     static public final String TEMPLATE_PACKAGE_NAME = "views.common";
     static public final String HEADER_HASH = "-635070772";
-    static public final long MODIFIED_AT = 1494316209000L;
+    static public final long MODIFIED_AT = 1494386898000L;
     static public final String[] ARGUMENT_NAMES = { "title" };
 
     // argument @ [1:2]
@@ -97,11 +97,11 @@ public class main extends com.fizzed.rocker.runtime.DefaultRockerModel {
             // PlainText @ [13:18]
             __internal.aboutToExecutePosInTemplate(13, 18);
             __internal.writeValue(PLAIN_TEXT_1_0);
-            // ValueExpression @ [52:9]
-            __internal.aboutToExecutePosInTemplate(52, 9);
+            // ValueExpression @ [58:9]
+            __internal.aboutToExecutePosInTemplate(58, 9);
             __internal.renderValue(content, false);
-            // PlainText @ [52:17]
-            __internal.aboutToExecutePosInTemplate(52, 17);
+            // PlainText @ [58:17]
+            __internal.aboutToExecutePosInTemplate(58, 17);
             __internal.writeValue(PLAIN_TEXT_2_0);
         }
     }
@@ -109,7 +109,7 @@ public class main extends com.fizzed.rocker.runtime.DefaultRockerModel {
     private static class PlainText {
 
         static private final String PLAIN_TEXT_0_0 = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">\n\n    <title>";
-        static private final String PLAIN_TEXT_1_0 = "</title>\n\n    <!-- Bootstrap core CSS -->\n    <link rel=\"stylesheet\"\n          href=\"/assets/css/bootstrap.min.css\">\n\n    <!-- Custom styles for this template -->\n    <link href=\"/assets/css/starter-template.css\" rel=\"stylesheet\">\n\n</head>\n\n<body>\n\n<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container\">\n        <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"#\">Kikaha</a>\n        </div>\n        <div id=\"navbar\" class=\"collapse navbar-collapse\">\n            <ul class=\"nav navbar-nav\">\n                <li class=\"active\"><a href=\"/\">Home</a></li>\n                <li><a href=\"/bot-hazelcast\">HazelCast</a></li>\n                <li><a href=\"/bot-redis\">Redis</a></li>\n            </ul>\n        </div><!--/.nav-collapse -->\n    </div>\n</nav>\n\n<div class=\"container\">\n    <div class=\"row\"></div>\n    <div class=\"starter-template\">\n        <h3>Kikaka (<a href=\"https://github.com/Skullabs/kikaha\">https://github.com/Skullabs/kikaha</a>)</h3>\n        <h3>Rocker (<a href=\"https://github.com/fizzed/rocker\">https://github.com/fizzed/rocker</a>)</h3>\n        ";
+        static private final String PLAIN_TEXT_1_0 = "</title>\n\n    <!-- Bootstrap core CSS -->\n    <link rel=\"stylesheet\"\n          href=\"/assets/css/bootstrap.min.css\">\n\n    <!-- Custom styles for this template -->\n    <link href=\"/assets/css/starter-template.css\" rel=\"stylesheet\">\n\n</head>\n\n<body>\n\n<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container\">\n        <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n                <span class=\"sr-only\">Toggle navigation</span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n                <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"http://get.kikaha.io/\">Kikaha</a>\n        </div>\n        <div id=\"navbar\" class=\"collapse navbar-collapse\">\n            <ul class=\"nav navbar-nav\">\n                <li class=\"active\"><a href=\"/\">Home</a></li>\n                <li><a href=\"/hazelcast\">HazelCast</a></li>\n                <li><a href=\"/redis\">Redis</a></li>\n                <li><a href=\"/fastpfor\">FastPFor (JSON output BufferEncoder)</a></li>\n            </ul>\n        </div><!--/.nav-collapse -->\n    </div>\n</nav>\n\n<div class=\"container\">\n    <div class=\"row\"></div>\n    <div class=\"starter-template\">\n        <h4>Kikaka (<a href=\"https://github.com/Skullabs/kikaha\">https://github.com/Skullabs/kikaha</a>)</h4>\n        <h4>Rocker (<a href=\"https://github.com/fizzed/rocker\">https://github.com/fizzed/rocker</a>)</h4>\n        <h4>HazelCast (<a href=\"http://hazelcast.org/\">http://hazelcast.org/</a>)</h4>\n        <h4>Redis (<a href=\"https://redis.io/\">https://redis.io/</a>)</h4>\n        <h4>Jedis (<a href=\"https://github.com/xetorthio/jedis\">https://github.com/xetorthio/jedis</a>)<h4>\n        <h4>FastPFor (<a href=\"https://github.com/lemire/FastPFor\">https://github.com/lemire/FastPFor</a>)<h4>\n\n        ";
         static private final String PLAIN_TEXT_2_0 = "\n    </div>\n</div><!-- /.container -->\n\n\n<!-- Bootstrap core JavaScript\n================================================== -->\n<!-- Placed at the end of the document so the pages load faster -->\n<script src=\"/assets/js/jquery.min.js\"></script>\n</body>\n</html>\n";
 
     }

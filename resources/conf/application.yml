@@ -1,5 +1,10 @@
 server:
 
+  undertow:
+      io-threads: -1
+      worker-threads: 300
+      buffer-size: 16384 # 1024*16
+
   static:
     enabled: true
 

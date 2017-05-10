@@ -115,6 +115,24 @@
 			<version>2.8.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>me.lemire.integercompression</groupId>
+			<artifactId>JavaFastPFOR</artifactId>
+			<version>[0.1,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.undercouch</groupId>
+			<artifactId>actson</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
         <!-- for hot-reloading support only during development -->
 		<dependency>
 			<groupId>com.fizzed</groupId>

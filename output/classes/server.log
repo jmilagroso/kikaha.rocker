@@ -1,53 +1,57 @@
-15:52:33.381 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
-15:52:33.403 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
-15:52:33.404 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-hazelcast/2.0.4/kikaha-hazelcast-2.0.4.jar!/META-INF/defaults.yml
-15:52:33.405 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
-15:52:33.746 INFO  - [LOCAL] [dev] [3.7.2] Prefer IPv4 stack is true.
-15:52:33.752 INFO  - [LOCAL] [dev] [3.7.2] Picked [172.18.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-15:52:33.758 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [172.18.0.1]:5701
-15:52:33.758 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
-15:52:33.758 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
-15:52:33.850 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Backpressure is disabled
-15:52:34.130 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Creating MulticastJoiner
-15:52:34.133 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTING
-15:52:34.206 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 4 partition threads
-15:52:34.208 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
-15:52:34.211 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
-15:52:36.461 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] 
+11:28:28.576 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
+11:28:28.598 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
+11:28:28.599 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-hazelcast/2.0.4/kikaha-hazelcast-2.0.4.jar!/META-INF/defaults.yml
+11:28:28.599 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
+11:28:28.941 INFO  - [LOCAL] [dev] [3.7.2] Prefer IPv4 stack is true.
+11:28:28.947 INFO  - [LOCAL] [dev] [3.7.2] Picked [172.18.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+11:28:28.954 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [172.18.0.1]:5701
+11:28:28.954 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+11:28:28.954 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
+11:28:29.046 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Backpressure is disabled
+11:28:29.352 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Creating MulticastJoiner
+11:28:29.355 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTING
+11:28:29.430 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 4 partition threads
+11:28:29.432 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
+11:28:29.447 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
+11:28:31.542 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] 
 
 
 Members [1] {
-	Member [172.18.0.1]:5701 - 9ed09a0b-b99b-421f-93a6-1f0af3cc69f5 this
+	Member [172.18.0.1]:5701 - a5a66f54-8ac9-415d-aaac-d773cc8410ac this
 }
 
-15:52:36.513 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTED
-15:52:36.552 INFO  - Listening for HTTP requests at 0.0.0.0:9000
-15:52:36.559 INFO  - Configuring Undertow options...
-15:52:36.560 INFO  -   buffer-size: 1024
-15:52:36.567 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
-15:52:36.567 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
-15:52:36.567 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
-15:52:36.567 INFO  -   org.xnio.Options.BACKLOG: 20000
-15:52:36.567 INFO  - Registering route: GET:/hello/world
-15:52:36.569 INFO  - Registering route: GET:/bot-hazelcast
-15:52:36.569 INFO  - Registering route: GET:/bot-hazelcast/{page}
-15:52:36.569 INFO  - Registering route: GET:/hazelcast
-15:52:36.569 INFO  - Registering route: GET:/hazelcast/generate
-15:52:36.569 INFO  - Registering route: GET:/bot-redis
-15:52:36.570 INFO  - Registering route: GET:/bot-redis/{page}
-15:52:36.570 INFO  - Registering route: GET:/
-15:52:36.570 INFO  - Registering route: GET:/{templatePath}.do
-15:52:36.570 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
-15:52:36.593 INFO  - XNIO version 3.3.6.Final
-15:52:36.599 INFO  - XNIO NIO Implementation Version 3.3.6.Final
-15:52:36.673 INFO  - Application started in 3428ms.
-15:53:37.828 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Running shutdown hook... Current state: ACTIVE
-15:53:37.829 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTTING_DOWN
-15:53:37.830 INFO  - Server stopped!
-15:53:37.831 WARN  - [172.18.0.1]:5701 [dev] [3.7.2] Terminating forcefully...
-15:53:37.832 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down multicast service...
-15:53:37.832 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down connection manager...
-15:53:37.834 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down node engine...
-15:53:37.849 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Destroying node NodeExtension.
-15:53:37.850 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast Shutdown is completed in 19 ms.
-15:53:37.851 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTDOWN
+11:28:31.586 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTED
+11:28:31.623 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+11:28:31.630 INFO  - Configuring Undertow options...
+11:28:31.630 INFO  -   worker-threads: 300
+11:28:31.630 INFO  -   buffer-size: 16384
+11:28:31.636 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+11:28:31.636 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+11:28:31.636 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+11:28:31.637 INFO  -   org.xnio.Options.BACKLOG: 20000
+11:28:31.637 INFO  - Registering route: GET:/fastpfor
+11:28:31.638 INFO  - Registering route: GET:/xdecompress
+11:28:31.638 INFO  - Registering route: GET:/hazelcast
+11:28:31.638 INFO  - Registering route: GET:/hazelcast/{page}
+11:28:31.638 INFO  - Registering route: GET:/
+11:28:31.638 INFO  - Registering route: GET:/decompress
+11:28:31.639 INFO  - Registering route: GET:/{templatePath}.do
+11:28:31.639 INFO  - Registering route: GET:/redis
+11:28:31.639 INFO  - Registering route: GET:/redis/{page}
+11:28:31.640 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
+11:28:31.657 INFO  - XNIO version 3.3.6.Final
+11:28:31.663 INFO  - XNIO NIO Implementation Version 3.3.6.Final
+11:28:31.731 INFO  - Application started in 3286ms.
+11:28:32.130 INFO  - Rocker version 0.16.0
+11:28:32.132 INFO  - Rocker template reloading not activated
+11:28:32.144 INFO  - Rocker template reloading activated
+11:28:52.451 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Running shutdown hook... Current state: ACTIVE
+11:28:52.452 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTTING_DOWN
+11:28:52.452 WARN  - [172.18.0.1]:5701 [dev] [3.7.2] Terminating forcefully...
+11:28:52.454 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down multicast service...
+11:28:52.455 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down connection manager...
+11:28:52.460 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down node engine...
+11:28:52.463 INFO  - Server stopped!
+11:28:52.478 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Destroying node NodeExtension.
+11:28:52.479 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast Shutdown is completed in 27 ms.
+11:28:52.480 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTDOWN

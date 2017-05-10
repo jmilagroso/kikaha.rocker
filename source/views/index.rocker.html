@@ -1,11 +1,7 @@
-@import myapp.models.User;
-@import myapp.models.Author;
+@import static java.lang.System.currentTimeMillis;
 
-@args (User u, Author a)
+@args (String s)
 
 @views.common.main.template("Home") -> {
-Some Dummy Dynamic Data
-@u.name @u.age
-<br>
-@a.name @a.place @a.role
+    @s @currentTimeMillis()
 }

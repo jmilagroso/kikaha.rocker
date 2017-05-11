@@ -19,9 +19,9 @@
 /home/jay/2.0/source/myapp/models/BufferEncoder.java
 /home/jay/2.0/source/myapp/services/Builder.java
 /home/jay/2.0/output/generated-sources/rocker/views/common/main.java
-/home/jay/2.0/source/myapp/models/Forum.java
 /home/jay/2.0/source/myapp/models/FastByteArrayOutputStream.java
 /home/jay/2.0/source/myapp/models/User.java
+/home/jay/2.0/source/myapp/models/Collection.java
 /home/jay/2.0/source/myapp/routes/UndertowResource.java
 /home/jay/2.0/source/myapp/routes/RedisResource.java
 /home/jay/2.0/output/generated-sources/rocker/views/hazelcast.java

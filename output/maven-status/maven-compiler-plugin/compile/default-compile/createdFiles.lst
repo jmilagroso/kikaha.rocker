@@ -7,11 +7,11 @@ rocker/EmptyHeaders.class
 myapp/routes/HazelCastResource$1.class
 rocker/RockerSerializerFactory.class
 views/common/main$PlainText.class
-myapp/models/Forum.class
 rocker/HTMLRockerSerializer.class
 views/redis.class
 META-INF/services/myapp.routes.UndertowResource
 myapp/routes/FastPForResource.class
+myapp/models/Collection.class
 views/index$PlainText.class
 myapp/routes/GeneratedRoutingMethod1920576170.class
 myapp/routes/RedisResource$3.class

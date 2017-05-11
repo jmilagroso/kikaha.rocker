@@ -8,7 +8,7 @@ import com.fizzed.rocker.RockerOutput;
 import com.fizzed.rocker.runtime.DefaultRockerTemplate;
 import com.fizzed.rocker.runtime.PlainTextUnloadedClassLoader;
 // import @ [1:1]
-import myapp.models.Forum;;
+import myapp.models.Collection;;
 // import @ [2:1]
 import myapp.models.Post;;
 
@@ -21,12 +21,12 @@ public class hazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
     static public final com.fizzed.rocker.ContentType CONTENT_TYPE = com.fizzed.rocker.ContentType.HTML;
     static public final String TEMPLATE_NAME = "hazelcast.rocker.html";
     static public final String TEMPLATE_PACKAGE_NAME = "views";
-    static public final String HEADER_HASH = "-109662583";
-    static public final long MODIFIED_AT = 1494388232000L;
-    static public final String[] ARGUMENT_NAMES = { "forum", "title", "subtitle", "url", "page", "pageCount" };
+    static public final String HEADER_HASH = "174607495";
+    static public final long MODIFIED_AT = 1494467553000L;
+    static public final String[] ARGUMENT_NAMES = { "collection", "title", "subtitle", "url", "page", "pageCount" };
 
     // argument @ [4:2]
-    private Forum forum;
+    private Collection collection;
     // argument @ [4:2]
     private String title;
     // argument @ [4:2]
@@ -38,13 +38,13 @@ public class hazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
     // argument @ [4:2]
     private Integer pageCount;
 
-    public hazelcast forum(Forum forum) {
-        this.forum = forum;
+    public hazelcast collection(Collection collection) {
+        this.collection = collection;
         return this;
     }
 
-    public Forum forum() {
-        return this.forum;
+    public Collection collection() {
+        return this.collection;
     }
 
     public hazelcast title(String title) {
@@ -92,9 +92,9 @@ public class hazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
         return this.pageCount;
     }
 
-    static public hazelcast template(Forum forum, String title, String subtitle, String url, Integer page, Integer pageCount) {
+    static public hazelcast template(Collection collection, String title, String subtitle, String url, Integer page, Integer pageCount) {
         return new hazelcast()
-            .forum(forum)
+            .collection(collection)
             .title(title)
             .subtitle(subtitle)
             .url(url)
@@ -200,7 +200,7 @@ public class hazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
         }
 
         // argument @ [4:2]
-        protected final Forum forum;
+        protected final Collection collection;
         // argument @ [4:2]
         protected final String title;
         // argument @ [4:2]
@@ -218,7 +218,7 @@ public class hazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
             __internal.setContentType(CONTENT_TYPE);
             __internal.setTemplateName(TEMPLATE_NAME);
             __internal.setTemplatePackageName(TEMPLATE_PACKAGE_NAME);
-            this.forum = model.forum();
+            this.collection = model.collection();
             this.title = model.title();
             this.subtitle = model.subtitle();
             this.url = model.url();
@@ -249,12 +249,12 @@ public class hazelcast extends com.fizzed.rocker.runtime.DefaultRockerModel {
                 // ForBlockBegin @ [14:9]
                 __internal.aboutToExecutePosInTemplate(14, 9);
                 try {
-                    final com.fizzed.rocker.runtime.CollectionForIterator<Post> __forIterator0 = new com.fizzed.rocker.runtime.CollectionForIterator<Post>(forum.data);
+                    final com.fizzed.rocker.runtime.CollectionForIterator<Post> __forIterator0 = new com.fizzed.rocker.runtime.CollectionForIterator<Post>(collection.data);
                     while (__forIterator0.hasNext()) {
                         final Post p = __forIterator0.next();
                         try {
-                            // PlainText @ [14:37]
-                            __internal.aboutToExecutePosInTemplate(14, 37);
+                            // PlainText @ [14:42]
+                            __internal.aboutToExecutePosInTemplate(14, 42);
                             __internal.writeValue(PLAIN_TEXT_3_0);
                             // ValueExpression @ [16:27]
                             __internal.aboutToExecutePosInTemplate(16, 27);

@@ -39,7 +39,7 @@ public class FastPForResource implements HttpHandler {
 
         List<Integer> probeList = new ArrayList<>();
 
-        int numberOfProbes = 50000;
+        int numberOfProbes = 10;
 
         for (int i = 0; i < numberOfProbes; i++) {
 //            2               = sex

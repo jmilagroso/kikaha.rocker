@@ -9,9 +9,8 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
-import myapp.models.Author;
-import myapp.models.Forum;
-import myapp.models.Post;
+import myapp.models.*;
+import myapp.models.Collection;
 import myapp.services.Builder;
 import redis.clients.jedis.Jedis;
 import java.util.*;
@@ -27,7 +26,7 @@ public class RedisResource {
 
     private List<Post> process() {
         RockerRuntime.getInstance().setReloading(true);
-        Forum forum = new Forum();
+        Collection collection = new myapp.models.Collection();
         Gson gson = new Gson();
 
         try {

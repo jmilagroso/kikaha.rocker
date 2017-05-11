@@ -11,10 +11,9 @@ import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
 import myapp.models.Author;
-import myapp.models.Forum;
+import myapp.models.Collection;
 import myapp.models.Post;
 import myapp.services.Builder;
-import myapp.services.Paginator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +33,7 @@ public class HazelCastResource {
 
     private List<Post> process() {
         Config cfg = null;
-        Forum forum = new Forum();
+        Collection collection = new Collection();
         try {
             cfg = new XmlConfigBuilder("conf/hazelcast.xml").build();
 

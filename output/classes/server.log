@@ -1,87 +1,57 @@
-11:50:41.139 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
-11:50:41.160 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
-11:50:41.160 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-hazelcast/2.0.4/kikaha-hazelcast-2.0.4.jar!/META-INF/defaults.yml
-11:50:41.161 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
-11:50:41.480 INFO  - [LOCAL] [dev] [3.7.2] Prefer IPv4 stack is true.
-11:50:41.485 INFO  - [LOCAL] [dev] [3.7.2] Picked [172.18.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-11:50:41.491 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [172.18.0.1]:5701
-11:50:41.491 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
-11:50:41.491 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
-11:50:41.573 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Backpressure is disabled
-11:50:41.843 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Creating MulticastJoiner
-11:50:41.845 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTING
-11:50:41.912 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 4 partition threads
-11:50:41.913 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
-11:50:41.917 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
-11:50:43.802 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] 
+09:52:53.171 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-core/2.0.4/kikaha-core-2.0.4.jar!/META-INF/defaults.yml
+09:52:53.193 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-urouting/2.0.4/kikaha-urouting-2.0.4.jar!/META-INF/defaults.yml
+09:52:53.194 INFO  - Loading configurations from: file:/home/jay/.m2/repository/io/skullabs/kikaha/kikaha-hazelcast/2.0.4/kikaha-hazelcast-2.0.4.jar!/META-INF/defaults.yml
+09:52:53.194 INFO  - Loading configurations from: /home/jay/2.0/output/classes/conf/application.yml
+09:52:53.963 INFO  - [LOCAL] [dev] [3.7.2] Prefer IPv4 stack is true.
+09:52:53.969 INFO  - [LOCAL] [dev] [3.7.2] Picked [172.18.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
+09:52:53.988 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast 3.7.2 (20161004 - 540b01c) starting at [172.18.0.1]:5701
+09:52:53.988 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Copyright (c) 2008-2016, Hazelcast, Inc. All Rights Reserved.
+09:52:53.988 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Configured Hazelcast Serialization version : 1
+09:52:54.209 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Backpressure is disabled
+09:52:54.690 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Creating MulticastJoiner
+09:52:54.693 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTING
+09:52:54.777 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 4 partition threads
+09:52:54.779 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Starting 3 generic threads (1 dedicated for priority tasks)
+09:52:54.782 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] TcpIpConnectionManager configured with Non Blocking IO-threading model: 3 input threads and 3 output threads
+09:52:56.698 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] 
 
 
 Members [1] {
-	Member [172.18.0.1]:5701 - eb090cf2-6ff4-4852-b2d8-44e61b46f4c3 this
+	Member [172.18.0.1]:5701 - 9f698d8a-0ecc-4319-a311-a5f52e86c93b this
 }
 
-11:50:43.845 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTED
-11:50:43.883 INFO  - Listening for HTTP requests at 0.0.0.0:9000
-11:50:43.890 INFO  - Configuring Undertow options...
-11:50:43.890 INFO  -   worker-threads: 300
-11:50:43.890 INFO  -   buffer-size: 16384
-11:50:43.897 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
-11:50:43.897 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
-11:50:43.897 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
-11:50:43.898 INFO  -   org.xnio.Options.BACKLOG: 20000
-11:50:43.898 INFO  - Registering route: GET:/fastpfor
-11:50:43.899 INFO  - Registering route: GET:/undertow
-11:50:43.899 INFO  - Registering route: GET:/hazelcast
-11:50:43.899 INFO  - Registering route: GET:/hazelcast/{page}
-11:50:43.899 INFO  - Registering route: GET:/
-11:50:43.900 INFO  - Registering route: GET:/{templatePath}.do
-11:50:43.900 INFO  - Registering route: GET:/redis
-11:50:43.900 INFO  - Registering route: GET:/redis/{page}
-11:50:43.900 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
-11:50:43.926 INFO  - XNIO version 3.3.6.Final
-11:50:43.937 INFO  - XNIO NIO Implementation Version 3.3.6.Final
-11:50:43.998 INFO  - Application started in 2978ms.
-11:50:50.711 ERROR - UT005071: Undertow request failed HttpServerExchange{ GET /undertow request {Connection=[keep-alive], Accept=[text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8], Accept-Language=[en-US,en;q=0.8], Cache-Control=[max-age=0], Accept-Encoding=[gzip, deflate, sdch], User-Agent=[Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36], Upgrade-Insecure-Requests=[1], Host=[localhost:9000]} response {}}
-javax.ws.rs.NotFoundException: HTTP 404 Not Found
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1020)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:883)
-	at org.glassfish.jersey.client.JerseyInvocation.access$800(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$3.call(JerseyInvocation.java:724)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:720)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:430)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.get(JerseyInvocation.java:321)
-	at myapp.routes.UndertowResource.handleRequest(UndertowResource.java:29)
-	at kikaha.core.url.SimpleRoutingHandler.handleRequest(SimpleRoutingHandler.java:62)
-	at kikaha.core.url.SimpleRoutingHandler.handleRequest(SimpleRoutingHandler.java:51)
-	at kikaha.core.DefaultHttpRequestHandler.handleRequest(DefaultHttpRequestHandler.java:16)
-	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
-	at io.undertow.server.protocol.http.HttpReadListener.handleEventWithNoRunningRequest(HttpReadListener.java:243)
-	at io.undertow.server.protocol.http.HttpReadListener.handleEvent(HttpReadListener.java:134)
-	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:148)
-	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:92)
-	at io.undertow.server.protocol.http.HttpOpenListener.handleEvent(HttpOpenListener.java:51)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at org.xnio.ChannelListeners$10.handleEvent(ChannelListeners.java:291)
-	at org.xnio.ChannelListeners$10.handleEvent(ChannelListeners.java:286)
-	at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:92)
-	at org.xnio.nio.QueuedNioTcpServer$1.run(QueuedNioTcpServer.java:128)
-	at org.xnio.nio.WorkerThread.safeRun(WorkerThread.java:580)
-	at org.xnio.nio.WorkerThread.run(WorkerThread.java:464)
-11:50:50.784 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Initializing cluster partition table arrangement...
-11:50:51.959 INFO  - Rocker version 0.16.0
-11:50:51.960 INFO  - Rocker template reloading not activated
-11:50:56.947 INFO  - Rocker template reloading activated
-11:51:07.220 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Running shutdown hook... Current state: ACTIVE
-11:51:07.220 INFO  - Server stopped!
-11:51:07.220 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTTING_DOWN
-11:51:07.220 WARN  - [172.18.0.1]:5701 [dev] [3.7.2] Terminating forcefully...
-11:51:07.221 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down multicast service...
-11:51:07.221 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down connection manager...
-11:51:07.221 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down node engine...
-11:51:07.229 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Destroying node NodeExtension.
-11:51:07.230 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast Shutdown is completed in 9 ms.
-11:51:07.230 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTDOWN
+09:52:56.745 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is STARTED
+09:52:56.819 INFO  - Listening for HTTP requests at 0.0.0.0:9000
+09:52:56.827 INFO  - Configuring Undertow options...
+09:52:56.827 INFO  -   worker-threads: 300
+09:52:56.827 INFO  -   buffer-size: 16384
+09:52:56.835 INFO  -   io.undertow.UndertowOptions.ENABLE_STATISTICS: false
+09:52:56.835 INFO  -   io.undertow.UndertowOptions.RECORD_REQUEST_START_TIME: false
+09:52:56.835 INFO  -   io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE: true
+09:52:56.835 INFO  -   org.xnio.Options.BACKLOG: 20000
+09:52:56.836 INFO  - Registering route: GET:/fastpfor
+09:52:56.837 INFO  - Registering route: GET:/undertow
+09:52:56.837 INFO  - Registering route: GET:/hazelcast
+09:52:56.837 INFO  - Registering route: GET:/hazelcast/{page}
+09:52:56.837 INFO  - Registering route: GET:/
+09:52:56.837 INFO  - Registering route: GET:/{templatePath}.do
+09:52:56.838 INFO  - Registering route: GET:/redis
+09:52:56.838 INFO  - Registering route: GET:/redis/{page}
+09:52:56.838 INFO  - Enabling static routing at folder: /home/jay/2.0/webapp
+09:52:56.858 INFO  - XNIO version 3.3.6.Final
+09:52:56.865 INFO  - XNIO NIO Implementation Version 3.3.6.Final
+09:52:56.956 INFO  - Application started in 3963ms.
+09:53:04.150 INFO  - Rocker version 0.16.0
+09:53:04.152 INFO  - Rocker template reloading not activated
+09:53:04.175 INFO  - Rocker template reloading activated
+09:53:14.990 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Initializing cluster partition table arrangement...
+09:54:03.537 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Running shutdown hook... Current state: ACTIVE
+09:54:03.538 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTTING_DOWN
+09:54:03.539 WARN  - [172.18.0.1]:5701 [dev] [3.7.2] Terminating forcefully...
+09:54:03.539 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down multicast service...
+09:54:03.542 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down connection manager...
+09:54:03.544 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Shutting down node engine...
+09:54:03.552 INFO  - Server stopped!
+09:54:03.584 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Destroying node NodeExtension.
+09:54:03.585 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] Hazelcast Shutdown is completed in 46 ms.
+09:54:03.586 INFO  - [172.18.0.1]:5701 [dev] [3.7.2] [172.18.0.1]:5701 is SHUTDOWN

@@ -1,7 +1,7 @@
-@import myapp.models.Forum;
+@import myapp.models.Collection;
 @import myapp.models.Post;
 
-@args (Forum forum, String title, String subtitle, String url, Integer page, Integer pageCount)
+@args (Collection collection, String title, String subtitle, String url, Integer page, Integer pageCount)
 
 @views.common.main.template("Redis") -> {
     <div class="page-header">
@@ -11,7 +11,7 @@
         </h1>
     </div>
     <ul class="list-group">
-        @for (Post p : forum.data) {
+        @for (Post p : collection.data) {
             <li class="list-group-item">
                 Title: <b>@p.title</b>
                 <br>

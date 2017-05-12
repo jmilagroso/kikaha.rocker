@@ -71,8 +71,9 @@ public class HazelCastResource {
                 postsMap.put("posts", posts);
                 authorsMap.put("authors", authors);
             }
-
+            
             return postsMap.get("posts");
+
         } catch (Exception e) {
             // Handle exception, just return empty List<Post>
             return new ArrayList<Post>();

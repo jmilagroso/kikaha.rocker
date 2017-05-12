@@ -1,3 +1,5 @@
 .idea/
 output/
 *.iml
+server.*
+server-*

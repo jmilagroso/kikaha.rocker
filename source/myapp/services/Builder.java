@@ -15,12 +15,13 @@ public class Builder {
 
     @Inject
     public Collection builder(List<?> data, Integer perPage, Integer page) {
+        int size = data.size();
         // Paginator
         paginator = new Paginator();
-        paginator.handle(perPage,  data.size(), page);
+        paginator.handle(perPage,  size, page);
 
         Collection collection = new Collection();
-        collection.data = data.subList(paginator.startIndex, paginator.endIndex);
+        collection.data = (size > 0) ? data.subList(paginator.startIndex, paginator.endIndex) : null;
 
         return collection;
     }

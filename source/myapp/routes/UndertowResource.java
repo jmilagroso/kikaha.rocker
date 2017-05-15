@@ -24,7 +24,7 @@ public class UndertowResource implements HttpHandler {
 
         GenericType<List<Probe>> genericProbe = new GenericType<List<Probe>>(){};
         List<Probe> probes = ClientBuilder.newClient()
-                .target("http://localhost:9000/compress")
+                .target("http://localhost:9001/fastpfor")
                 .request().accept(MediaType.APPLICATION_JSON)
                 .get(genericProbe);
 
@@ -36,8 +36,4 @@ public class UndertowResource implements HttpHandler {
 
         exchange.getResponseSender().send(e.encode(probes));
     }
-
-
-
-
 }

@@ -1,16 +1,26 @@
 server:
+  # HTTP listener configurations
+  http:
+    host: '0.0.0.0'
+    port: 9001
+    enabled: true
 
+  # Undertow internals
   undertow:
-      io-threads: -1
-      worker-threads: 300
-      buffer-size: 16384 # 1024*16
+    io-threads: -1
+    worker-threads: 300
+    buffer-size: 16384 # 1024*16
 
+  # Static asset routing
   static:
     enabled: true
 
+  # Configurations for micro-Routing API
   urouting:
+    default-encoding: "UTF-8"
     default-content-type: "application/json"
     # default-content-type: "text/html"
+    exception-handler: kikaha.urouting.UnhandledExceptionHandler
 
   hazelcast:
     config: "conf/hazelcast.xml"
@@ -18,3 +28,10 @@ server:
   auth:
     # Distributed Session Management with Hazelcast
     security-context-factory: kikaha.hazelcast.HazelcastSecurityContextFactory
+
+  rules:
+    pattern: "/protected/*"
+    identity-manager: "custom"
+    auth-mechanisms: "basic"
+    expected-roles:
+    exclude-patterns:

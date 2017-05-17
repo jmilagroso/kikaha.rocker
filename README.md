@@ -1,4 +1,4 @@
-# kikaha.rocker [![Build Status](https://travis-ci.org/jmilagroso/kikaha.rocker.svg?branch=master)](https://travis-ci.org/jmilagroso/kikaha.rocker)
+# kikaha.rocker [![Build Status](https://travis-ci.org/jmilagroso/kikaha.rocker.svg?branch=master)](https://travis-ci.org/jmilagroso/kikaha.rocker) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/970/badge)](https://bestpractices.coreinfrastructure.org/projects/970) 
 Integrates Kikaha with Rocker. 
 
 ## Kikaha

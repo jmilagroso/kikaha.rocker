@@ -29,11 +29,10 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 ```
 ### URL
 Open 
-- http://localhost:9000
-- http://localhost:9000/hazelcast/
-- http://localhost:9000/redis/
-- http://localhost:9000/fastpfor/
-- http://localhost:9000/undertow/
+- [Home Resource](http://localhost:9000)
+- [HazelCast Resource](http://localhost:9000/hazelcast/)
+- [Redis Resource](http://localhost:9000/redis/)
+- [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
 
 
 

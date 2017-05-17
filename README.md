@@ -14,8 +14,6 @@ Integrates Kikaha with Rocker.
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 [Jedis](https://github.com/xetorthio/jedis) a blazingly small and sane redis java client.
 
-## FastPFor
-[FastPFor](https://github.com/lemire/FastPFor) is a FastPFOR C++ library: Fast integer compression.
 
 ### Setup
 ```sh

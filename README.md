@@ -1,4 +1,4 @@
-# kikaha.rocker
+# kikaha.rocker [![Build Status](https://travis-ci.org/jmilagroso/kikaha.rocker.svg?branch=master)](https://travis-ci.org/jmilagroso/kikaha.rocker)
 Integrates Kikaha with Rocker. 
 
 ## Kikaha

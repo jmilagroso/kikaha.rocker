@@ -34,6 +34,9 @@ Open
 - [Redis Resource](http://localhost:9000/redis/)
 - [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
 
+### License
+This code is distributed using the Apache license, Version 2.0.
 
-
-Special thanks to [jeoffreylim](https://github.com/jeoffreylim) [anaesguerra](https://github.com/anaesguerra)
+### Contributors
+[jeoffreylim](https://github.com/jeoffreylim) 
+[anaesguerra](https://github.com/anaesguerra)

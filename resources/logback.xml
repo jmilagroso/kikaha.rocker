@@ -12,7 +12,7 @@
       <fileNamePattern>server-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
       <maxFileSize>10MB</maxFileSize>    
       <maxHistory>30</maxHistory>
-      <totalSizeCap>1GB</totalSizeCap>
+      <totalSizeCap>11GB</totalSizeCap>
     </rollingPolicy>
 		<encoder>
 			<pattern>%d{HH:mm:ss.SSS} %-5level - %msg%n</pattern>

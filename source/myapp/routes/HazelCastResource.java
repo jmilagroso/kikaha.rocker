@@ -6,19 +6,15 @@ import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import kikaha.urouting.api.*;
 import javax.inject.*;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
 
 import myapp.models.Author;
 import myapp.models.Collection;
 import myapp.models.Post;
 import myapp.services.Builder;
+import myapp.services.Downloader;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import java.util.concurrent.ConcurrentMap;
 
@@ -31,45 +27,23 @@ public class HazelCastResource {
     String title = "HazelCast title";
     String subtitle = "HazelCast subtitle";
 
-    private List<Post> process() {
-        Config cfg = null;
-        Collection collection = new Collection();
-        try {
-            cfg = new XmlConfigBuilder("conf/hazelcast.xml").build();
+    List<Post> posts;
+    Config cfg = null;
 
+    private List<Post> process() {
+        try {
+            Collection collection = new Collection();
             HazelcastInstance instance = Hazelcast.getHazelcastInstanceByName(cfg.getInstanceName());
+            cfg = new XmlConfigBuilder("conf/hazelcast.xml").build();
 
             ConcurrentMap<String, List<Post>> postsMap = instance.getMap("posts.map");
             ConcurrentMap<String, List<Author>> authorsMap = instance.getMap("posts.author");
 
             if(postsMap.size() == 0 && authorsMap.size()==0){
-                // Get posts JSON and translate
-                GenericType<List<Post>> genericTypePost = new GenericType<List<Post>>(){};
-                List<Post> posts = ClientBuilder.newClient()
-                        .target("http://maqe.github.io/json/posts.json")
-                        .request().accept(MediaType.APPLICATION_JSON)
-                        .get(genericTypePost);
-
-                GenericType<List<Author>> genericTypeAuthor = new GenericType<List<Author>>(){};
-                List<Author> authors = ClientBuilder.newClient()
-                        .target("http://maqe.github.io/json/authors.json")
-                        .request().accept(MediaType.APPLICATION_JSON)
-                        .get(genericTypeAuthor);
-
-                Map<Integer, Author> map = new HashMap<Integer, Author>();
-                for(Author a: authors) {
-                    map.put(a.id, a);
+                posts = Downloader.init();
+                if(!posts.isEmpty()) {
+                    postsMap.put("posts", posts);
                 }
-
-                // Post-Author association.
-                for(Post p: posts) {
-                    if(map.containsKey(p.author_id)) {
-                        p.author = map.get(p.author_id);
-                    }
-                }
-
-                postsMap.put("posts", posts);
-                authorsMap.put("authors", authors);
             }
             
             return postsMap.get("posts");
@@ -83,10 +57,10 @@ public class HazelCastResource {
     @GET
     @Path( "/" )
     @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderBot() {
+    public rocker.RockerTemplate render() {
         return new rocker.RockerTemplate()
-                .templateName("views/hazelcast.rocker.html")
-                .setParamContent(new Object[] {
+                .setTemplateName("views/hazelcast.rocker.html")
+                .setObjects(new Object[] {
                         builder.builder(this.process(), 5, 1),
                         title,
                         subtitle,
@@ -100,10 +74,10 @@ public class HazelCastResource {
     @GET
     @Path( "/{page}" )
     @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderBotWithPage( @PathParam("page") Integer page) {
+    public rocker.RockerTemplate renderWithPage( @PathParam("page") Integer page) {
         return new rocker.RockerTemplate()
-                .templateName("views/hazelcast.rocker.html")
-                .setParamContent(new Object[] {
+                .setTemplateName("views/hazelcast.rocker.html")
+                .setObjects(new Object[] {
                         builder.builder(this.process(), 5, page),
                         title,
                         subtitle,

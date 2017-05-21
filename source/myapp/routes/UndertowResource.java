@@ -55,8 +55,6 @@ public class UndertowResource implements HttpHandler {
         try {
             final List<Chat> chatCollection = new ArrayList<Chat>();
 
-
-
             messagesCollection.find().forEach(document -> {
                 Chat chat = new Chat();
                 chat.message = document.get("message").toString();

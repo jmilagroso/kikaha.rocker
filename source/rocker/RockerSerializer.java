@@ -1,6 +1,5 @@
 package rocker;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -36,7 +35,6 @@ public class RockerSerializer {
 
     public String serialize( final RockerTemplate object ) {
         final Writer writer = new StringWriter();
-
         serialize( object, writer );
         return writer.toString();
     }
@@ -44,22 +42,23 @@ public class RockerSerializer {
     public void serialize( final RockerTemplate object, final Writer writer ) {
         final String templateName = object.templateName();
 
-        String rendered = this.template(templateName, (Object[]) object.paramContent())
+        String rendered = this.template(templateName, (Object[]) object.objects())
                 .render()
                 .toString();
         try {
             writer.write(rendered);
+            //writer.flush();
+            //writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     static private BindableRockerModel template(String templatePath, Object [] arguments) {
-
         // load model from bootstrap (which may recompile if needed)
         RockerModel model = RockerRuntime.getInstance().getBootstrap().model(templatePath);
 
-        BindableRockerModel bindableModel = new BindableRockerModel(templatePath, model.getClass().getCanonicalName(), model);
+        BindableRockerModel bindableRockerModel = new BindableRockerModel(templatePath, model.getClass().getCanonicalName(), model);
 
         if (arguments != null && arguments.length > 0) {
             String[] argumentNames = getModelArgumentNames(templatePath, model);
@@ -71,11 +70,11 @@ public class RockerSerializer {
             for (int i = 0; i < arguments.length; i++) {
                 String name = argumentNames[i];
                 Object value = arguments[i];
-                bindableModel.bind(name, value);
+                bindableRockerModel.bind(name, value);
             }
         }
 
-        return bindableModel;
+        return bindableRockerModel;
     }
 
     static private String[] getModelArgumentNames(String templatePath, RockerModel model) {

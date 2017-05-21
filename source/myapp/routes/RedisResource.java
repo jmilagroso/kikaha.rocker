@@ -5,9 +5,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import kikaha.urouting.api.*;
 import javax.inject.*;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
 
 import myapp.models.*;
 import myapp.models.Collection;

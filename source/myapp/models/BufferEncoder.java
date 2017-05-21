@@ -19,7 +19,6 @@ public class BufferEncoder {
 
     private final FastByteArrayOutputStream fastByteArrayOutputStream;
 
-
     public BufferEncoder(FastByteArrayOutputStream fastByteArrayOutputStream) {
         this.fastByteArrayOutputStream = fastByteArrayOutputStream;
     }

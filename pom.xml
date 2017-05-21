@@ -52,10 +52,12 @@
 			<groupId>io.skullabs.kikaha</groupId>
 			<artifactId>kikaha-injection-processor</artifactId>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>io.skullabs.kikaha</groupId>
 			<artifactId>kikaha-urouting-mustache</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>io.skullabs.kikaha</groupId>
 			<artifactId>kikaha-urouting-jackson</artifactId>

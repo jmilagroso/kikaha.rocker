@@ -27,23 +27,19 @@ public class HazelCastResource {
     String title = "HazelCast title";
     String subtitle = "HazelCast subtitle";
 
-    List<Post> posts;
-    Config cfg = null;
-
     private List<Post> process() {
+
+        Config cfg = null;
         try {
-            Collection collection = new Collection();
-            HazelcastInstance instance = Hazelcast.getHazelcastInstanceByName(cfg.getInstanceName());
             cfg = new XmlConfigBuilder("conf/hazelcast.xml").build();
+            HazelcastInstance instance = Hazelcast.getHazelcastInstanceByName(cfg.getInstanceName());
 
             ConcurrentMap<String, List<Post>> postsMap = instance.getMap("posts.map");
             ConcurrentMap<String, List<Author>> authorsMap = instance.getMap("posts.author");
 
-            if(postsMap.size() == 0 && authorsMap.size()==0){
-                posts = Downloader.init();
-                if(!posts.isEmpty()) {
-                    postsMap.put("posts", posts);
-                }
+            if(postsMap.isEmpty()){
+                List<Post> posts = Downloader.init();
+                postsMap.put("posts", posts);
             }
             
             return postsMap.get("posts");

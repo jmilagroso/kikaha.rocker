@@ -37,7 +37,7 @@ public class RedisResource {
             //jedis.del(redisKey.getBytes());
             if(jedis.get(redisKey.getBytes())==null) {
                 posts = Downloader.init();
-                if(!posts.isEmpty()) {
+                if(posts.isEmpty()) {
                     jedis.set(redisKey, gson.toJson(posts));
                 }
             }

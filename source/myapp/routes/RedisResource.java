@@ -5,13 +5,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import kikaha.urouting.api.*;
 import javax.inject.*;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
 
 import myapp.models.*;
 import myapp.models.Collection;
 import myapp.services.Builder;
+import myapp.services.Downloader;
 import redis.clients.jedis.Jedis;
 import java.util.*;
 
@@ -23,6 +21,8 @@ public class RedisResource {
     String controller = "redis";
     String title = "Redis title";
     String subtitle = "Redis subtitle";
+
+    List<Post> posts;
 
     private List<Post> process() {
         RockerRuntime.getInstance().setReloading(true);
@@ -36,32 +36,10 @@ public class RedisResource {
             String redisKey = "posts";
             //jedis.del(redisKey.getBytes());
             if(jedis.get(redisKey.getBytes())==null) {
-                // Get posts JSON and translate
-                GenericType<List<Post>> genericTypePost = new GenericType<List<Post>>(){};
-                List<Post> posts = ClientBuilder.newClient()
-                        .target("http://maqe.github.io/json/posts.json")
-                        .request().accept(MediaType.APPLICATION_JSON)
-                        .get(genericTypePost);
-
-                GenericType<List<Author>> genericTypeAuthor = new GenericType<List<Author>>(){};
-                List<Author> authors = ClientBuilder.newClient()
-                        .target("http://maqe.github.io/json/authors.json")
-                        .request().accept(MediaType.APPLICATION_JSON)
-                        .get(genericTypeAuthor);
-
-                Map<Integer, Author> map = new HashMap<Integer, Author>();
-                for(Author a: authors) {
-                    map.put(a.id, a);
+                posts = Downloader.init();
+                if(!posts.isEmpty()) {
+                    jedis.set(redisKey, gson.toJson(posts));
                 }
-
-                // Post-Author association.
-                for(Post p: posts) {
-                    if(map.containsKey(p.author_id)) {
-                        p.author = map.get(p.author_id);
-                    }
-                }
-
-                jedis.set(redisKey, gson.toJson(posts));
             }
 
             List<Post> posts = new Gson().fromJson(jedis.get(redisKey), new TypeToken<ArrayList<Post>>(){}.getType());
@@ -76,7 +54,7 @@ public class RedisResource {
     @GET
     @Path( "/" )
     @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderBot()  {
+    public rocker.RockerTemplate render()  {
         return new rocker.RockerTemplate()
                 .setTemplateName("views/redis.rocker.html")
                 .setObjects(new Object[] {
@@ -93,7 +71,7 @@ public class RedisResource {
     @GET
     @Path( "/{page}" )
     @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderBotWithPage( @PathParam("page") Integer page) {
+    public rocker.RockerTemplate renderWithPage( @PathParam("page") Integer page) {
         return new rocker.RockerTemplate()
                 .setTemplateName("views/redis.rocker.html")
                 .setObjects(new Object[] {

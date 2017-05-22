@@ -45,7 +45,6 @@ public class RockerSerializer {
 
     public String serialize( final RockerTemplate object ) {
         final Writer writer = new StringWriter();
-
         serialize( object, writer );
         return writer.toString();
     }
@@ -73,7 +72,6 @@ public class RockerSerializer {
     }
 
     static private BindableRockerModel template(String templatePath, Object [] arguments) {
-
         // load model from bootstrap (which may recompile if needed)
         RockerModel model = RockerRuntime.getInstance().getBootstrap().model(templatePath);
 

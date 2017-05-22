@@ -39,15 +39,15 @@ public class KikahaMock {
     // RedisResource page
     @org.junit.Test
     public void testRedisResource() throws Exception {
-        r.renderBot();
-        verify(r).renderBot();
+        r.render();
+        verify(r).render();
     }
 
     // HazelCastResource page
     @org.junit.Test
     public void testHazelCastResource() throws Exception {
-        hc.renderBot();
-        verify(hc).renderBot();
+        hc.render();
+        verify(hc).render();
     }
 
     @org.junit.Test

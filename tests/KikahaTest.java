@@ -1,16 +1,21 @@
 import static org.junit.Assert.assertEquals;
 
+import myapp.models.*;
 import myapp.routes.HazelCastResource;
+import myapp.routes.HomeResource;
 import myapp.routes.RedisResource;
 import myapp.services.Builder;
 import myapp.services.Paginator;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+
+import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 /**
@@ -21,6 +26,7 @@ public class KikahaTest {
 
     @Mock
     Builder builder;
+    HomeResource hr;
     RedisResource r;
     HazelCastResource hc;
 
@@ -29,6 +35,7 @@ public class KikahaTest {
         builder = new Builder();
         r = new RedisResource();
         hc = new HazelCastResource();
+        hr = new HomeResource();
     }
 
     // Page input/expected
@@ -50,11 +57,16 @@ public class KikahaTest {
     @Parameter(1)
     public int expectedPage;
 
+    // HomeResource page
+    @org.junit.Test
+    public void testHomeResource() throws Exception {
+        assertEquals(true, hr.render() instanceof rocker.RockerTemplate);
+    }
 
     // RedisResource page
     @org.junit.Test
     public void testRedisResource() throws Exception {
-        assertEquals(true, r.renderBot() instanceof rocker.RockerTemplate);
+        assertEquals(true, r.render() instanceof rocker.RockerTemplate);
     }
 
     // RedisResource Pagination
@@ -66,7 +78,7 @@ public class KikahaTest {
     // HazelCastResource page
     @org.junit.Test
     public void testHazelCastResource() throws Exception {
-        assertEquals(true, hc.renderBot() instanceof rocker.RockerTemplate);
+        assertEquals(true, hc.render() instanceof rocker.RockerTemplate);
     }
 
     // HazelCastResource Pagination
@@ -75,4 +87,32 @@ public class KikahaTest {
         assertEquals(inputPage, expectedPage);
     }
 
+
+    @Test
+    public void testModels() {
+        try {
+            Author author = new Author();
+            BufferEncoder bufferEncoder = null;
+            Chat chat = new Chat();
+            Collection collection = new Collection();
+            FastByteArrayOutputStream fastByteArrayOutputStream = new FastByteArrayOutputStream();
+            Post post = new Post();
+            Probe probe = new Probe();
+            User user = new User();
+            user.name = "John Doe";
+
+            assertEquals(true, author instanceof Author);
+            assertEquals(true, bufferEncoder.encode(probe) instanceof ByteBuffer);
+            assertEquals(true, chat instanceof Chat);
+            assertEquals(true, collection instanceof Collection);
+            assertEquals(true, fastByteArrayOutputStream instanceof FastByteArrayOutputStream);
+            assertEquals(true, post instanceof Post);
+            assertEquals(true, probe instanceof Probe);
+            assertEquals(true, user instanceof User);
+        } catch (Exception e) {
+
+        }
+
+
+    }
 }

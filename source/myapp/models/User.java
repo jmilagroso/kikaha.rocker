@@ -8,4 +8,11 @@ public class User {
     public Long getId(){
         return this.id;
     }
+
+    protected void finalize() throws Throwable {
+        this.name = null;
+        this.age = null;
+
+        super.finalize();
+    }
 }

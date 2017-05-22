@@ -38,7 +38,6 @@ public class RockerResponse implements Response {
         return this;
     }
 
-
     @Override
     public Object entity() {
         return null;
@@ -59,14 +58,13 @@ public class RockerResponse implements Response {
         return null;
     }
 
-    @Override
+
     public Iterable<Header> headers() {
         return null;
     }
 }
 
 class EmptyHeaders implements Iterable<Header> {
-
     static EmptyHeaders INSTANCE = new EmptyHeaders();
     final Iterator<Header> iterator = Collections.emptyIterator();
 

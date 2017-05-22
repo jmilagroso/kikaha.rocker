@@ -11,10 +11,13 @@ public class HomeResource {
     @GET
     @Path( "/" )
     @Produces( Mimes.HTML )
-    public rocker.RockerTemplate renderHome() {
+    public rocker.RockerTemplate render() {
         RockerRuntime.getInstance().setReloading(true);
 
-        return new rocker.RockerTemplate().setTemplateName( "views/index.rocker.html" ).setObjects("Current time in millis is");
+
+        return new rocker.RockerTemplate()
+                .setTemplateName( "views/index.rocker.html" )
+                .setObjects("Current time in millis is");
     }
 
 }

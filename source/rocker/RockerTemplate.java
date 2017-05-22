@@ -18,6 +18,7 @@ public class RockerTemplate {
     @NonNull
     Object objects;
 
+
     public RockerTemplate setTemplateName(String name) {
         this.templateName = name;
 
@@ -37,4 +38,5 @@ public class RockerTemplate {
     public Object getObjects() {
         return this.objects;
     }
+
 }

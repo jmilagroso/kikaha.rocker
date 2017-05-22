@@ -1,10 +1,16 @@
 package rocker;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Field;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetDecoder;
+import java.nio.charset.CharsetEncoder;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -12,10 +18,13 @@ import javax.inject.Singleton;
 
 import com.fizzed.rocker.BindableRockerModel;
 import com.fizzed.rocker.RockerModel;
+import com.fizzed.rocker.RockerOutput;
 import com.fizzed.rocker.TemplateBindException;
 import com.fizzed.rocker.runtime.RockerRuntime;
 import kikaha.config.Config;
 import lombok.Getter;
+
+import com.fizzed.rocker.runtime.ArrayOfByteArraysOutput;
 
 import lombok.experimental.Accessors;
 
@@ -42,13 +51,22 @@ public class RockerSerializer {
     }
 
     public void serialize( final RockerTemplate object, final Writer writer ) {
-        final String templateName = object.templateName();
+        final String templateName = object.getTemplateName();
 
-        String rendered = this.template(templateName, (Object[]) object.paramContent())
-                .render()
-                .toString();
+        BindableRockerModel template = this.template(templateName, (Object[]) object.getObjects());
+        ArrayOfByteArraysOutput output = template.render(ArrayOfByteArraysOutput.FACTORY);
+
+        // convert to array of byte buffers
+        // Reference: https://github.com/fizzed/rocker/blob/master/rocker-test-java8/src/test/java/com/fizzed/rocker/bin/UndertowMain.java
+        List<byte[]> byteArrays = output.getArrays();
+        int size = byteArrays.size();
+        ByteBuffer[] byteBuffers = new ByteBuffer[size];
+        for (int i = 0; i < size; i++) {
+            byteBuffers[i] = ByteBuffer.wrap(byteArrays.get(i));
+        }
+
         try {
-            writer.write(rendered);
+            writer.write(output.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +77,7 @@ public class RockerSerializer {
         // load model from bootstrap (which may recompile if needed)
         RockerModel model = RockerRuntime.getInstance().getBootstrap().model(templatePath);
 
-        BindableRockerModel bindableModel = new BindableRockerModel(templatePath, model.getClass().getCanonicalName(), model);
+        BindableRockerModel bindableRockerModel = new BindableRockerModel(templatePath, model.getClass().getCanonicalName(), model);
 
         if (arguments != null && arguments.length > 0) {
             String[] argumentNames = getModelArgumentNames(templatePath, model);
@@ -71,11 +89,11 @@ public class RockerSerializer {
             for (int i = 0; i < arguments.length; i++) {
                 String name = argumentNames[i];
                 Object value = arguments[i];
-                bindableModel.bind(name, value);
+                bindableRockerModel.bind(name, value);
             }
         }
 
-        return bindableModel;
+        return bindableRockerModel;
     }
 
     static private String[] getModelArgumentNames(String templatePath, RockerModel model) {

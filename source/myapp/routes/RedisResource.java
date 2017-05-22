@@ -78,8 +78,8 @@ public class RedisResource {
     @Produces( Mimes.HTML )
     public rocker.RockerTemplate renderBot()  {
         return new rocker.RockerTemplate()
-                .templateName("views/redis.rocker.html")
-                .setParamContent(new Object[] {
+                .setTemplateName("views/redis.rocker.html")
+                .setObjects(new Object[] {
                         builder.builder(this.process(), 5, 1),
                         title,
                         subtitle,
@@ -95,8 +95,8 @@ public class RedisResource {
     @Produces( Mimes.HTML )
     public rocker.RockerTemplate renderBotWithPage( @PathParam("page") Integer page) {
         return new rocker.RockerTemplate()
-                .templateName("views/redis.rocker.html")
-                .setParamContent(new Object[] {
+                .setTemplateName("views/redis.rocker.html")
+                .setObjects(new Object[] {
                         builder.builder(this.process(), 5, page),
                         title,
                         subtitle,

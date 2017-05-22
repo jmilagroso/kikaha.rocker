@@ -85,8 +85,8 @@ public class HazelCastResource {
     @Produces( Mimes.HTML )
     public rocker.RockerTemplate renderBot() {
         return new rocker.RockerTemplate()
-                .templateName("views/hazelcast.rocker.html")
-                .setParamContent(new Object[] {
+                .setTemplateName("views/hazelcast.rocker.html")
+                .setObjects(new Object[] {
                         builder.builder(this.process(), 5, 1),
                         title,
                         subtitle,
@@ -102,8 +102,8 @@ public class HazelCastResource {
     @Produces( Mimes.HTML )
     public rocker.RockerTemplate renderBotWithPage( @PathParam("page") Integer page) {
         return new rocker.RockerTemplate()
-                .templateName("views/hazelcast.rocker.html")
-                .setParamContent(new Object[] {
+                .setTemplateName("views/hazelcast.rocker.html")
+                .setObjects(new Object[] {
                         builder.builder(this.process(), 5, page),
                         title,
                         subtitle,

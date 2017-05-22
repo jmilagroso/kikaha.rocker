@@ -29,16 +29,40 @@ public class RockerResponse implements Response {
     Integer statusCode = 200;
 
     public RockerResponse paramObject( final Object entity ) {
-        this.entity.paramContent( entity );
+        this.entity.setObjects( entity );
         return this;
     }
 
     public RockerResponse templateName( final String templateName ) {
-        this.entity.templateName( templateName );
+        this.entity.setTemplateName( templateName );
         return this;
     }
 
 
+    @Override
+    public Object entity() {
+        return null;
+    }
+
+    @Override
+    public Integer statusCode() {
+        return null;
+    }
+
+    @Override
+    public String encoding() {
+        return null;
+    }
+
+    @Override
+    public String contentType() {
+        return null;
+    }
+
+    @Override
+    public Iterable<Header> headers() {
+        return null;
+    }
 }
 
 class EmptyHeaders implements Iterable<Header> {

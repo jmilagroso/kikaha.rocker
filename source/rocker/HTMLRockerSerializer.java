@@ -1,13 +1,12 @@
 package rocker;
 
 import java.io.IOException;
-        import javax.enterprise.inject.Typed;
-        import javax.inject.*;
-        import com.github.mustachejava.MustacheNotFoundException;
-        import io.undertow.server.HttpServerExchange;
-        import kikaha.core.NotFoundHandler;
-        import kikaha.core.modules.http.ContentType;
-        import kikaha.urouting.api.*;
+import javax.enterprise.inject.Typed;
+import javax.inject.*;
+import io.undertow.server.HttpServerExchange;
+import kikaha.core.NotFoundHandler;
+import kikaha.core.modules.http.ContentType;
+import kikaha.urouting.api.*;
 
 @ContentType( Mimes.HTML )
 @Singleton
@@ -26,7 +25,7 @@ public class HTMLRockerSerializer implements Serializer {
             final RockerTemplate template = (RockerTemplate) object;
             String serialized = factory.serializer().serialize(template);
             exchange.getResponseSender().send(serialized);
-        } catch ( MustacheNotFoundException cause ) {
+        } catch ( Exception cause ) {
             cause.printStackTrace();
             handleNotFound( exchange );
         }

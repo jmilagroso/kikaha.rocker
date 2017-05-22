@@ -14,7 +14,7 @@ public class HomeResource {
     public rocker.RockerTemplate renderHome() {
         RockerRuntime.getInstance().setReloading(true);
 
-        return new rocker.RockerTemplate().templateName( "views/index.rocker.html" ).setParamContent("Current time in millis is");
+        return new rocker.RockerTemplate().setTemplateName( "views/index.rocker.html" ).setObjects("Current time in millis is");
     }
 
 }

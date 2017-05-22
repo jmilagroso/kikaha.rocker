@@ -28,7 +28,7 @@ public class RockerResponse implements Response {
     @NonNull
     Integer statusCode = 200;
 
-    public RockerResponse paramObject( final Object entity ) {
+    public RockerResponse objects( final Object entity ) {
         this.entity.setObjects( entity );
         return this;
     }

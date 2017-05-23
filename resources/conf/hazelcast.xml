@@ -151,7 +151,7 @@
 			automatically evicted from the map. Entry is touched if get, put or containsKey is called.
 			Any integer between 0 and Integer.MAX_VALUE. 0 means infinite. Default is 0.
 		-->
-        <max-idle-seconds>0</max-idle-seconds>
+        <max-idle-seconds>60</max-idle-seconds>
         <!--
             Valid values are:
             NONE (no eviction),
@@ -159,7 +159,7 @@
             LFU (Least Frequently Used).
             NONE is the default.
         -->
-        <eviction-policy>NONE</eviction-policy>
+        <eviction-policy>LRU</eviction-policy>
         <!--
             Maximum size of the map. When max size is reached,
             map is evicted based on the policy defined.

@@ -41,6 +41,7 @@
 		<jersey-media.version>2.13</jersey-media.version>
 		<jaxrs.version>2.4.1</jaxrs.version>
 		<servelet.version>4.0.0-b05</servelet.version>
+		<asynchttp.version>2.1.0-alpha19</asynchttp.version>
 	</properties>
 
 	<dependencies>
@@ -212,6 +213,11 @@
 			<groupId>org.pac4j</groupId>
 			<artifactId>pac4j-stormpath</artifactId>
 			<version>${pac4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.asynchttpclient</groupId>
+			<artifactId>async-http-client</artifactId>
+			<version>${asynchttp.version}</version>
 		</dependency>
 	</dependencies>
 	<build>

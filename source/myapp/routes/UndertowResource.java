@@ -1,6 +1,7 @@
 package myapp.routes;
 
 import com.fizzed.rocker.Rocker;
+import com.fizzed.rocker.runtime.RockerRuntime;
 import com.mongodb.ServerAddress;
 import com.mongodb.async.client.*;
 import com.mongodb.connection.ClusterSettings;
@@ -48,6 +49,7 @@ public class UndertowResource implements HttpHandler {
 
     @Override
     public void handleRequest(final HttpServerExchange exchange) throws Exception {
+        RockerRuntime.getInstance().setReloading(true);
         // A wrapper for HttpServerExchange
         SimpleExchange simplified = requestHelper.simplify( exchange );
         Integer page = simplified.getQueryParameter( "page", Long.class ).intValue();

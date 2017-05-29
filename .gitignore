@@ -4,3 +4,4 @@ output/
 server.*
 server-*
 config.*
+*.log

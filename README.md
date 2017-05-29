@@ -15,6 +15,9 @@ Integrates Kikaha with Rocker.
 [Jedis](https://github.com/xetorthio/jedis) a blazingly small and sane redis java client.
 
 
+## Async Http Client
+[Async Http Client](https://github.com/AsyncHttpClient/async-http-client) a asynchronous Http and WebSocket Client library for Java.
+
 ### Setup
 ```sh
 $ git clone git@github.com:jmilagroso/kikaha.rocker.git
@@ -33,6 +36,7 @@ Open
 - [HazelCast Resource](http://localhost:9000/hazelcast/)
 - [Redis Resource](http://localhost:9000/redis/)
 - [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
+- [Async Http Client](http://localhost:9000/async)
 
 ### License
 This code is distributed using the Apache license, Version 2.0.

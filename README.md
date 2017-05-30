@@ -1,4 +1,4 @@
-# kikaha.rocker [![Build Status](https://travis-ci.org/jmilagroso/kikaha.rocker.svg?branch=master)](https://travis-ci.org/jmilagroso/kikaha.rocker) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/970/badge)](https://bestpractices.coreinfrastructure.org/projects/970) 
+# kikaha.rocker [![Build Status](https://travis-ci.org/jmilagroso/kikaha.rocker.svg?branch=master)](https://travis-ci.org/jmilagroso/kikaha.rocker) 
 Integrates Kikaha with Rocker. 
 
 ## Kikaha
@@ -12,7 +12,10 @@ Integrates Kikaha with Rocker.
 
 ## Redis
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+
 [lettuce-core](https://github.com/lettuce-io/lettuce-core) advanced Redis client for thread-safe sync, async, and reactive usage. Supports Cluster, Sentinel, Pipelining, and codecs.
+
+[a-redis](http://aredis.sourceforge.net/) is a java client for the Redis Cache server designed for performance and efficiency in terms of utilization of Connections and Threads
 
 ## Async Http Client
 [Async Http Client](https://github.com/AsyncHttpClient/async-http-client) a asynchronous Http and WebSocket Client library for Java.

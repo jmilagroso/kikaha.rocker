@@ -37,7 +37,8 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 Open 
 - [Home Resource](http://localhost:9000)
 - [HazelCast Resource](http://localhost:9000/hazelcast/)
-- [Redis Resource](http://localhost:9000/redis/)
+- [Redis(Lettuce) Resource](http://localhost:9000/redis/)
+- [Redis(A-Redis) Resource](http://localhost:9000/aredis/)
 - [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
 - [Async Http Client](http://localhost:9000/async)
 

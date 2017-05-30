@@ -12,10 +12,10 @@ Integrates Kikaha with Rocker.
 
 ## Redis
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
-[Jedis](https://github.com/xetorthio/jedis) a blazingly small and sane redis java client.
+[lettuce-core](https://github.com/lettuce-io/lettuce-core) advanced Redis client for thread-safe sync, async, and reactive usage. Supports Cluster, Sentinel, Pipelining, and codecs.
 
 
-### Setup
+#### Setup
 ```sh
 $ git clone git@github.com:jmilagroso/kikaha.rocker.git
 $ cd kikaha.rocker
@@ -23,20 +23,20 @@ $ curl -s http://download.kikaha.io/installer | bash
 $ kikaha run_app
 ```
 
-### Memory Adjustment
+#### Memory Adjustment
 ```sh
 $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 ```
-### URL
+#### URL
 Open 
 - [Home Resource](http://localhost:9000)
 - [HazelCast Resource](http://localhost:9000/hazelcast/)
 - [Redis Resource](http://localhost:9000/redis/)
 - [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
 
-### License
+#### License
 This code is distributed using the Apache license, Version 2.0.
 
-### Contributors
+#### Contributors
 [jeoffreylim](https://github.com/jeoffreylim) 
 [anaesguerra](https://github.com/anaesguerra)

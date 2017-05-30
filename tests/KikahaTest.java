@@ -1,18 +1,16 @@
 import static org.junit.Assert.assertEquals;
 
-import myapp.models.*;
-import myapp.routes.HazelCastResource;
-import myapp.routes.HomeResource;
-import myapp.routes.RedisResource;
-import myapp.services.Builder;
-import myapp.services.Paginator;
+import kikaha.app.models.*;
+import kikaha.app.routes.HazelCastResource;
+import kikaha.app.routes.HomeResource;
+import kikaha.app.routes.LettuceRedisResource;
+import kikaha.app.services.Builder;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import java.nio.ByteBuffer;
@@ -27,13 +25,13 @@ public class KikahaTest {
     @Mock
     Builder builder;
     HomeResource hr;
-    RedisResource r;
+    LettuceRedisResource r;
     HazelCastResource hc;
 
     @Before
     public void setUp(){
         builder = new Builder();
-        r = new RedisResource();
+        r = new LettuceRedisResource();
         hc = new HazelCastResource();
         hr = new HomeResource();
     }
@@ -63,13 +61,13 @@ public class KikahaTest {
         assertEquals(true, hr.render() instanceof rocker.RockerTemplate);
     }
 
-    // RedisResource page
+    // LettuceRedisResource page
     @org.junit.Test
     public void testRedisResource() throws Exception {
         assertEquals(true, r.render() instanceof rocker.RockerTemplate);
     }
 
-    // RedisResource Pagination
+    // LettuceRedisResource Pagination
     @org.junit.Test
     public void testRedisResourcePage() throws Exception {
         assertEquals(inputPage, expectedPage);

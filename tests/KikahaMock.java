@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 
-import myapp.routes.HazelCastResource;
-import myapp.routes.RedisResource;
-import myapp.services.Builder;
-import myapp.services.Paginator;
+import kikaha.app.routes.HazelCastResource;
+import kikaha.app.routes.LettuceRedisResource;
+import kikaha.app.services.Builder;
+import kikaha.app.services.Paginator;
 import org.junit.Before;
 import org.junit.Rule;
 import org.mockito.Mock;
@@ -21,7 +21,7 @@ public class KikahaMock {
 
     @Mock
     Builder builder;
-    RedisResource r;
+    LettuceRedisResource r;
     HazelCastResource hc;
     Paginator paginator;
 
@@ -31,12 +31,12 @@ public class KikahaMock {
     @Before
     public void setUp(){
         builder = mock(Builder.class);
-        r = mock(RedisResource.class);
+        r = mock(LettuceRedisResource.class);
         hc = mock(HazelCastResource.class);
         paginator = mock(Paginator.class);
     }
 
-    // RedisResource page
+    // LettuceRedisResource page
     @org.junit.Test
     public void testRedisResource() throws Exception {
         r.render();

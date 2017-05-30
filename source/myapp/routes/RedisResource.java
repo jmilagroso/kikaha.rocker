@@ -3,48 +3,51 @@ package myapp.routes;
 import com.fizzed.rocker.runtime.RockerRuntime;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.lambdaworks.redis.RedisClient;
+import com.lambdaworks.redis.RedisFuture;
+import com.lambdaworks.redis.RedisURI;
+import com.lambdaworks.redis.api.StatefulRedisConnection;
+import com.lambdaworks.redis.api.async.RedisStringAsyncCommands;
 import kikaha.urouting.api.*;
 import javax.inject.*;
 
 import myapp.models.*;
-import myapp.models.Collection;
 import myapp.services.Builder;
 import myapp.services.Downloader;
-import redis.clients.jedis.Jedis;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.*;
 
 @Singleton
 @Path( "/redis" )
 public class RedisResource {
 
-    Builder builder = new Builder();
-    String controller = "redis";
-    String title = "Redis title";
-    String subtitle = "Redis subtitle";
+    private static Logger logger = LoggerFactory.getLogger(RedisResource.class);
 
-    List<Post> posts;
+    // Redis [Host + Port] Override
+    private static RedisURI redisURI = new RedisURI();
+
+    private static Builder builder = new Builder();
+    private static String controller = "redis";
+    private static String title = "Redis title";
+    private static String subtitle = "Redis subtitle";
 
     private List<Post> process() {
-        RockerRuntime.getInstance().setReloading(true);
-        Collection collection = new myapp.models.Collection();
-        Gson gson = new Gson();
-
         try {
-            // Single instance redis
-            Jedis jedis = new Jedis("localhost", 6379);
+            // Redis Client
+            redisURI.setHost("localhost"); // @override
+            redisURI.setPort(6379);        // @override
+            RedisClient client = RedisClient.create(redisURI);
 
-            String redisKey = "posts";
-            //jedis.del(redisKey.getBytes());
-            if(jedis.get(redisKey.getBytes())==null) {
-                posts = Downloader.init();
-                if(posts.isEmpty()) {
-                    jedis.set(redisKey, gson.toJson(posts));
-                }
+            StatefulRedisConnection<String, String> connection = client.connect();
+            RedisStringAsyncCommands<String, String> async = connection.async();
+            RedisFuture<String> get = async.get("posts");
+
+            if(get.get()==null) {
+                RedisFuture<String> set = async.set("posts", new Gson().toJson(Downloader.init()));
             }
 
-            List<Post> posts = new Gson().fromJson(jedis.get(redisKey), new TypeToken<ArrayList<Post>>(){}.getType());
-
-            return posts;
+            return new Gson().fromJson(get.get(), new TypeToken<ArrayList<Post>>(){}.getType());
         } catch (Exception e) {
             // Handle exception, just return empty List<Post>
             return new ArrayList<Post>();

@@ -14,8 +14,11 @@ Integrates Kikaha with Rocker.
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 [lettuce-core](https://github.com/lettuce-io/lettuce-core) advanced Redis client for thread-safe sync, async, and reactive usage. Supports Cluster, Sentinel, Pipelining, and codecs.
 
+## Async Http Client
+[Async Http Client](https://github.com/AsyncHttpClient/async-http-client) a asynchronous Http and WebSocket Client library for Java.
 
-#### Setup
+### Setup
+
 ```sh
 $ git clone git@github.com:jmilagroso/kikaha.rocker.git
 $ cd kikaha.rocker
@@ -33,6 +36,7 @@ Open
 - [HazelCast Resource](http://localhost:9000/hazelcast/)
 - [Redis Resource](http://localhost:9000/redis/)
 - [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
+- [Async Http Client](http://localhost:9000/async)
 
 #### License
 This code is distributed using the Apache license, Version 2.0.

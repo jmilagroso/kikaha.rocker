@@ -58,7 +58,6 @@ public class ARedisResource implements HttpHandler {
             // Get a client to DB 1 instead of the default of 0
             AsyncRedisClient aredis = f.getClient("localhost/0");
 
-            //CompletionHandler handler = new CompletionHandler();
             aredis.submitCommand(new RedisCommandInfo(RedisCommand.GET, "posts"), new AsyncHandler<RedisCommandInfo>() {
                 @Override
                 public void completed(RedisCommandInfo result, Throwable e) {
@@ -78,12 +77,16 @@ public class ARedisResource implements HttpHandler {
                             tmp = new Gson().fromJson(result.getResult().toString(), new TypeToken<ArrayList<Post>>(){}.getType());
                         }
 
+                        // HTML / Rocker
                         exchange.getResponseSender().send(Rocker.template("kikaha/app/views/redis.rocker.html", builder.builder(tmp, 5, page),
                                 title,
                                 subtitle,
                                 controller,
                                 builder.paginator.currentPage,
                                 builder.paginator.pageCount).render().toString());
+
+                        // JSON
+                        // exchange.getResponseSender().send(new Gson().toJson(tmp));
                     }
                 }
             });

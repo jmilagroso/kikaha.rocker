@@ -43,6 +43,7 @@
 		<asynchttp.version>2.1.0-alpha19</asynchttp.version>
 		<lettuce.version>5.0.0.Beta1</lettuce.version>
 		<netty.version>4.1.11.Final</netty.version>
+		<auth0.version>3.2.0</auth0.version>
 	</properties>
 
 	<dependencies>
@@ -96,11 +97,13 @@
 			<artifactId>jersey-media-moxy</artifactId>
 			<version>${jersey-media.version}</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
 			<artifactId>jackson-jaxrs-json-provider</artifactId>
 			<version>${jaxrs.version}</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -242,6 +245,18 @@
 			<version>${netty.version}</version>
 			<classifier>linux-x86_64</classifier>
 			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>${auth0.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.twitter</groupId>
+			<artifactId>util_2.12</artifactId>
+			<version>6.43.0</version>
 		</dependency>
 
 	</dependencies>

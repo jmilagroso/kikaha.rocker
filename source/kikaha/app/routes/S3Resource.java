@@ -13,9 +13,6 @@ import javax.inject.Singleton;
 import javax.ws.rs.core.Response;
 import java.nio.charset.Charset;
 
-/**
- * Created by jay on 6/2/17.
- */
 @Singleton
 @WebResource( path="/s3", method="GET" )
 public class S3Resource implements HttpHandler {
@@ -27,18 +24,22 @@ public class S3Resource implements HttpHandler {
     @Override
     public void handleRequest(final HttpServerExchange exchange) throws Exception {
         try {
+            // Async http client instance.
             AsyncHttpClient asyncHttpClient = new DefaultAsyncHttpClient();
 
+            // S3 AWS request instance.
             S3.AwsS3Request awsS3Request = S3.get("README.md");
 
-            String fileName = "README.md";
+            // Bount request builder (So we can inject HTTP request headers as needed)
+            BoundRequestBuilder boundRequestBuilder = asyncHttpClient.prepareGet(S3.getRequestURL());
 
-            BoundRequestBuilder boundRequestBuilder = asyncHttpClient.prepareGet(S3.getS3Uri() + "/"+S3.getS3bucket()+"/"+fileName);
+            // Request headers for S3.
             for(String key: awsS3Request.getHeaders().keySet()) {
-                //logger.info(key+"=>"+awsS3Request.getHeaders().get(key));
+                logger.info(key+"=>"+awsS3Request.getHeaders().get(key));
                 boundRequestBuilder.addHeader(key, awsS3Request.getHeaders().get(key));
             }
 
+            // Async http client.
             boundRequestBuilder.execute(new AsyncCompletionHandler<Response>(){
 
                 @Override

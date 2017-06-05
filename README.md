@@ -20,6 +20,9 @@ Integrates Kikaha with Rocker.
 ## Async Http Client
 [Async Http Client](https://github.com/AsyncHttpClient/async-http-client) a asynchronous Http and WebSocket Client library for Java.
 
+## S3 Async Support
+[s3cmd](https://github.com/s3tools/s3cmd) S3cmd tool for Amazon Simple Storage Service (S3)
+
 ### Setup
 
 ```sh
@@ -41,6 +44,8 @@ Open
 - [Redis(A-Redis) Resource](http://localhost:9000/aredis/)
 - [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
 - [Async Http Client](http://localhost:9000/async)
+- [Async Http Client + S3](http://localhost:9000/s3)
+
 
 #### License
 This code is distributed using the Apache license, Version 2.0.

@@ -37,7 +37,7 @@ public class AsyncResource implements HttpHandler {
                 @Override
                 public Response onCompleted(org.asynchttpclient.Response response) throws Exception {
 
-                    // logger.info(response.getResponseBody(Charset.defaultCharset()));
+                     logger.info(response.getResponseBody(Charset.defaultCharset()));
 
                     exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/html");
                     exchange.getResponseSender().send(Rocker.template(

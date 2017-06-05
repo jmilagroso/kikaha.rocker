@@ -62,6 +62,10 @@ public class S3 {
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
     }
 
+    public static String getS3bucket() {
+        return s3bucket;
+    }
+
     public static String getS3Uri() {
         return s3Uri;
     }

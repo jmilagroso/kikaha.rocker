@@ -17,8 +17,6 @@ import java.nio.charset.Charset;
 @WebResource( path="/s3", method="GET" )
 public class S3Resource implements HttpHandler {
 
-    // http://sakthipriyan.com/2016/02/17/scala-code-to-access-documents-in-aws-s3-bucket.html
-
     Logger logger = LoggerFactory.getLogger(UndertowResource.class);
 
     @Override

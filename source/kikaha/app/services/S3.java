@@ -56,6 +56,7 @@ public class S3 {
     private final static String s3bucket = "jay";
     private final static String s3Key = "LOCALMINIO";
     private final static String s3Secret = "cloud4wi/minerva";
+    private static String path;
 
     private final static SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
     {
@@ -64,6 +65,14 @@ public class S3 {
 
     public static String getS3bucket() {
         return s3bucket;
+    }
+
+    public static String getPath() {
+        return path;
+    }
+
+    public static String getRequestURL() {
+        return S3.getS3Uri() + "/"+S3.getS3bucket()+"/"+S3.getPath();
     }
 
     public static String getS3Uri() {
@@ -100,6 +109,9 @@ public class S3 {
      * @return
      */
     public static AwsS3Request get(String path) {
+
+        S3.path = path;
+
         String date = sdf.format(new Date());
         String authorization = auth("GET\n\n\n"+date+"\n/"+s3bucket+"/"+path);
 

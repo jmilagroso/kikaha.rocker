@@ -3,7 +3,6 @@ import static org.junit.Assert.assertEquals;
 import kikaha.app.models.*;
 import kikaha.app.routes.HazelCastResource;
 import kikaha.app.routes.HomeResource;
-import kikaha.app.routes.LettuceRedisResource;
 import kikaha.app.services.Builder;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,13 +24,11 @@ public class KikahaTest {
     @Mock
     Builder builder;
     HomeResource hr;
-    LettuceRedisResource r;
     HazelCastResource hc;
 
     @Before
     public void setUp(){
         builder = new Builder();
-        r = new LettuceRedisResource();
         hc = new HazelCastResource();
         hr = new HomeResource();
     }
@@ -59,12 +56,6 @@ public class KikahaTest {
     @org.junit.Test
     public void testHomeResource() throws Exception {
         assertEquals(true, hr.render() instanceof rocker.RockerTemplate);
-    }
-
-    // LettuceRedisResource page
-    @org.junit.Test
-    public void testRedisResource() throws Exception {
-        assertEquals(true, r.render() instanceof rocker.RockerTemplate);
     }
 
     // LettuceRedisResource Pagination

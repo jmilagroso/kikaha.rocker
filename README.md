@@ -13,8 +13,6 @@ Integrates Kikaha with Rocker.
 ## Redis
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 
-[lettuce-core](https://github.com/lettuce-io/lettuce-core) advanced Redis client for thread-safe sync, async, and reactive usage. Supports Cluster, Sentinel, Pipelining, and codecs.
-
 [a-redis](http://aredis.sourceforge.net/) is a java client for the Redis Cache server designed for performance and efficiency in terms of utilization of Connections and Threads
 
 ## Async Http Client
@@ -22,6 +20,9 @@ Integrates Kikaha with Rocker.
 
 ## S3 Async Support
 [s3cmd](https://github.com/s3tools/s3cmd) S3cmd tool for Amazon Simple Storage Service (S3)
+
+## JWT
+[jwt](https://github.com/auth0/java-jwt) Java implementation of JSON Web Token (JWT)
 
 ### Setup
 
@@ -53,5 +54,5 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 This code is distributed using the Apache license, Version 2.0.
 
 #### Contributors
-[jeoffreylim](https://github.com/jeoffreylim) 
-[anaesguerra](https://github.com/anaesguerra)
+* [jeoffreylim](https://github.com/jeoffreylim) 
+* [anaesguerra](https://github.com/anaesguerra)

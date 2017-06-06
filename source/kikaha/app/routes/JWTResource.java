@@ -1,15 +1,8 @@
 package kikaha.app.routes;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.interfaces.DecodedJWT;
 import kikaha.app.services.Security;
+import kikaha.config.Config;
 import kikaha.urouting.api.*;
-import org.joda.time.DateTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.inject.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +11,35 @@ import java.util.Map;
 @Path( "/jwt" )
 public class JWTResource {
 
-    private static Logger logger = LoggerFactory.getLogger(JWTResource.class);
+    @Inject
+    Config config;
+
+    // JWT Security
+    private Security security;
+
+    // TODO Find a way to load `loadConfig` in a middleware or constructor without invoking DI exception.
+
+    // Prevents multiple call on Security class
+    private boolean hasLoadedConfig;
+    private void loadConfig() {
+        if(!hasLoadedConfig) {
+            security = new Security(config.getString("jwt.secret"), config.getInteger("jwt.expires-days", -1));
+            hasLoadedConfig = true;
+        }
+    }
+
+    @GET
+    @Path( "/test" )
+    @Produces( Mimes.HTML )
+    public rocker.RockerTemplate renderTest() {
+
+        loadConfig();
+
+        return new rocker.RockerTemplate()
+                .setTemplateName("kikaha/app/views/index.rocker.html")
+                .setObjects("Token:"+security.token("SomeId123", "SomeClaimant", "SomeIssuer"));
+    }
+
 
     @GET
     @Path( "/{id}/{claim}/{issuer}" )
@@ -27,14 +48,10 @@ public class JWTResource {
                                       @PathParam("claim") String claim,
                                       @PathParam("issuer") String issuer) {
 
-        final String token = JWT.create()
-                .withJWTId(id)
-                .withClaim("name", claim)
-                .withIssuer(issuer)
-                .sign(Security.algorithm);
+        loadConfig();
 
         Map<String,String> map = new HashMap<>();
-        map.put("token", token);
+        map.put("token", security.token(id, claim, issuer));
 
         return map;
     }
@@ -47,12 +64,14 @@ public class JWTResource {
                                       @PathParam("claim") String claim,
                                       @PathParam("issuer") String issuer) {
 
+        loadConfig();
+
         boolean isValidToken = false;
 
         try {
-            isValidToken = Security.valid(token, id, claim, issuer);
+            isValidToken = security.valid(token, id, claim, issuer);
         } catch (Exception e) {
-            logger.error(e.getLocalizedMessage().toString());
+            throw new IllegalStateException(e.getLocalizedMessage());
         }
 
         Map<String,Boolean> map = new HashMap<>();

@@ -36,15 +36,17 @@ $ kikaha run_app
 ```sh
 $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 ```
-#### URL
-Open 
-- [Home Resource](http://localhost:9000)
-- [HazelCast Resource](http://localhost:9000/hazelcast/)
-- [Redis(Lettuce) Resource](http://localhost:9000/redis/)
-- [Redis(A-Redis) Resource](http://localhost:9000/aredis/)
-- [Undertow Resource with MongoDB](http://localhost:9000/undertow/)
-- [Async Http Client](http://localhost:9000/async)
-- [Async Http Client + S3](http://localhost:9000/s3)
+#### Examples
+```sh
+* Async Redis example -> kikaha.app.routes.ARedisResource
+* Async HTTP Client example -> kikaha.app.routes.AsyncResource
+* Hazelcast example -> kikaha.app.routes.HazelCastResource
+* Rocker example -> kikaha.app.routes.HomeResource
+* JWT example -> kikaha.app.routes.JWTResource
+* Lettuce Redis example -> kikaha.app.routes.LettuceRedisResource
+* S3 example -> kikaha.app.routes.S3Resource, kikaha.app.services.S3
+* Undertow and Mongo example -> kikaha.app.routes.UndertowResource
+```
 
 
 #### License

@@ -50,6 +50,7 @@ public class S3 {
         }
     }
 
+    //TODO implement typesafe config for these values.
     private final static String utf8 = "UTF-8";
     private final static String hmacsha1 = "HMACSHA1";
     private final static String s3Uri = "http://localhost:43908";

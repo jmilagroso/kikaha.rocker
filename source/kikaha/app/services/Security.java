@@ -4,33 +4,65 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import kikaha.app.routes.JWTResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import org.joda.time.DateTime;
+import java.util.Date;
 
 /**
  * Created by jay on 5/30/17.
  */
 public class Security {
 
-    public static Algorithm algorithm;
-
-    private final static String secret = "EFFA813E0EE1340533837C5E96FAEF220DDAE85B5E41EFC32EF210F367F48BFE";
-
-    private static Logger logger = LoggerFactory.getLogger(Security.class);
-
     private static JWTVerifier verifier;
 
-    static {
+    private Algorithm algorithm;
+
+    private Integer expirationInDays;
+
+    public Security(String secret, Integer days) {
         try {
             algorithm = Algorithm.HMAC256(secret);
+            expirationInDays = days;
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new IllegalStateException(e.getLocalizedMessage());
         }
     }
 
-    public static boolean valid(String token, String id, String claim, String issuer) {
+    /**
+     * Generates new token.
+     * @param id The id string/integer parameter.
+     * @param claim The claim string parameter.
+     * @param issuer The issuer string parameter.
+     * @return string The token string.
+     */
+    public String token(String id, String claim, String issuer) {
+        String token = null;
+        try {
+            Date dt = new Date();
+            DateTime dtOrg = new DateTime(dt);
+            DateTime dtPlusNDays = dtOrg.plusDays(expirationInDays);
+
+            token = JWT.create()
+                    .withJWTId(id)
+                    .withClaim("name", claim)
+                    .withIssuer(issuer)
+                    .withExpiresAt(dtPlusNDays.toDate())
+                    .sign(algorithm);
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getLocalizedMessage());
+        }
+
+        return token;
+    }
+
+    /**
+     * Validates token
+     * @param token The token string parameter.
+     * @param id The id string/integer parameter.
+     * @param claim The claim string parameter.
+     * @param issuer The issuer string parameter.
+     * @return boolean Is valid.
+     */
+    public boolean valid(String token, String id, String claim, String issuer) {
 
         boolean valid = false;
 
@@ -44,7 +76,7 @@ public class Security {
             DecodedJWT jwt = verifier.verify(token);
             valid = true;
         } catch (Exception e) {
-            logger.error(e.getLocalizedMessage().toString());
+            throw new IllegalStateException(e.getLocalizedMessage());
         }
 
         return valid;

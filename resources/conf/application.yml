@@ -35,3 +35,7 @@ server:
     auth-mechanisms: "basic"
     expected-roles:
     exclude-patterns:
+
+jwt:
+  secret: "EFFA813E0EE1340533837C5E96FAEF220DDAE85B5E41EFC32EF210F367F48BFE"
+  expires-days: 2

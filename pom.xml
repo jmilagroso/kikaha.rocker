@@ -23,13 +23,10 @@
 		<config.dir.test.resource>tests-resources</config.dir.test.resource>
 		<config.dir.output>output</config.dir.output>
 		<config.dir.web>webapp</config.dir.web>
-
 		<pac4j.version>1.9.4</pac4j.version>
 		<undertow-pac4j.version>1.2.3</undertow-pac4j.version>
 		<undertow.version>1.3.23.Final</undertow.version>
 		<java.version>1.8</java.version>
-
-		<typesafe.version>1.3.1</typesafe.version>
 		<rocker.version>0.16.0</rocker.version>
 		<junit.version>4.12</junit.version>
 		<mockito.version>2.7.22</mockito.version>
@@ -59,12 +56,6 @@
 			<groupId>io.skullabs.kikaha</groupId>
 			<artifactId>kikaha-injection-processor</artifactId>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>io.skullabs.kikaha</groupId>
-			<artifactId>kikaha-urouting-mustache</artifactId>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>io.skullabs.kikaha</groupId>
 			<artifactId>kikaha-urouting-jackson</artifactId>
@@ -72,11 +63,6 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.typesafe</groupId>
-			<artifactId>config</artifactId>
-			<version>${typesafe.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fizzed</groupId>
@@ -97,13 +83,6 @@
 			<artifactId>jersey-media-moxy</artifactId>
 			<version>${jersey-media.version}</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>${jaxrs.version}</version>
-		</dependency>
-		-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -123,7 +102,7 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			<version>2.8.0</version>
+			<version>${gson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fizzed</groupId>
@@ -142,74 +121,9 @@
 			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-core</artifactId>
-			<version>${log4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.undertow</groupId>
-			<artifactId>undertow-core</artifactId>
-			<version>${undertow.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>undertow-pac4j</artifactId>
-			<version>${undertow-pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-oauth</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-openid</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-cas</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-saml</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-oidc</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-http</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-jwt</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-sql</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-ldap</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-mongo</artifactId>
-			<version>${pac4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.pac4j</groupId>
-			<artifactId>pac4j-stormpath</artifactId>
-			<version>${pac4j.version}</version>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.asynchttpclient</groupId>
@@ -226,19 +140,16 @@
 			<artifactId>netty-common</artifactId>
 			<version>${netty.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-transport</artifactId>
 			<version>${netty.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-handler</artifactId>
 			<version>${netty.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-transport-native-epoll</artifactId>
@@ -246,19 +157,21 @@
 			<classifier>linux-x86_64</classifier>
 			<optional>true</optional>
 		</dependency>
-
 		<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
 			<version>${auth0.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.twitter</groupId>
 			<artifactId>util_2.12</artifactId>
 			<version>6.43.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.9</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

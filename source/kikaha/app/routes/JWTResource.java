@@ -23,7 +23,7 @@ public class JWTResource {
     private boolean hasLoadedConfig;
     private void loadConfig() {
         if(!hasLoadedConfig) {
-            security = new Security(config.getString("jwt.secret"), config.getInteger("jwt.expires-days", -1));
+            security = new Security(config.getString("jwt.secret"), config.getInteger("jwt.expires-days", 1));
             hasLoadedConfig = true;
         }
     }

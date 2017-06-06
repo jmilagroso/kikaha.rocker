@@ -44,7 +44,6 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 * Hazelcast example -> kikaha.app.routes.HazelCastResource
 * Rocker example -> kikaha.app.routes.HomeResource
 * JWT example -> kikaha.app.routes.JWTResource
-* Lettuce Redis example -> kikaha.app.routes.LettuceRedisResource
 * S3 example -> kikaha.app.routes.S3Resource, kikaha.app.services.S3
 * Undertow and Mongo example -> kikaha.app.routes.UndertowResource
 ```

@@ -27,7 +27,7 @@ Integrates Kikaha with Rocker.
 ### Swagger 
 [Swagger](http://swagger.io/) is the world’s largest framework of API developer tools for the OpenAPI Specification(OAS), enabling development across the entire API lifecycle, from design and documentation, to test and deployment.
 
-### Setup
+#### Setup (Development)
 
 ```sh
 $ git clone git@github.com:jmilagroso/kikaha.rocker.git
@@ -35,6 +35,18 @@ $ cd kikaha.rocker
 $ curl -s http://download.kikaha.io/installer | bash
 $ kikaha run_app
 ```
+
+#### Setup (Staging/Production)
+
+```sh
+$ git clone git@github.com:jmilagroso/kikaha.rocker.git
+$ cd kikaha.rocker
+$ mvn clean package kikaha:package
+$ cd output/
+$ unzip kikaha.rocker-1.0.0.zip
+$ cd kikaha.rocker-1.0.0
+$ chmod a+x bin/kikaha.sh
+$ sh bin/kikaha.sh start
 
 #### Memory Adjustment
 ```sh
@@ -49,8 +61,8 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 * JWT example -> kikaha.app.routes.JWTResource
 * S3 example -> kikaha.app.routes.S3Resource, kikaha.app.services.S3
 * Undertow and Mongo example -> kikaha.app.routes.UndertowResource
+* Swagger (implementation) example -> kikaha.app.routes.SwaggerResource, kikaha.app.routes.SwaggerUIResource
 ```
-
 
 #### License
 This code is distributed using the Apache license, Version 2.0.

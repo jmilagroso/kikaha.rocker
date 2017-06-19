@@ -47,6 +47,7 @@ $ unzip kikaha.rocker-1.0.0.zip
 $ cd kikaha.rocker-1.0.0
 $ chmod a+x bin/kikaha.sh
 $ sh bin/kikaha.sh start
+```
 
 #### Memory Adjustment
 ```sh

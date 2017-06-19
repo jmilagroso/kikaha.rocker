@@ -5,17 +5,13 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
-import io.undertow.server.handlers.resource.ClassPathResourceManager;
-import io.undertow.server.handlers.resource.FileResourceManager;
-import io.undertow.server.handlers.resource.ResourceManager;
 import io.undertow.util.Headers;
-import kikaha.core.modules.http.StaticResourceModule;
 import kikaha.core.modules.http.WebResource;
 import org.apache.hadoop.hbase.io.ByteBufferOutputStream;
 
 import javax.inject.Singleton;
 import java.io.BufferedInputStream;
-import java.io.File;
+
 
 @Singleton
 @WebResource( path="/webjars/*", method="GET" )

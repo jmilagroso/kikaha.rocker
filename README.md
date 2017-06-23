@@ -1,5 +1,5 @@
 # kikaha.rocker [![Build Status](https://travis-ci.org/jmilagroso/kikaha.rocker.svg?branch=master)](https://travis-ci.org/jmilagroso/kikaha.rocker) 
-Integrates Kikaha with Rocker. 
+A Kikaha web application with Rocker template framework, Hazelcast in-memory data grid, Redis in-memory data structure store, Async HTTP client, S3 command-line tool mapping, Swagger, and JWT implementation.
 
 #### Kikaha
 [Kikaha](http://get.kikaha.io/v1.6/docs/what-is-kikaha) aims to be an absurdly fast Java web server designed for microservices. Written over [Undertow](http://undertow.io/) platform (you know, it is really fast :zap:), it was designed to be a micro container that handle high throughput demands and provide high scalability. Its internal design is clean-code-driven, because open source software should be easy to be improved. Also, we believe on the JVM communities, what they have done, the goals we already achieved and on its improvements. This make we proud to contribute to JVM, the fastest web platform ever.
@@ -37,19 +37,34 @@ $ kikaha run_app
 ```
 
 #### Setup Staging/~~Production~~
-
 ```sh
 $ git clone git@github.com:jmilagroso/kikaha.rocker.git
 $ cd kikaha.rocker
 $ mvn clean package kikaha:package
-$ cd output/ && unzip kikaha.rocker.zip
-$ sh kikaha.rocker/bin/kikaha.sh start
+$ cd output/ &&unzip kikaha.rocker-1.0.0.zip
+$ cd kikaha.rocker-1.0.0
+$ chmod a+x bin/kikaha.sh
+$ sh bin/kikaha.sh start
 ```
 
 #### Memory Adjustment
 ```sh
 $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 ```
+
+#### DataSource Connection Pool Adjustment
+```sh
+# resources/application.yml (http://www.vibur.org/#configuration-settings)
+  ...
+  datasources:
+    default:
+      pool-initial-size: 1000
+      pool-max-size: 5000
+      pool-fair: true
+      ...
+  ...
+```
+
 #### Examples
 ```sh
 * Async Redis example -> kikaha.app.routes.ARedisResource
@@ -64,7 +79,6 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 * Swagger Integration example -> kikaha.app.routes.SwaggerResource
                                  kikaha.app.routes.SwaggerUIResource
 ```
-
 
 #### License
 This code is distributed using the Apache license, Version 2.0.

@@ -41,7 +41,7 @@ $ kikaha run_app
 $ git clone git@github.com:jmilagroso/kikaha.rocker.git
 $ cd kikaha.rocker
 $ mvn clean package kikaha:package
-$ cd output/ &&unzip kikaha.rocker-1.0.0.zip
+$ cd output/ && unzip kikaha.rocker-1.0.0.zip
 $ cd kikaha.rocker-1.0.0
 $ chmod a+x bin/kikaha.sh
 $ sh bin/kikaha.sh start

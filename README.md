@@ -7,7 +7,7 @@ A Kikaha web application with Rocker template framework, Hazelcast in-memory dat
 #### Rocker
 [Rocker](https://github.com/fizzed/rocker) is a Java 8 optimized (runtime compat with 6+), near zero-copy rendering, speedy template engine that produces statically typed, plain java object templates that are compiled along with the rest of your project. No more "warm-up" time in production, slow reflection-based logic, or nasty surprises that should have been caught during development.
 
-### Hazelcast
+#### Hazelcast
 [Hazelcast](https://hazelcast.org/getting-started-with-hazelcast/) is an open source in-memory data grid based on Java.
 
 #### Redis

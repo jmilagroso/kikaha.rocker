@@ -76,6 +76,7 @@ public class WazeResource implements HttpHandler {
             BoundRequestBuilder boundRequestBuilder = httpClient.prepareGet(url);
             boundRequestBuilder.addHeader("Accept", "application/json");
 
+
             boundRequestBuilder.execute(new AsyncCompletionHandler<Response>(){
                 @Override
                 public final State onHeadersReceived(final HttpHeaders headers) throws Exception {

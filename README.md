@@ -27,6 +27,9 @@ A Kikaha web application with Rocker template framework, Hazelcast in-memory dat
 #### Swagger 
 [Swagger](http://swagger.io/) is the world’s largest framework of API developer tools for the OpenAPI Specification(OAS), enabling development across the entire API lifecycle, from design and documentation, to test and deployment.
 
+#### Apache Zookeeper
+[Apache Zookeeper](https://zookeeper.apache.org/) is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. All of these kinds of services are used in some form or another by distributed applications. Each time they are implemented there is a lot of work that goes into fixing the bugs and race conditions that are inevitable. Because of the difficulty of implementing these kinds of services, applications initially usually skimp on them ,which make them brittle in the presence of change and difficult to manage. Even when done correctly, different implementations of these services lead to management complexity when the applications are deployed.
+
 #### Setup Development
 
 ```sh
@@ -78,6 +81,7 @@ $ export KIKAHA_JVM_OPTS="-Xms2g -Xmx2g"
 * Undertow and Mongo example -> kikaha.app.routes.UndertowResource
 * Swagger Integration example -> kikaha.app.routes.SwaggerResource
                                  kikaha.app.routes.SwaggerUIResource
+* Zookeeper Integration example -> kikaha.app.routes.ZookeeperResource                                 
 ```
 
 #### License

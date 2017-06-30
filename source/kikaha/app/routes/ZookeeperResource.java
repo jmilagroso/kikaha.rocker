@@ -3,20 +3,19 @@ package kikaha.app.routes;
 import com.relops.snowflake.Snowflake;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
-import kikaha.app.zookeeper.ZKClientManagerImpl;
 import kikaha.core.modules.http.WebResource;
-import org.apache.zookeeper.KeeperException;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.recipes.cache.PathChildrenCache;
+import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.test.TestingServer;
 import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import playground.ZKDemo;
-
 import javax.inject.Singleton;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * Created by jay on 6/29/17.
@@ -29,6 +28,14 @@ public class ZookeeperResource implements HttpHandler {
 
     // MySQL Cluster Config Separator
     private static final char MySQLClusterConfigSeparator = '!';
+
+    // ZK Related containers.
+    private static final String     PATH = "/mysql/clusters";
+    private static TestingServer server = null;
+    private static CuratorFramework client = null;
+    private static PathChildrenCache cache = null;
+    private static Stat stat = null;
+
     @Override
     public void handleRequest(final HttpServerExchange exchange) throws Exception {
         // Please consider run blocking operations on Undertow's Worker Threads, instead of Undertow's IO Thread.
@@ -39,83 +46,51 @@ public class ZookeeperResource implements HttpHandler {
             return;
         }
 
-        // Zookeeper client manager impl.
-        ZKClientManagerImpl zkClientManager = new ZKClientManagerImpl();
-
-        // Zookeeper node path.
-        String path = "/MySQLClusters";
-
-        // "MySQL Cluster" config string array.
-        // TODO Fetch this from a .yml/.conf/.json over a type-safe config library.
-        String[] mysqlClusters = new String[]{
-                "host:192.168.0.1,user:app1,password:app1,port:3306",
-                "host:192.168.0.2,user:app2,password:app2,port:3306",
-                "host:192.168.0.3,user:app3,password:app3,port:3306",
-                "host:192.168.0.4,user:app4,password:app4,port:3306",
-                "host:192.168.0.5,user:app5,password:app5,port:3306",
-        };
-
-        // Byte array of the mysql cluster config data.
-        byte[] bytesArray = null;
-
         try {
-            // Byte array output stream container.
-            ByteArrayOutputStream output = new ByteArrayOutputStream();
-            for(String cluster : mysqlClusters) {
-                try {
-                    // Cluster separator.
-                    cluster += MySQLClusterConfigSeparator;
-                    // Write the each string cluster to byte
-                    // array output stream (byte[])
-                    output.write(cluster.getBytes());
-                } catch (IOException e) {
-                    logger.error(e.getLocalizedMessage());
-                }
-            }
-            // Output stream get byte array.
-            bytesArray = output.toByteArray();
-            // Remove the last pipe from the byte array.
-            bytesArray = Arrays.copyOfRange(bytesArray, 0, bytesArray.length - 1);
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
+            client = CuratorFrameworkFactory.newClient("localhost:2181",
+                    new ExponentialBackoffRetry(
+                            1000,
+                            3));
+            client.start();
 
-        // Arbitrary parameter, in case we need to update the cluster config values.
-        // TODO Handle the update invocation.
-        boolean update = false;
+            // Let's make sure we're connected to zookeeper first.
+            client.blockUntilConnected();
 
-        try {
-            Stat stat = zkClientManager.getZNodeStats(path);
+            cache = new PathChildrenCache(client, PATH, true);
+            cache.start();
+
+            // Get metadata info
+            stat = client.getZookeeperClient().getZooKeeper().exists(PATH, true);
+
+            // Arbitrary parameter, in case we need to update our data.
+            // TODO Handle the update invocation.
+            boolean update = false;
+
+            // Data from zk node as cached.
+            String result = null;
+
             if (stat != null) {
-                // What if we need to update the data?
                 if(update) {
-                    zkClientManager.update(path, bytesArray);
+                    int version = client.getZookeeperClient().getZooKeeper().exists(PATH, true).getVersion();
+                    client.getZookeeperClient().getZooKeeper().setData(PATH, dummyData(), version);
                 }
-                // Access node path data.
-                String nodeData = (String)zkClientManager.getZNodeData(path,false);
-                logger.info("MySQL Cluster Config(s) from ZK = "+nodeData);
-
-                mimicDBSharding(nodeData);
+                result = new String(get(), "UTF-8");
             } else {
-                // Node path doesn't exist, let's create it.
-                zkClientManager.create(path, bytesArray);
+                // No node exists, create first then proceed with saving..
+                createParents(dummyData());
+                result = new String(get(), "UTF-8");
             }
-        } catch (KeeperException e) {
+
+            // Let's shard
+            shard(result);
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            zkClientManager.closeConnection();
         }
     }
 
-    private final static void mimicDBSharding(String mysqlDBCluster) {
-        logger.info("mysqlDBCluster = "+mysqlDBCluster);
-        logger.info(String.valueOf(mysqlDBCluster.split(String.valueOf(MySQLClusterConfigSeparator)).length));
-
-        String[] clusters = mysqlDBCluster.split(String.valueOf(MySQLClusterConfigSeparator));
-
-        List<Long> randomIds = new LinkedList<>();
+    // Mimic sharding.
+    private static void shard(String data) {
+        String[] clusters = data.split(String.valueOf(MySQLClusterConfigSeparator));
 
         // Dummy record to be inserted on the "database"
         int recordCount = 4096;
@@ -125,10 +100,7 @@ public class ZookeeperResource implements HttpHandler {
             // The node id is a manually assigned value between 0 and 1023 which is used to
             // differentiate different snowflakes when used in a multi-node cluster.
             long id = s.next();
-            randomIds.add(id);
-        }
 
-        for(Long id: randomIds) {
             int shard = (int)(id % clusters.length);
 
             // Each 'Shard' (1 Machine) has N sharded dbs.
@@ -137,6 +109,58 @@ public class ZookeeperResource implements HttpHandler {
             int db = (int)(id % clusters.length);
 
             System.out.println("UUID:"+id + " | DB:mysql-host-"+clusters[shard] + " | db:" + db);
+        }
+    }
+
+    // Generate dummy data
+    private static byte[] dummyData() {
+        // Byte array of the mysql cluster config data.
+        byte[] bytesArray = null;
+        // Prepare data to be saved/updated
+        String[] mysqlClusters = new String[]{
+                "host:192.168.0.1,user:app1,password:app1,port:3306",
+                "host:192.168.0.2,user:app2,password:app2,port:3306",
+                "host:192.168.0.3,user:app3,password:app3,port:3306",
+                "host:192.168.0.4,user:app4,password:app4,port:3306",
+                "host:192.168.0.5,user:app5,password:app5,port:3306",
+        };
+        // Byte array output stream container.
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        for(String cluster : mysqlClusters) {
+            try {
+                // Cluster separator.
+                cluster += MySQLClusterConfigSeparator;
+                // Write the each string cluster to byte
+                // array output stream (byte[])
+                output.write(cluster.getBytes());
+            } catch (IOException e) {
+                logger.error(e.getLocalizedMessage());
+            }
+        }
+        // Output stream get byte array.
+        bytesArray = output.toByteArray();
+        // Remove the last pipe from the byte array.
+        bytesArray = Arrays.copyOfRange(bytesArray, 0, bytesArray.length - 1);
+
+        return bytesArray;
+    }
+
+    // Get data from zookeeper
+    private static byte[] get() {
+        try {
+            return client.getZookeeperClient().getZooKeeper().getData(PATH, null,null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // Create data to zookeeper
+    private static void createParents(byte[] bytesArray) {
+        try {
+            client.create().creatingParentsIfNeeded().forPath(PATH, bytesArray);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

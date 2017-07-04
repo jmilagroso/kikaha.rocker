@@ -23,7 +23,7 @@ public class JWTResource {
     private boolean hasLoadedConfig;
     private void loadConfig() {
         if(!hasLoadedConfig) {
-            security = new Security(config.getString("jwt.secret"), config.getInteger("jwt.expires-days", 1));
+            security = new Security(config.getString("jwt.secret"), config.getInteger("jwt.expires-seconds", 3600));
             hasLoadedConfig = true;
         }
     }
@@ -40,9 +40,9 @@ public class JWTResource {
                 .setObjects("Token:"+security.token("SomeId123", "SomeClaimant", "SomeIssuer"));
     }
 
-
+    // Sample generates new token with default expiration set in config (3600 sec).
     @GET
-    @Path( "/{id}/{claim}/{issuer}" )
+    @Path( "/{id}/{claim}/{issuer}/" )
     @Produces( Mimes.JSON )
     public Map<String, String> render(@PathParam("id") String id,
                                       @PathParam("claim") String claim,
@@ -56,8 +56,26 @@ public class JWTResource {
         return map;
     }
 
+    // Sample generates new token with expiration (in seconds) override.
     @GET
-    @Path( "/verify/{token}/{id}/{claim}/{issuer}" )
+    @Path( "/{id}/{claim}/{issuer}/{expiresInSeconds}" )
+    @Produces( Mimes.JSON )
+    public Map<String, String> renderWithExpiration(@PathParam("id") String id,
+                                      @PathParam("claim") String claim,
+                                      @PathParam("issuer") String issuer,
+                                      @PathParam("expiresInSeconds") Integer expiresInSeconds) {
+
+        loadConfig();
+
+        Map<String,String> map = new HashMap<>();
+        map.put("token", security.token(id, claim, issuer, expiresInSeconds));
+
+        return map;
+    }
+
+    // Sample token verification (as a protected resource)
+    @GET
+    @Path( "/verify/{id}/{claim}/{issuer}/{token}" )
     @Produces( Mimes.JSON )
     public Map<String, Boolean> verify(@PathParam("token") String token,
                                       @PathParam("id") String id,

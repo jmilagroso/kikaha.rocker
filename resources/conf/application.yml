@@ -27,7 +27,8 @@ server:
 
   auth:
     # Distributed Session Management with Hazelcast
-    security-context-factory: kikaha.hazelcast.HazelcastSecurityContextFactory
+    # security-context-factory: kikaha.hazelcast.HazelcastSecurityContextFactory
+    security-context-factory: kikaha.core.modules.security.RESTAPISecurityContextFactory
 
   rules:
     pattern: "/protected/*"
@@ -38,4 +39,4 @@ server:
 
 jwt:
   secret: "EFFA813E0EE1340533837C5E96FAEF220DDAE85B5E41EFC32EF210F367F48BFE"
-  expires-days: 2
+  expires-seconds: 3600

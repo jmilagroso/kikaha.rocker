@@ -16,12 +16,15 @@ public class Security {
 
     private Algorithm algorithm;
 
-    private Integer expirationInDays;
+    private Integer expiresInSeconds;
 
-    public Security(String secret, Integer days) {
+    private Date now;
+    private Date exp;
+
+    public Security(String secret, Integer seconds) {
         try {
             algorithm = Algorithm.HMAC256(secret);
-            expirationInDays = days;
+            expiresInSeconds = seconds;
         } catch (Exception e) {
             throw new IllegalStateException(e.getLocalizedMessage());
         }
@@ -37,15 +40,44 @@ public class Security {
     public String token(String id, String claim, String issuer) {
         String token = null;
         try {
-            Date dt = new Date();
-            DateTime dtOrg = new DateTime(dt);
-            DateTime dtPlusNDays = dtOrg.plusDays(expirationInDays);
+            now = new Date();
+            exp = new Date(now.getTime() + (1000*expiresInSeconds));
 
             token = JWT.create()
+                    .withIssuedAt(now)
+                    .withNotBefore(now)
+                    .withExpiresAt(exp)
                     .withJWTId(id)
                     .withClaim("name", claim)
                     .withIssuer(issuer)
-                    .withExpiresAt(dtPlusNDays.toDate())
+                    .sign(algorithm);
+        } catch (Exception e) {
+            throw new IllegalStateException(e.getLocalizedMessage());
+        }
+
+        return token;
+    }
+
+    /**
+     * Generates new token.
+     * @param id The id string/integer parameter.
+     * @param claim The claim string parameter.
+     * @param issuer The issuer string parameter.
+     * @return string The token string.
+     */
+    public String token(String id, String claim, String issuer, Integer expiresInSecondsOverride) {
+        String token = null;
+        try {
+            now = new Date();
+            exp = new Date(now.getTime() + (1000*expiresInSecondsOverride));
+
+            token = JWT.create()
+                    .withIssuedAt(now)
+                    .withNotBefore(now)
+                    .withExpiresAt(exp)
+                    .withJWTId(id)
+                    .withClaim("name", claim)
+                    .withIssuer(issuer)
                     .sign(algorithm);
         } catch (Exception e) {
             throw new IllegalStateException(e.getLocalizedMessage());

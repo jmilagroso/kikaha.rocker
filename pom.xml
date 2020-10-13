@@ -28,7 +28,7 @@
 		<undertow.version>1.3.23.Final</undertow.version>
 		<java.version>1.8</java.version>
 		<rocker.version>0.16.0</rocker.version>
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<mockito.version>2.7.22</mockito.version>
 		<gson.version>2.8.0</gson.version>
 		<mongo.async.version>3.2.2</mongo.async.version>

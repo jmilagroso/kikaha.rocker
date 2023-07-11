@@ -39,7 +39,7 @@
 		<servelet.version>4.0.0-b05</servelet.version>
 		<asynchttp.version>2.1.0-alpha19</asynchttp.version>
 		<lettuce.version>5.0.0.Beta1</lettuce.version>
-		<netty.version>4.1.51.Final</netty.version>
+		<netty.version>4.1.94.Final</netty.version>
 		<auth0.version>3.2.0</auth0.version>
 	</properties>
 
